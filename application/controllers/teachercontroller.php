@@ -38,7 +38,25 @@ class TeacherController extends Controller
 #--------------------------------------------------------------------------------------------------
 	public function profile()
 	{
-		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# mula baca database
+		try {
+			$this->_setView('index-teacher');# nama fail di View
+			# Used to define the page title
+			$this->_view->set('title', $this->_tajukModulDaa);
+			$this->_view->set('tajukModul', 'Ini Dashboard Profile');
+			$this->_view->set('action', '&nbsp;...&nbsp;');
+
+			return $this->_view->output();
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');
+			//exit;
+		}
 		//*/
 	}
 #--------------------------------------------------------------------------------------------------
