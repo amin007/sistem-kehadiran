@@ -9,7 +9,7 @@ class TeacherController extends Controller
 		$this->_setModel($model);
     }
 #--------------------------------------------------------------------------------------------------
-	// Used to display the home page
+	# Used to display the home page
 	public function index()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
