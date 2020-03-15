@@ -7,7 +7,14 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <!-- FontAwesome CSS -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<?php
+
+$link[] = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">';
+$link[] = '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
+$link[] = '<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/font-awesome.min.css">';
+
+echo $link[1] . "\r";
+?>
 <!-- ElegantFonts CSS -->
 <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/elegant-fonts.css">
 <!-- themify-icons CSS -->
@@ -16,6 +23,13 @@
 <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/swiper.min.css">
 <!-- Styles -->
 <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/style.css">
+<style>
+.hero-content {
+    background: url("<?php echo URL ?>/sumber/images/hero-bg.jpg") no-repeat center;
+    background-size: cover;
+}
+
+</style>
 </head>
 <body>
     <div class="hero-content">
@@ -79,7 +93,9 @@
                                 </div><!-- .hamburger-menu -->
 
                                 <div class="header-bar-cart">
-                                    <a href="#" class="flex justify-content-center align-items-center"><span aria-hidden="true" class="icon_bag_alt"></span></a>
+                                    <a href="#" class="flex justify-content-center align-items-center">
+									<span aria-hidden="true" class="icon_bag_alt"></span>
+									</a>
                                 </div><!-- .header-bar-search -->
                             </nav><!-- .site-navigation -->
                         </div><!-- .col -->
