@@ -5,7 +5,7 @@ atasbawah('template','A4.4.1','include');
 diatas();
 menuAdmin();
 #--------------------------------------------------------------------------------------------------
-if(!isset($tajukModul)) $tajukModul = 'Ini Muka Hadapan Admin';
+if(!isset($tajukModul)) $tajukModul = 'Ini Deskboard Admin';
 if(!isset($action)) $action = '&nbsp;...&nbsp;';
 #--------------------------------------------------------------------------------------------------
 ?>
