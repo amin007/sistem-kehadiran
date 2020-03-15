@@ -16,7 +16,7 @@ class AdminController extends Controller
 		# mula baca database
 		try {
 			$this->_setView('index-admin');
-			// Used to define the page title
+			# Used to define the page title
 			$this->_view->set('title', 'Index Page!');
 
 			return $this->_view->output();
