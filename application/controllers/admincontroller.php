@@ -3,6 +3,8 @@
 class AdminController extends Controller
 {
 #--------------------------------------------------------------------------------------------------
+	protected $_tajukModulDaa = 'Admin Page!';
+#--------------------------------------------------------------------------------------------------
 	public function __construct($model, $action)
 	{
 		parent::__construct($model, $action);
@@ -17,7 +19,7 @@ class AdminController extends Controller
 		try {
 			$this->_setView('index-admin');
 			# Used to define the page title
-			$this->_view->set('title', 'Index Page!');
+			$this->_view->set('title', $this->_tajukModulDaa);
 
 			return $this->_view->output();
 		} catch (Exception $e) {
@@ -39,7 +41,7 @@ class AdminController extends Controller
 		try {
 			$this->_setView('index-admin');
 			# Used to define the page title
-			$this->_view->set('title', 'Admin Page!');
+			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Grade');
 			$this->_view->set('action', '&nbsp;...&nbsp;');
 
