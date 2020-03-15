@@ -9,7 +9,7 @@ class HomeController extends Controller
 		$this->_setModel($model);
     }
 #--------------------------------------------------------------------------------------------------
-	// Used to display the home page
+	# Used to display the home page
 	public function index()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
@@ -17,8 +17,12 @@ class HomeController extends Controller
 		try {
 			//$this->_setView('index-mula');
 			$this->_setView('index-template');
-			// Used to define the page title
-			$this->_view->set('title', 'Index Page!');
+			# Used to define the page title
+			$this->_view->set('title', 'Selamat Datang');
+			$this->_view->set('email', 'maizatussolehah@gmail.com');
+			//$this->_view->set('email', 'tuanna.design@gmail.com');
+			$this->_view->set('telefon', '06-762 8046');
+			//$this->_view->set('telefon', '001-1234-88888');
 
 			return $this->_view->output();
 		} catch (Exception $e) {
