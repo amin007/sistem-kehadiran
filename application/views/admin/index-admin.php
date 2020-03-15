@@ -10,7 +10,7 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 #--------------------------------------------------------------------------------------------------
 ?>
 
-<div class="container" style="margin-top:30px">
+<div class="container" style="margin-top:20px">
 <div class="card">
 	<div class="card-header">
 	<!-- ====================================================================================== -->
