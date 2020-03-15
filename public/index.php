@@ -6,6 +6,7 @@ define ('DS', DIRECTORY_SEPARATOR);
 define ('ROOT', dirname(dirname(__FILE__)));
 define ('URL', dirname('http://' . $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF']));
 define ('SITE_ID', 1);
+define ('SITE_STATUS', 1);
 
 # 1. laporan tahap kesilapan kod PHP
 error_reporting(E_ALL);
