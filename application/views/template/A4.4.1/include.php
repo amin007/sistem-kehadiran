@@ -98,6 +98,15 @@ END;
 	function notaKaki()
 	{
 		print <<<END
+<!-- Footer
+=============================================================================================== -->
+<!-- footer class="footer">
+	<div class="container">
+		<span class="label label-info">
+		&copy; Hak Cipta Terperihara 2016. Theme Asal Bootstrap Twitter
+		</span>
+	</div>
+</footer -->
 END;
 		#
 	}
@@ -113,15 +122,6 @@ END;
 	{
 		print <<<END
 
-<!-- Footer
-=============================================================================================== -->
-<!-- footer class="footer">
-	<div class="container">
-		<span class="label label-info">
-		&copy; Hak Cipta Terperihara 2016. Theme Asal Bootstrap Twitter
-		</span>
-	</div>
-</footer -->
 
 <!-- khas untuk jquery dan js2 lain
 =============================================================================================== -->
