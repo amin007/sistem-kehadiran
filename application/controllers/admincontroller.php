@@ -35,6 +35,24 @@ class AdminController extends Controller
 	public function grade()
 	{
 		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# mula baca database
+		try {
+			$this->_setView('index-admin');
+			# Used to define the page title
+			$this->_view->set('title', 'Admin Page!');
+			$this->_view->set('tajukModul', 'Ini Dashboard Grade');
+			$this->_view->set('action', '&nbsp;...&nbsp;');
+
+			return $this->_view->output();
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');
+			//exit;
+		}
 		//*/
 	}
 #--------------------------------------------------------------------------------------------------
