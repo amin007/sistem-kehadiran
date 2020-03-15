@@ -46,23 +46,24 @@ END;
 #--------------------------------------------------------------------------------------------------
 	function menuAdmin()
 	{
+		$url = URL;
 		print <<<END
 <div class="jumbotron-small text-center" style="margin-bottom:0">
 	<h1>Student Attendance System</h1>
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	<a class="navbar-brand" href="index.php">Home</a>
+	<a class="navbar-brand" href="$url/admin/index">Home</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
 	<ul class="navbar-nav">
-	<li class="nav-item"><a class="nav-link" href="admin/grade">Grade</a></li>
-	<li class="nav-item"><a class="nav-link" href="admin/teacher">Teacher</a></li>
-	<li class="nav-item"><a class="nav-link" href="admin/student">Student</a></li>
-	<li class="nav-item"><a class="nav-link" href="admin/attendance">Attendance</a></li>
-	<li class="nav-item"><a class="nav-link" href="admin/logout">Logout</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/admin/grade">Grade</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/admin/teacher">Teacher</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/admin/student">Student</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/admin/attendance">Attendance</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/admin/logout">Logout</a></li>
     </ul>
 	</div><!-- / class="collapse navbar-collapse" -->
 </nav>
@@ -72,22 +73,23 @@ END;
 #--------------------------------------------------------------------------------------------------
 	function menuTeacher()
 	{
+		$url = URL;
 		print <<<END
 <div class="jumbotron-small text-center" style="margin-bottom:0">
 	<h1>Student Attendance System</h1>
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	<a class="navbar-brand" href="index.php">Home</a>
+	<a class="navbar-brand" href="$url/teacher/index">Home</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
 	<ul class="navbar-nav">
-	<li class="nav-item"><a class="nav-link" href="teacher/profile">Profile</a></li>
-	<li class="nav-item"><a class="nav-link" href="teacher/student">Student</a></li>
-	<li class="nav-item"><a class="nav-link" href="teacher/attendance">Attendance</a></li>
-	<li class="nav-item"><a class="nav-link" href="teacher/logout">Logout</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/teacher/profile">Profile</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/teacher/student">Student</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/teacher/attendance">Attendance</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/teacher/logout">Logout</a></li>
 	</ul>
 	</div><!-- / class="collapse navbar-collapse" -->
 </nav>
