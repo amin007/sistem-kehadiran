@@ -53,7 +53,8 @@ spl_autoload_register(function ($class)
 //*/
 #--------------------------------------------------------------------------------------------------
 $core[] = 'function.php';
-$core[] = 'init.php';
+//$core[] = 'init.php';# nilai default
+$core[] = 'init2.php';# nilai ikut localhost
 $core[] = 'bootstrap.php';
 //echo '<hr>Core <hr>' . "\n";
 foreach($core as $file):
