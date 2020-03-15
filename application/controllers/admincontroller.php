@@ -9,7 +9,7 @@ class AdminController extends Controller
 		$this->_setModel($model);
     }
 #--------------------------------------------------------------------------------------------------
-	// Used to display the home page
+	# Used to display the home page
 	public function index()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
@@ -32,5 +32,34 @@ class AdminController extends Controller
 		//*/
 	}
 #--------------------------------------------------------------------------------------------------
+	public function grade()
+	{
+		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	public function teacher()
+	{
+		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	public function student()
+	{
+		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	public function attendance()
+	{
+		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	public function logout()
+	{
+		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//*/
+	}
 #--------------------------------------------------------------------------------------------------
 }
