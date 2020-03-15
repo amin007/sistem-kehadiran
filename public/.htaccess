@@ -1,0 +1,22 @@
+# IMPORTANT!
+# This file required by Bootpad
+# Please DO NOT delete this file
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+
+    # Rewrite all other URLs to index.php/URL
+    RewriteRule ^(.*)$ index.php?load=$1 [PT,L]
+
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+
+    ErrorDocument 404 index.php
+
+</IfModule>
