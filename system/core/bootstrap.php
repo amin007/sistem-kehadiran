@@ -41,7 +41,11 @@ if (isset($_GET['load']))
     }
 }
 #--------------------------------------------------------------------------------------------------
-// Used to check whether site is under maintenane
+	$modelName = $controller;
+	$controller .= 'Controller';
+	$load = new $controller($modelName, $action);
+#--------------------------------------------------------------------------------------------------
+/*// Used to check whether site is under maintenane
 if(SITE_STATUS == 1) {
 	$modelName = 'home';
 	$controller .= 'Controller';
@@ -50,7 +54,7 @@ if(SITE_STATUS == 1) {
 	$modelName = $controller;
 	$controller .= 'Controller';
 	$load = new $controller($modelName, $action);
-}
+}*/
 #--------------------------------------------------------------------------------------------------
 // Used to debug the MVC circulation proccessed
 //echo '<hr>2.Controller='.$controller.'|Model='.$modelName.'|Action='.$action.'|Value='.$query.$fvalue;
