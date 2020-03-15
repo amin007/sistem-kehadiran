@@ -14,16 +14,16 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 
     <!-- ElegantFonts CSS -->
-    <link rel="stylesheet" href="css/elegant-fonts.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/elegant-fonts.css">
 
     <!-- themify-icons CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/themify-icons.css">
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/swiper.min.css">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/style.css">
 </head>
 <body>
     <div class="hero-content">
@@ -920,10 +920,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer><!-- .site-footer -->
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="js/swiper.min.js"></script>
-<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
-<script type="text/javascript" src="js/jquery.collapsible.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="<?php echo URL ?>/sumber/js/swiper.min.js"></script>
+<script type="text/javascript" src="<?php echo URL ?>/sumber/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="<?php echo URL ?>/sumber/js/jquery.collapsible.min.js"></script>
+<script type="text/javascript" src="<?php echo URL ?>/sumber/js/custom.js"></script>
 
 </body>
 </html>
