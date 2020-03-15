@@ -6,19 +6,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<!-- FontAwesome CSS -->
 <?php
 
+$link[] = '<!-- FontAwesome CSS -->';
 $link[] = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">';
 $link[] = '<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
 $link[] = '<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/font-awesome.min.css">';
 
-echo $link[1] . "\r";
+echo $link[0] . "\r";
+echo $link[2] . "\r";
+
+$link2[] = '<!-- ElegantFonts CSS -->';
+$link2[] = '<link rel="stylesheet" href="' . URL. '/sumber/css/elegant-fonts.css">';
+$link2[] = '<link rel="stylesheet" href="https://technext.github.io/ezuca/css/elegant-fonts.css">';
+
+echo $link2[0] . "\r";
+echo $link2[2] . "\r";
+
+$link3[] = '<!-- themify-icons CSS -->';
+$link3[] = '<link rel="stylesheet" href="' . URL . '/sumber/css/themify-icons.css">';
+$link3[] = '<link rel="stylesheet" href="https://technext.github.io/ezuca/css/themify-icons.css">';
+
+echo $link3[0] . "\r";
+echo $link3[2] . "\r";
+
 ?>
-<!-- ElegantFonts CSS -->
-<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/elegant-fonts.css">
-<!-- themify-icons CSS -->
-<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/themify-icons.css">
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/swiper.min.css">
 <!-- Styles -->
