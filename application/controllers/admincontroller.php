@@ -17,7 +17,7 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# mula baca database
 		try {
-			$this->_setView('index-admin');
+			$this->_setView('index-admin');# nama fail di View
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Utama');
@@ -41,7 +41,7 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# mula baca database
 		try {
-			$this->_setView('index-admin');
+			$this->_setView('index-admin');# nama fail di View
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Kelas');
@@ -65,7 +65,7 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# mula baca database
 		try {
-			$this->_setView('index-admin');
+			$this->_setView('index-admin');# nama fail di View
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Guru');
@@ -89,7 +89,7 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# mula baca database
 		try {
-			$this->_setView('index-admin');
+			$this->_setView('index-admin');# nama fail di View
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Pelajar');
@@ -113,7 +113,7 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# mula baca database
 		try {
-			$this->_setView('index-admin');
+			$this->_setView('index-admin');# nama fail di View
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Kedatangan');
@@ -137,7 +137,7 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# mula baca database
 		try {
-			$this->_setView('index-admin');
+			$this->_setView('index-admin');# nama fail di View
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Logout');
