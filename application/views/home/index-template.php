@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Pusat Tuisyen</title>
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-    <!-- FontAwesome CSS -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-
-    <!-- ElegantFonts CSS -->
-    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/elegant-fonts.css">
-
-    <!-- themify-icons CSS -->
-    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/themify-icons.css">
-
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/swiper.min.css">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="<?php echo URL ?>/sumber/css/style.css">
+<head><title>Pusat Tuisyen</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+<!-- ElegantFonts CSS -->
+<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/elegant-fonts.css">
+<!-- themify-icons CSS -->
+<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/themify-icons.css">
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/swiper.min.css">
+<!-- Styles -->
+<link rel="stylesheet" href="<?php echo URL ?>/sumber/css/style.css">
 </head>
 <body>
     <div class="hero-content">
@@ -212,7 +204,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="course-content flex flex-wrap justify-content-between align-content-lg-stretch">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/1.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/1.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -248,7 +240,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="course-content flex flex-wrap justify-content-between align-content-lg-stretch">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/2.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/2.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -322,10 +314,10 @@
                 <div class="col-12 col-lg-6 flex align-content-center mt-5 mt-lg-0">
                     <div class="ezuca-video position-relative">
                         <div class="video-play-btn position-absolute">
-                            <img src="images/video-icon.png" alt="Video Play">
+                            <img src="<?php echo URL ?>/sumber/images/video-icon.png" alt="Video Play">
                         </div><!-- .video-play-btn -->
 
-                        <img src="images/video-screenshot.png" alt="">
+                        <img src="<?php echo URL ?>/sumber/images/video-screenshot.png" alt="">
                     </div><!-- .ezuca-video -->
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -341,7 +333,7 @@
                         <div class="row">
                             <div class="col-12 col-lg-6 order-2 order-lg-1 flex align-items-center mt-5 mt-lg-0">
                                 <figure class="user-avatar">
-                                    <img src="images/user-1.jpg" alt="">
+                                    <img src="<?php echo URL ?>/sumber/images/user-1.jpg" alt="">
                                 </figure><!-- .user-avatar -->
                             </div><!-- .col -->
 
@@ -363,7 +355,7 @@
                         <div class="row">
                             <div class="col-12 col-lg-6 order-2 order-lg-1 flex align-items-center mt-5 mt-lg-0">
                                 <figure class="user-avatar">
-                                    <img src="images/user-2.jpg" alt="">
+                                    <img src="<?php echo URL ?>/sumber/images/user-2.jpg" alt="">
                                 </figure><!-- .user-avatar -->
                             </div><!-- .col -->
 
@@ -385,7 +377,7 @@
                         <div class="row">
                             <div class="col-12 col-lg-6 flex order-2 order-lg-1 align-items-center mt-5 mt-lg-0">
                                 <figure class="user-avatar">
-                                    <img src="images/user-3.jpg" alt="">
+                                    <img src="<?php echo URL ?>/sumber/images/user-3.jpg" alt="">
                                 </figure><!-- .user-avatar -->
                             </div><!-- .col -->
 
@@ -435,7 +427,7 @@
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/1.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/1.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -471,7 +463,7 @@
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/2.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/2.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -507,7 +499,7 @@
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/3.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/3.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -543,7 +535,7 @@
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/4.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/4.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -579,7 +571,7 @@
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/5.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/5.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -615,7 +607,7 @@
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="#"><img src="images/6.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/6.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -667,7 +659,7 @@
                 <div class="col-12 col-lg-6">
                     <div class="featured-event-content">
                         <figure class="event-thumbnail position-relative m-0">
-                            <a href="#"><img src="images/event-1.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/event-1.jpg" alt=""></a>
 
                             <div class="posted-date position-absolute">
                                 <div class="day">23</div>
@@ -688,7 +680,7 @@
                 <div class="col-12 col-lg-6 mt-5 mt-lg-0">
                     <div class="event-content flex flex-wrap justify-content-between align-content-stretch">
                         <figure class="event-thumbnail">
-                            <a href="#"><img src="images/event-2.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/event-2.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="event-content-wrap">
@@ -714,7 +706,7 @@
 
                     <div class="event-content flex flex-wrap justify-content-between align-content-lg-stretch">
                         <figure class="event-thumbnail">
-                            <a href="#"><img src="images/event-3.jpg" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/event-3.jpg" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="event-content-wrap">
@@ -745,59 +737,59 @@
     <section class="home-gallery">
         <div class="gallery-wrap flex flex-wrap">
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/a.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/a.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/b.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/b.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x2">
-                <a href="#"><img src="images/c.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/c.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/d.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/d.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/e.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/e.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="images/g.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/g.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="images/h.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/h.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/i.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/i.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x2 ">
-                <a href="#"><img src="images/j.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/j.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/k.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/k.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/l.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/l.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid2x1">
-                <a href="#"><img src="images/m.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/m.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid3x1">
-                <a href="#"><img src="images/n.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/n.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
 
             <div class="gallery-grid gallery-grid1x1">
-                <a href="#"><img src="images/o.jpg" alt=""></a>
+                <a href="#"><img src="<?php echo URL ?>/sumber/images/o.jpg" alt=""></a>
             </div><!-- .gallery-grid -->
         </div><!-- .gallery-wrap -->
     </section><!-- .home-gallery -->
@@ -807,23 +799,23 @@
             <div class="row">
                 <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
                     <div class="logo-wrap">
-                        <img src="images/logo-1.png" alt="">
+                        <img src="<?php echo URL ?>/sumber/images/logo-1.png" alt="">
                     </div><!-- .logo-wrap -->
 
                     <div class="logo-wrap">
-                        <img src="images/logo-2.png" alt="">
+                        <img src="<?php echo URL ?>/sumber/images/logo-2.png" alt="">
                     </div><!-- .logo-wrap -->
 
                     <div class="logo-wrap">
-                        <img src="images/logo-3.png" alt="">
+                        <img src="<?php echo URL ?>/sumber/images/logo-3.png" alt="">
                     </div><!-- .logo-wrap -->
 
                     <div class="logo-wrap">
-                        <img src="images/logo-4.png" alt="">
+                        <img src="<?php echo URL ?>/sumber/images/logo-4.png" alt="">
                     </div><!-- .logo-wrap -->
 
                     <div class="logo-wrap">
-                        <img src="images/logo-5.png" alt="">
+                        <img src="<?php echo URL ?>/sumber/images/logo-5.png" alt="">
                     </div><!-- .logo-wrap -->
                 </div><!-- .col -->
             </div><!-- .row -->
@@ -836,7 +828,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <a class="foot-logo" href="#"><img src="images/foot-logo.png" alt=""></a>
+                            <a class="foot-logo" href="#"><img src="<?php echo URL ?>/sumber/images/foot-logo.png" alt=""></a>
 
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia dese mollit anim id est laborum. </p>
 
@@ -899,8 +891,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
                     <div class="col-12 col-lg-6">
                         <div class="download-apps flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
-                            <a href="#"><img src="images/app-store.png" alt=""></a>
-                            <a href="#"><img src="images/play-store.png" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/app-store.png" alt=""></a>
+                            <a href="#"><img src="<?php echo URL ?>/sumber/images/play-store.png" alt=""></a>
                         </div><!-- .download-apps -->
 
                     </div>
