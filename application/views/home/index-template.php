@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><title>Pusat Tuisyen</title>
+<head><title><?php echo $title ?></title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,11 +51,11 @@ echo $link3[2] . "\r";
                     <div class="row">
                         <div class="col-12 col-lg-6 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
                             <div class="header-bar-email d-flex align-items-center">
-                                <i class="fa fa-envelope"></i><a href="#">tuanna.design@gmail.com</a>
+                                <i class="fa fa-envelope"></i><a href="#"><?php echo $email ?></a>
                             </div><!-- .header-bar-email -->
 
                             <div class="header-bar-text lg-flex align-items-center">
-                                <p><i class="fa fa-phone"></i>001-1234-88888 </p>
+                                <p><i class="fa fa-phone"></i><?php echo $telefon ?> </p>
                             </div><!-- .header-bar-text -->
                         </div><!-- .col -->
 
