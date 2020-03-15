@@ -12,10 +12,11 @@ class HomeController extends Controller
 	// Used to display the home page
 	public function index()
 	{
-		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# mula baca database
 		try {
-			$this->_setView('index-mula');
+			//$this->_setView('index-mula');
+			$this->_setView('index-template');
 			// Used to define the page title
 			$this->_view->set('title', 'Index Page!');
 
