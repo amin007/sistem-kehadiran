@@ -38,17 +38,19 @@ data-target=".daftarLg">Daftar Akaun</button -->
 aria-labelledby="myLargeModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg" role="document">
 <div class="modal-content">
+<form>
 	<div class="modal-header">
 		<h4 class="modal-title">Tajuk</h4>
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		<span aria-hidden="true">&times;</span></button>
 	</div>
 	<div class="modal-body">
-		Tengah
+		<?php borangDaftar(); ?>
 	</div><!-- / class="modal-body" -->
 	<div class="modal-footer">
 		Nota Kaki
 	</div><!-- / class="modal-footer" -->
+</form>
 </div><!-- / class="modal-content" -->
 </div><!-- / class="modal-dialog" -->
 </div><!-- / class="modal fade -->
