@@ -182,7 +182,7 @@ dibawah();
 		<input type="checkbox" checked="checked"> Ingat Saya
 		<hr>
 		<button type="button" onclick="document.getElementById('id01').style.display='none'"
-		 class="btn btn-danger">Batal</button>
+		class="btn btn-danger" data-dismiss="modal" aria-label="Close">Batal</button>
 		<?php
 	}
 #--------------------------------------------------------------------------------------------------
