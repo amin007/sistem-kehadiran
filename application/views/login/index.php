@@ -40,7 +40,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
 <div class="modal-content">
 <form>
 	<div class="modal-header">
-		<h4 class="modal-title">Tajuk</h4>
+		<h4 class="modal-title"><b>Maklumat Peribadi Guru</b></h4>
 		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		<span aria-hidden="true">&times;</span></button>
 	</div>
@@ -89,10 +89,6 @@ dibawah();
 	{
 		?>
 		<div class="form-group row">
-			<h2><b>Maklumat Peribadi Guru</b></h2><hr>
-		</div><!-- / class="form-group row" -->
-
-		<div class="form-group row">
 			<label class="col-sm-2 col-form-label"><b>Nama Penuh</b></label>
 			<div class="col-sm-10">
 				<input type="text" class="form-control" name="teacher_name" required>
@@ -138,10 +134,10 @@ dibawah();
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label">
+			<label class="col-sm-7 col-form-label">
 				<b>Tarikh Mendaftar Sebagai Guru Pusat Tuisyen YNS</b>
 			</label>
-			<div class="col-sm-10">
+			<div class="col-sm-5">
 				<input type="date" class="form-control" name="teacher_doj" required><br />
 			</div><!-- / class="col-sm-10" -->
 		</div><!-- / class="form-group row" -->
@@ -150,13 +146,13 @@ dibawah();
 			<label class="col-sm-2 col-form-label"><b>Gambar Anda</b></label>
 			<div class="col-sm-10">
 				<input class="form-control" type="file" name="teacher_image" required /><br>
-				<span class="text-muted"><small>Hanya format .jpg & .png</small></span><br><br>
+				<span class="text-muted"><small>Hanya format .jpg & .png</small></span>
 			</div><!-- / class="col-sm-10" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Jenis Pelajar Yang Diajar</b></label>
-			<div class="col-sm-10">
+			<label class="col-sm-5 col-form-label"><b>Jenis Pelajar Yang Diajar</b></label>
+			<div class="col-sm-7">
 				<input type="checkbox" name="teacher_grade_id" value="1">UPSR
 				<input type="checkbox" name="teacher_grade_id" value="2">PT3
 				<input type="checkbox" name="teacher_grade_id" value="3">SPM
