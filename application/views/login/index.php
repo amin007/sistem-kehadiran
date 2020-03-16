@@ -89,38 +89,38 @@ dibawah();
 	{
 		?>
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Nama Penuh</b></label>
-			<div class="col-sm-10">
+			<label class="col-sm-3 col-form-label"><b>Nama Penuh</b></label>
+			<div class="col-sm-9">
 				<input type="text" class="form-control" name="teacher_name" required>
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Alamat Surat Menyurat</b></label>
-			<div class="col-sm-10">
+			<label class="col-sm-3 col-form-label"><b>Alamat Surat Menyurat</b></label>
+			<div class="col-sm-9">
 				<input type="text" class="form-control" name="teacher_address" required>
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Email</b></label>
-			<div class="col-sm-10">
+			<label class="col-sm-3 col-form-label"><b>Email</b></label>
+			<div class="col-sm-9">
 				<input type="text" class="form-control" name="teacher_emailid"
 				id="teacher_emailid" required>
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Kata Laluan</b></label>
-			<div class="col-sm-10">
+			<label class="col-sm-3 col-form-label"><b>Kata Laluan</b></label>
+			<div class="col-sm-9">
 				<input type="password" class="form-control" name="teacher_password"
 				id="teacher_password" required>
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Tahap Kelayakan</b></label>
-			<div class="col-sm-10">
+			<label class="col-sm-3 col-form-label"><b>Tahap Kelayakan</b></label>
+			<div class="col-sm-9">
 				<select class="form-control" name="teacher_qualification">
 				<option value="0"></option>
 				<option value="1">SPM</option>
@@ -130,33 +130,33 @@ dibawah();
 				<option value="5">PHD</option>
 				<option value="6">Bersara</option>
 				</select required>
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-7 col-form-label">
-				<b>Tarikh Mendaftar Sebagai Guru Pusat Tuisyen YNS</b>
+			<label class="col-sm-3 col-form-label">
+				<b>Tarikh Mendaftar Sebagai<br>Guru Pusat Tuisyen YNS</b>
 			</label>
-			<div class="col-sm-5">
+			<div class="col-sm-9">
 				<input type="date" class="form-control" name="teacher_doj" required>
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Gambar&nbsp;Anda</b></label>
-			<div class="col-sm-10">
+			<label class="col-sm-3 col-form-label"><b>Gambar&nbsp;Anda</b></label>
+			<div class="col-sm-9">
 				<input class="form-control" type="file" name="teacher_image" required />
 				<span class="text-muted"><small>Hanya format .jpg & .png</small></span>
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Jenis Pelajar Yang Diajar</b></label>
+			<label class="col-sm-3 col-form-label"><b>Jenis Pelajar Yang Diajar</b></label>
 			<div class="col-sm-5">
 				<input type="checkbox" name="teacher_grade_id" value="1">UPSR
 				<input type="checkbox" name="teacher_grade_id" value="2">PT3
 				<input type="checkbox" name="teacher_grade_id" value="3">SPM
-			</div><!-- / class="col-sm-10" -->
+			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
 		<?php
