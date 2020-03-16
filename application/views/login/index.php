@@ -135,10 +135,13 @@ dibawah();
 
 		<div class="form-group row">
 			<label class="col-sm-3 col-form-label">
-				<b>Tarikh Mendaftar Sebagai<br>Guru Pusat Tuisyen YNS</b>
+				<b>Tarikh Mendaftar</b>
 			</label>
 			<div class="col-sm-9">
 				<input type="date" class="form-control" name="teacher_doj" required>
+				<small id="passwordHelpBlock" class="form-text text-muted">
+					Tarikh Mendaftar Sebagai Guru Pusat Tuisyen YNS
+				</small>
 			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
@@ -153,9 +156,18 @@ dibawah();
 		<div class="form-group row">
 			<label class="col-sm-3 col-form-label"><b>Jenis Pelajar Yang Diajar</b></label>
 			<div class="col-sm-5">
-				<input type="checkbox" name="teacher_grade_id" value="1">UPSR
-				<input type="checkbox" name="teacher_grade_id" value="2">PT3
-				<input type="checkbox" name="teacher_grade_id" value="3">SPM
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="1">
+					<label class="form-check-label" for="inlineCheckbox1">UPSR</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="2">
+					<label class="form-check-label" for="inlineCheckbox2">PT3</label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="3">
+					<label class="form-check-label" for="inlineCheckbox3">SPM</label>
+				</div>
 			</div><!-- / class="col-sm-9" -->
 		</div><!-- / class="form-group row" -->
 
@@ -165,12 +177,12 @@ dibawah();
 	function butangBorangDaftar()
 	{
 		?>
-		<button type="submit">Daftar</button>
-		<button type="reset">Set Semula</button>
+		<button type="submit" class="btn btn-primary">Daftar</button>
+		<button type="reset" class="btn btn-warning">Set Semula</button>
 		<input type="checkbox" checked="checked"> Ingat Saya
 		<hr>
 		<button type="button" onclick="document.getElementById('id01').style.display='none'"
-		class="cancelbtn">Batal</button>
+		 class="btn btn-danger">Batal</button>
 		<?php
 	}
 #--------------------------------------------------------------------------------------------------
