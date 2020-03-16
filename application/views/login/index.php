@@ -129,7 +129,7 @@ dibawah();
 				<option value="4">Ijazah Sarjana</option>
 				<option value="5">PHD</option>
 				<option value="6">Bersara</option>
-				</select required><br><br>
+				</select required>
 			</div><!-- / class="col-sm-10" -->
 		</div><!-- / class="form-group row" -->
 
@@ -138,21 +138,21 @@ dibawah();
 				<b>Tarikh Mendaftar Sebagai Guru Pusat Tuisyen YNS</b>
 			</label>
 			<div class="col-sm-5">
-				<input type="date" class="form-control" name="teacher_doj" required><br />
+				<input type="date" class="form-control" name="teacher_doj" required>
 			</div><!-- / class="col-sm-10" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-2 col-form-label"><b>Gambar Anda</b></label>
+			<label class="col-sm-2 col-form-label"><b>Gambar&nbsp;Anda</b></label>
 			<div class="col-sm-10">
-				<input class="form-control" type="file" name="teacher_image" required /><br>
+				<input class="form-control" type="file" name="teacher_image" required />
 				<span class="text-muted"><small>Hanya format .jpg & .png</small></span>
 			</div><!-- / class="col-sm-10" -->
 		</div><!-- / class="form-group row" -->
 
 		<div class="form-group row">
-			<label class="col-sm-5 col-form-label"><b>Jenis Pelajar Yang Diajar</b></label>
-			<div class="col-sm-7">
+			<label class="col-sm-2 col-form-label"><b>Jenis Pelajar Yang Diajar</b></label>
+			<div class="col-sm-5">
 				<input type="checkbox" name="teacher_grade_id" value="1">UPSR
 				<input type="checkbox" name="teacher_grade_id" value="2">PT3
 				<input type="checkbox" name="teacher_grade_id" value="3">SPM
