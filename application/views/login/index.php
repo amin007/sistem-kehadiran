@@ -22,40 +22,19 @@ diatas($title);
 		<br><button type="button" class="btn btn-success" data-toggle="modal"
 		data-target=".login-sm">Log Masuk</button>
 		<hr>Tidak mempunyai akaun? Sila daftar di sini.
-		<br><a class="btn btn-success" href="<?php echo URL ?>/login/daftar">Daftar Akaun</a>
+		<br><button type="button" class="btn btn-success" data-toggle="modal"
+		data-target=".daftarLg">Daftar Akaun</button>
 	</td>
 </tr></table>
 <!-- ========================================================================================== -->
 </div><!-- / class="container" -->
 
 <!-- ########################################################################################## -->
-<!-- Extra large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
-
-<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog"
-aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-xl" role="document">
-<div class="modal-content">
-	<div class="modal-header">
-		<h4 class="modal-title">Tajuk</h4>
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		<span aria-hidden="true">&times;</span></button>
-	</div>
-	<div class="modal-body">
-		Tengah
-	</div><!-- / class="modal-body" -->
-	<div class="modal-footer">
-		Nota Kaki
-	</div><!-- / class="modal-footer" -->
-</div><!-- / class="modal-content" -->
-</div><!-- / class="modal-dialog" -->
-</div><!-- / class="modal fade -->
-
-<!-- ########################################################################################## -->
 <!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+<!-- button type="button" class="btn btn-success" data-toggle="modal"
+data-target=".daftarLg">Daftar Akaun</button -->
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+<div class="modal fade daftarLg" tabindex="-1" role="dialog"
 aria-labelledby="myLargeModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg" role="document">
 <div class="modal-content">
@@ -102,7 +81,58 @@ diJquery();
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 dibawah();
+###################################################################################################
 #--------------------------------------------------------------------------------------------------
+	function borangDaftar()
+	{
+		?>
+		<h2><b>Maklumat Peribadi Guru</b></h2><hr>
+		<!-- <small>Please fill out your contact information below.</small><br><br>-->
+
+		<label><b>Nama Penuh</b></label>
+		<input type="text"  name="teacher_name" required>
+
+		<label><b>Alamat Surat Menyurat</b></label>
+		<input type="text" name="teacher_address"  required>
+
+		<lable><b>Email</b></label>
+		<input type="text" name="teacher_emailid" id="teacher_emailid" required>
+
+		<label><b>Kata Laluan</b></label>
+		<input type="password" name="teacher_password" id="teacher_password"
+		class="form-control" required>
+
+		<label><b>Tahap Kelayakan</b></label><br><br>
+		<select name="teacher_qualification">
+		<option value="0"></option>
+		<option value="1">SPM</option>
+		<option value="2">Diploma</option>
+		<option value="3">Ijazah</option>
+		<option value="4">Ijazah Sarjana</option>
+		<option value="5">PHD</option>
+		<option value="6">Bersara</option>
+		</select required><br><br>
+
+		<label><b>Tarikh Mendaftar Sebagai Guru Pusat Tuisyen YNS</b></label><br><br>
+		<input type="date" name="teacher_doj" required><br />
+
+		<br/><label><b>Gambar Anda</b></label><br><br>
+		<input type="file" name="teacher_image" required /><br>
+		<span class="text-muted"><small>Hanya format .jpg & .png</small></span><br><br>
+
+		<label><b>Jenis Pelajar Yang Diajar</b></label><br><br>
+		<input type="checkbox" name="teacher_grade_id" value="1">UPSR</input>
+		<input type="checkbox" name="teacher_grade_id" value="2">PT3</input>
+		<input type="checkbox" name="teacher_grade_id" value="3">SPM</input><br><br>
+
+		<button type="submit">Daftar</button>
+		<button type="reset">Set Semula</button>
+		<input type="checkbox" checked="checked"> Ingat Saya
+		<hr>
+		<button type="button" onclick="document.getElementById('id01').style.display='none'"
+		class="cancelbtn">Batal</button>
+		<?php
+	}
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
