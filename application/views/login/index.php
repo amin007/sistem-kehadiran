@@ -34,7 +34,7 @@ diatas($title);
 <!-- button type="button" class="btn btn-success" data-toggle="modal"
 data-target=".daftarLg">Daftar Akaun</button -->
 
-<div class="modal fade daftarLg" tabindex="-1" role="dialog"
+<div class="modal fade daftarLg" data-backdrop="static" tabindex="-1" role="dialog"
 aria-labelledby="myLargeModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-lg" role="document">
 <div class="modal-content">
@@ -48,7 +48,7 @@ aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		<?php borangDaftar(); ?>
 	</div><!-- / class="modal-body" -->
 	<div class="modal-footer">
-		Nota Kaki
+		<?php butangBorangDaftar(); ?>
 	</div><!-- / class="modal-footer" -->
 </form>
 </div><!-- / class="modal-content" -->
