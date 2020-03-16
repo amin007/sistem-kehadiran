@@ -88,11 +88,16 @@ dibawah();
 	function borangDaftar()
 	{
 		?>
-		<h2><b>Maklumat Peribadi Guru</b></h2><hr>
-		<!-- <small>Please fill out your contact information below.</small><br><br>-->
+		<div class="form-group row">
+			<h2><b>Maklumat Peribadi Guru</b></h2><hr>
+		</div><!-- / class="form-group row" -->
 
-		<label><b>Nama Penuh</b></label>
-		<input type="text"  name="teacher_name" required>
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label"><b>Nama Penuh</b></label>
+			<div class="col-sm-10">
+				<input type="text" name="teacher_name" required>
+			</div><!-- / class="col-sm-10" -->
+		</div><!-- / class="form-group row" -->
 
 		<label><b>Alamat Surat Menyurat</b></label>
 		<input type="text" name="teacher_address"  required>
