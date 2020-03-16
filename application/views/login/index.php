@@ -127,6 +127,12 @@ dibawah();
 		<input type="checkbox" name="teacher_grade_id" value="2">PT3</input>
 		<input type="checkbox" name="teacher_grade_id" value="3">SPM</input><br><br>
 
+		<?php
+	}
+#--------------------------------------------------------------------------------------------------
+	function butangBorangDaftar()
+	{
+		?>
 		<button type="submit">Daftar</button>
 		<button type="reset">Set Semula</button>
 		<input type="checkbox" checked="checked"> Ingat Saya
@@ -135,7 +141,6 @@ dibawah();
 		class="cancelbtn">Batal</button>
 		<?php
 	}
-#--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
