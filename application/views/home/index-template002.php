@@ -92,8 +92,9 @@ echo $link3[2] . "\r";
 			<nav class="site-navigation flex justify-content-end align-items-center">
 				<ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
 				<li class="current-menu-item"><a href="<?php echo URL ?>">HALAMAN&nbsp;UTAMA</a></li>
-				<li><a href="#">MENGENAI&nbsp;KAMI</a></li>
-				<li><a href="#">PELAJAR&nbsp;DAN&nbsp;KAWASAN</a></li>
+				<li><a href="<?php echo URL ?>/home/about">MENGENAI&nbsp;KAMI</a></li>
+				<li><a href="<?php echo URL ?>/home/student">PELAJAR</a></li>
+				<li><a href="<?php echo URL ?>/home/area">KAWASAN</a></li>
 				</ul>
 
 				<div class="hamburger-menu d-lg-none">
