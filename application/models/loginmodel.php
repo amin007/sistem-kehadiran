@@ -53,11 +53,12 @@ class LoginModel extends Model
 			}
 			else
 			{
-				$error_teacher_password = "Wrong Password";
+				$errorPassword = "Wrong Password";
 				$error++;
 			}
 		}
 		#
+		return array($error,$errorPassword);
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
