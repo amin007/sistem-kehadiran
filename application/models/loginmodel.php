@@ -2,6 +2,24 @@
 
 class LoginModel extends Model
 {
+#==================================================================================================
+#--------------------------------------------------------------------------------------------------
+	function bentukSqlTeacher($userEmailid)
+	{
+		$sql = "SELECT * FROM tbl_teacher "
+		. "\r WHERE teacher_emailid = '" . $userEmailid . "' "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataSqlTeacher($sql)
+	{
+		$this->_setSql($sql);
+		$dataTeacher = $this->getAll();
+
+		return $dataTeacher;
+	}
 #--------------------------------------------------------------------------------------------------
 	public function semakDatabase($userEmailid,$userPassword)
 	{
@@ -21,23 +39,8 @@ class LoginModel extends Model
 		return array($error,$errorEmailid,$errorPassword);
 	}
 #--------------------------------------------------------------------------------------------------
-	function bentukSqlTeacher($userEmailid)
-	{
-		$sql = "SELECT * FROM tbl_teacher "
-		. "\r WHERE teacher_emailid = '" . $userEmailid . "' "
-		. "";
-
-		return $sql;
-	}
 #--------------------------------------------------------------------------------------------------
-	function dataSqlTeacher($sql)
-	{
-		$this->_setSql($sql);
-		$dataTeacher = $this->getAll();
-
-		return $dataTeacher;		
-	}
-#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 	public function getNews()
 	{
 		$this->_setSql($sql);
