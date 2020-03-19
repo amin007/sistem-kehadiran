@@ -16,7 +16,7 @@ class HomeController extends Controller
 		# mula baca database
 		try {
 			//$this->_setView('index-mula');
-			$this->_setView('index-template');
+			$this->_setView('index-template002');
 			# Used to define the page title
 			$this->_view->set('title', 'Selamat Datang');
 			$this->_view->set('email', 'admin@duduk.mana');
