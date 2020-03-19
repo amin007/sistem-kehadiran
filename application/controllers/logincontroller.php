@@ -71,32 +71,19 @@ class LoginController extends Controller
 		$error_teacher_password = '';
 		$error = 0;
 
-		if(empty($_POST["teacher_emailid"]))
-		{
-			$error_teacher_emailid = 'Email Address is required';
-			$error++;
-		}
-		else
-		{
-			$teacher_emailid = $_POST["teacher_emailid"];
-		}
-
-		if(empty($_POST["teacher_password"]))
-		{
-			$error_teacher_password = 'Password is required';
-			$error++;
-		}
-		else
-		{
-			$teacher_password = $_POST["teacher_password"];
-		}
 		#------------------------------------------------------------------------------------------
 		$this->semakError($error,$error_teacher_emailid,$error_teacher_password);
 		#------------------------------------------------------------------------------------------
 	}
 #--------------------------------------------------------------------------------------------------
+	function semakPost($error,$error_teacher_emailid,$error_teacher_password)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+	}
+#--------------------------------------------------------------------------------------------------
 	function semakError($error,$error_teacher_emailid,$error_teacher_password)
 	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		if($error > 0)
 		{
 			$output = array(
