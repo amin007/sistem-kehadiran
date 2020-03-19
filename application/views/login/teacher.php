@@ -12,7 +12,8 @@
 	<h1>Student Attendance System</h1>
 </div>
 
-<form method="post" id="teacher_login_form">
+<!-- form method="post" id="teacher_login_form" -->
+<form method="POST" action="<?php echo URL ?>/login/checkteacher">
 <div class="container">
 <div class="row">
 <div class="col-md-4"></div><!-- / class="col-md-4" -->
