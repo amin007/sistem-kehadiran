@@ -27,12 +27,12 @@ class LoginModel extends Model
 	public function semakDatabase($userEmailid,$userPassword)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$dataTeacher = $this->dataSqlTeacher($userEmailid);
+		$result = $this->dataSqlTeacher($userEmailid);
 		$totalRow = count($dataTeacher);debugValue($totalRow,'totalRow');
 		if($totalRow > 0)
 		{
 			list($error,$errorPassword) =
-				$this->semakPassword($dataTeacher,$userPassword);
+				$this->semakPassword($result,$userPassword);
 		}
 		else
 		{
@@ -43,7 +43,7 @@ class LoginModel extends Model
 		return array($error,$errorEmailid,$errorPassword);
 	}
 #--------------------------------------------------------------------------------------------------
-	function semakPassword($dataTeacher,$userPassword)
+	function semakPassword($result,$userPassword)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		foreach($result as $row)
