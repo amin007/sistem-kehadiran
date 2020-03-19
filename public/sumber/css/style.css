@@ -344,7 +344,8 @@ a:hover, a:active {
 .hero-content-wrap {
 	/*height: 820px;*/
 	height: 600px;
-	padding-top: 130px;
+	/*padding-top: 130px;*/
+	padding-top: 50px;
 }
 
 .hero-content-wrap h4 {
