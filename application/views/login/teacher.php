@@ -1,3 +1,7 @@
+<?php
+$action = 'id="teacher_login_form"';
+//$action = URL . '/login/checkteacher';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +16,7 @@
 	<h1>Student Attendance System</h1>
 </div>
 
-<!-- form method="post" id="teacher_login_form" -->
-<form method="POST" action="<?php echo URL ?>/login/checkteacher">
+<form method="POST" <?php echo $action ?>>
 <div class="container">
 <div class="row">
 <div class="col-md-4"></div><!-- / class="col-md-4" -->
