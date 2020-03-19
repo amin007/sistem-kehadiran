@@ -45,7 +45,7 @@ class HomeController extends Controller
 			//$this->_setView('index-mula');
 			$this->_setView('index-about');
 			# Used to define the page title
-			$this->_view->set('title', 'Selamat Datang');
+			$this->_view->set('title', 'Mengenai Kami');
 
 			return $this->_view->output();
 		} catch (Exception $e) {
@@ -68,7 +68,7 @@ class HomeController extends Controller
 			//$this->_setView('index-mula');
 			$this->_setView('index-student');
 			# Used to define the page title
-			$this->_view->set('title', 'Selamat Datang');
+			$this->_view->set('title', 'Pelajar Kami');
 
 			return $this->_view->output();
 		} catch (Exception $e) {
@@ -91,7 +91,7 @@ class HomeController extends Controller
 			//$this->_setView('index-mula');
 			$this->_setView('index-area');
 			# Used to define the page title
-			$this->_view->set('title', 'Selamat Datang');
+			$this->_view->set('title', 'Kawasan Kami');
 
 			return $this->_view->output();
 		} catch (Exception $e) {
