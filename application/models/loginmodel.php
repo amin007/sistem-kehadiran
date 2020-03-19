@@ -29,7 +29,7 @@ class LoginModel extends Model
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$dataTeacher = $this->dataSqlTeacher($userEmailid);
 		$totalRow = count($dataTeacher);debugValue($totalRow,'totalRow');
-		if($total_row > 0)
+		if($totalRow > 0)
 		{
 			list($error,$errorPassword) =
 				$this->semakPassword($dataTeacher,$userPassword);
