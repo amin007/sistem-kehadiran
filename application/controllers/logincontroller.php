@@ -70,7 +70,7 @@ class LoginController extends Controller
 		$error = 0;
 
 		#------------------------------------------------------------------------------------------
-		list($error,$errorEmailid,$errorPassword,$errorEmailid,$userPassword)
+		list($error,$errorEmailid,$errorPassword,$userEmailid,$userPassword)
 			= $this->semakPost($error,$errorEmailid,$errorPassword);
 		$this->semakError($error,$errorEmailid,$errorPassword);
 		#------------------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ class LoginController extends Controller
 			$userPassword = $_POST["teacher_password"];
 		}
 		#
-		return array($error,$errorEmailid,$errorPassword,$errorEmailid,$userPassword);
+		return array($error,$errorEmailid,$errorPassword,$userEmailid,$userPassword);
 	}
 #--------------------------------------------------------------------------------------------------
 	function semakError($error,$error_teacher_emailid,$error_teacher_password)
