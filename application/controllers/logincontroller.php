@@ -38,4 +38,24 @@ class LoginController extends Controller
 		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 	}
 #--------------------------------------------------------------------------------------------------
+	public function teacher()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# mula baca database
+		try {
+			//$this->_setView('index');# nama fail di View
+			# Used to define the page title
+			$this->_view->set('title', $this->_tajukModulDaa);
+			//*/
+			return $this->_view->output();
+		} catch (Exception $e) {
+			echo "Application error:" . $e->getMessage();
+		}
+	}
+#--------------------------------------------------------------------------------------------------
+	public function admin()
+	{
+		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+	}
+#--------------------------------------------------------------------------------------------------
 }
