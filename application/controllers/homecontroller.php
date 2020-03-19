@@ -37,5 +37,75 @@ class HomeController extends Controller
 		//*/
 	}
 #--------------------------------------------------------------------------------------------------
+	public function about()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# mula baca database
+		try {
+			//$this->_setView('index-mula');
+			$this->_setView('index-about');
+			# Used to define the page title
+			$this->_view->set('title', 'Selamat Datang');
+
+			return $this->_view->output();
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: /home');
+			//exit;
+		}
+		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	public function student()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# mula baca database
+		try {
+			//$this->_setView('index-mula');
+			$this->_setView('index-student');
+			# Used to define the page title
+			$this->_view->set('title', 'Selamat Datang');
+
+			return $this->_view->output();
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: /home');
+			//exit;
+		}
+		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	public function area()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# mula baca database
+		try {
+			//$this->_setView('index-mula');
+			$this->_setView('index-area');
+			# Used to define the page title
+			$this->_view->set('title', 'Selamat Datang');
+
+			return $this->_view->output();
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: /home');
+			//exit;
+		}
+		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 }
