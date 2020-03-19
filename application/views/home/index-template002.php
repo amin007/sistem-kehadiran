@@ -139,11 +139,9 @@ echo $link3[2] . "\r";
             </div><!-- .container -->
         </div><!-- .hero-content-hero-content-overlay -->
     </div><!-- .hero-content -->
-
-
-
+<!-- ########################################################################################## -->
     <footer class="site-footer">
-
+<?php include 't-footer-widgets.php'; ?>
         <div class="footer-bar">
             <div class="container">
                 <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
