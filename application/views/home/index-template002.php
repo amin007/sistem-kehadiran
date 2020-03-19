@@ -81,20 +81,19 @@ echo $link3[2] . "\r";
 	<div class="nav-bar">
 	<div class="container">
 	<div class="row">
-		<div class="col-9 col-lg-3">
+		<div class="col-2">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="index.html" rel="home">Ezu<span>ca</span></a></h1>
+				<h1 class="site-title"><a href="<?php echo URL ?>" rel="home">
+				Selamat&nbsp;<span>Datang</span></a></h1>
 			</div><!-- .site-branding -->
 		</div><!-- .col -->
 
-		<div class="col-3 col-lg-9 flex justify-content-end align-content-center">
+		<div class="col-10">
 			<nav class="site-navigation flex justify-content-end align-items-center">
 				<ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-				<li class="current-menu-item"><a href="index.html">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Courses</a></li>
-				<li><a href="#">blog</a></li>
-				<li><a href="#">Contact</a></li>
+				<li class="current-menu-item"><a href="<?php echo URL ?>">HALAMAN&nbsp;UTAMA</a></li>
+				<li><a href="#">MENGENAI&nbsp;KAMI</a></li>
+				<li><a href="#">PELAJAR&nbsp;DAN&nbsp;KAWASAN</a></li>
 				</ul>
 
 				<div class="hamburger-menu d-lg-none">
