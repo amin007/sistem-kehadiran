@@ -6,6 +6,7 @@ class LoginModel extends Model
 #--------------------------------------------------------------------------------------------------
 	function bentukSqlTeacher($userEmailid)
 	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$sql = "SELECT * FROM tbl_teacher "
 		. "\r WHERE teacher_emailid = '" . $userEmailid . "' "
 		. "";
@@ -15,6 +16,7 @@ class LoginModel extends Model
 #--------------------------------------------------------------------------------------------------
 	function dataSqlTeacher($userEmailid)
 	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$sql = $this->bentukSqlTeacher($userEmailid);
 		$this->_setSql($sql);
 		$dataTeacher = $this->getAll();
@@ -24,6 +26,7 @@ class LoginModel extends Model
 #--------------------------------------------------------------------------------------------------
 	public function semakDatabase($userEmailid,$userPassword)
 	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$dataTeacher = $this->dataSqlTeacher($userEmailid);
 		$totalRow = count($dataTeacher);debugValue($totalRow,'totalRow');
 		if($total_row > 0)
@@ -42,7 +45,7 @@ class LoginModel extends Model
 	function semakPassword($dataTeacher,$userPassword)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		foreach($dataTeacher as $row)
+		foreach($result as $row)
 		{
 			if(password_verify($userPassword, $row["teacher_password"]))
 			{
@@ -60,6 +63,7 @@ class LoginModel extends Model
 #==================================================================================================
 	public function getNews()
 	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$this->_setSql($sql);
 		$articles = $this->getAll();
 
@@ -70,6 +74,7 @@ class LoginModel extends Model
 #--------------------------------------------------------------------------------------------------
 	public function getArticleById($id)
 	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$this->_setSql($sql);
 		$articleDetails = $this->getRow(array($id));
 
