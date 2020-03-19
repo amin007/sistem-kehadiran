@@ -65,16 +65,16 @@ class LoginController extends Controller
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		#------------------------------------------------------------------------------------------
-		$error_teacher_emailid = '';
-		$error_teacher_password = '';
+		$errorEmailid = '';
+		$errorPassword = '';
 		$error = 0;
 
 		#------------------------------------------------------------------------------------------
-		$this->semakError($error,$error_teacher_emailid,$error_teacher_password);
+		$this->semakError($error,$errorEmailid,$errorPassword);
 		#------------------------------------------------------------------------------------------
 	}
 #--------------------------------------------------------------------------------------------------
-	function semakPost($error,$error_teacher_emailid,$error_teacher_password)
+	function semakPost($error,$errorEmailid,$errorPassword)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$teacher_emailid = '';
@@ -82,7 +82,7 @@ class LoginController extends Controller
 
 		if(empty($_POST["teacher_emailid"]))
 		{
-			$error_teacher_emailid = 'Email Address is required';
+			$errorEmailid = 'Email Address is required';
 			$error++;
 		}
 		else
@@ -92,7 +92,7 @@ class LoginController extends Controller
 
 		if(empty($_POST["teacher_password"]))
 		{
-			$error_teacher_password = 'Password is required';
+			$errorPassword = 'Password is required';
 			$error++;
 		}
 		else
@@ -100,7 +100,7 @@ class LoginController extends Controller
 			$teacher_password = $_POST["teacher_password"];
 		}
 		#
-		return array($error,$error_teacher_emailid,$error_teacher_password);
+		return array($error,$errorEmailid,$errorPassword);
 	}
 #--------------------------------------------------------------------------------------------------
 	function semakError($error,$error_teacher_emailid,$error_teacher_password)
