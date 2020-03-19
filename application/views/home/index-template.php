@@ -70,7 +70,7 @@ echo $link3[2] . "\r";
                             <div class="header-bar-menu">
                                 <ul class="flex justify-content-center align-items-center py-2 pt-md-0">
                                     <li><a href="<?php echo URL ?>/login/teacher">Teacher</a></li>
-                                    <li><a href="<?php echo URL ?>/login/teacher">Admin</a></li>
+                                    <li><a href="<?php echo URL ?>/login/admin">Admin</a></li>
                                 </ul>
                             </div><!-- .header-bar-menu -->
                         </div><!-- .col -->
