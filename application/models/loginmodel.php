@@ -6,7 +6,8 @@ class LoginModel extends Model
 	public function semakDatabase($userEmailid,$userPassword)
 	{
 		$sql = $this->bentukSqlTeacher();
-		$userPassword = $this->dataSqlTeacher($sql);
+		$dataTeacher = $this->dataSqlTeacher($sql);
+		debugValue($dataTeacher,'dataTeacher = ');
 	}
 #--------------------------------------------------------------------------------------------------
 	function bentukSqlTeacher()
@@ -21,11 +22,11 @@ class LoginModel extends Model
 	function dataSqlTeacher($sql)
 	{
 		$this->_setSql($sql);
-		$userPassword = $this->getAll();
+		$dataTeacher = $this->getAll();
 
-		if (empty($userPassword)){ return false; }
+		if (empty($dataTeacher)){ return false; }
 
-		return $userPassword;		
+		return $dataTeacher;		
 	}
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
