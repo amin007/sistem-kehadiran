@@ -5,15 +5,15 @@ class LoginModel extends Model
 #--------------------------------------------------------------------------------------------------
 	public function semakDatabase($userEmailid,$userPassword)
 	{
-		$sql = $this->bentukSqlTeacher();
+		$sql = $this->bentukSqlTeacher($userEmailid);
 		$dataTeacher = $this->dataSqlTeacher($sql);
 		debugValue($dataTeacher,'dataTeacher = ');
 	}
 #--------------------------------------------------------------------------------------------------
-	function bentukSqlTeacher()
+	function bentukSqlTeacher($userEmailid)
 	{
 		$sql = "SELECT * FROM tbl_teacher "
-		. "\r WHERE teacher_emailid = '" . $teacher_emailid . "' "
+		. "\r WHERE teacher_emailid = '" . $userEmailid . "' "
 		. "";
 
 		return $sql;
