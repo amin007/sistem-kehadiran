@@ -51,7 +51,7 @@ $(document).ready(function(){
 	$('#teacher_login_form').on('submit', function(event){
 	event.preventDefault();
 	$.ajax({
-		url:"check_teacher_login.php",
+		url:"<?php echo URL ?>/login/checkteacher",
 		method:"POST",
 		data:$(this).serialize(),
 		dataType:"json",
