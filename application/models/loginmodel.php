@@ -28,7 +28,7 @@ class LoginModel extends Model
 		$totalRow = count($dataTeacher);debugValue($totalRow,'totalRow');
 		if($total_row > 0)
 		{
-			$this->semakPassword($userPassword);
+			$this->semakPassword($dataTeacher,$userPassword);
 		}
 		else
 		{
@@ -39,6 +39,8 @@ class LoginModel extends Model
 		return array($error,$errorEmailid,$errorPassword);
 	}
 #--------------------------------------------------------------------------------------------------
+	function semakPassword($dataTeacher,$userPassword)
+	{}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
 	public function getNews()
