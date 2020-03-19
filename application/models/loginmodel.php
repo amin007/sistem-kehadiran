@@ -40,7 +40,22 @@ class LoginModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 	function semakPassword($dataTeacher,$userPassword)
-	{}
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		foreach($dataTeacher as $row)
+		{
+			if(password_verify($userPassword, $row["teacher_password"]))
+			{
+				$_SESSION["teacher_id"] = $row["teacher_id"];
+			}
+			else
+			{
+				$error_teacher_password = "Wrong Password";
+				$error++;
+			}
+		}
+		#
+	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
 	public function getNews()
