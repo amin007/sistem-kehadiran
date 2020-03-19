@@ -44,8 +44,8 @@ echo $link3[2] . "\r";
 </style>
 </head>
 <body>
-    <div class="hero-content">
-        <header class="site-header">
+<div class="hero-content">
+<header class="site-header">
             <div class="top-header-bar">
                 <div class="container-fluid">
                     <div class="row">
@@ -77,71 +77,54 @@ echo $link3[2] . "\r";
                     </div><!-- .row -->
                 </div><!-- .container-fluid -->
             </div><!-- .top-header-bar -->
+	<!-- ########################################################################################## -->
+	<div class="nav-bar">
+	<div class="container">
+	<div class="row">
+		<div class="col-9 col-lg-3">
+			<div class="site-branding">
+				<h1 class="site-title"><a href="index.html" rel="home">Ezu<span>ca</span></a></h1>
+			</div><!-- .site-branding -->
+		</div><!-- .col -->
 
-            <div class="nav-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-9 col-lg-3">
-                            <div class="site-branding">
-                                <h1 class="site-title"><a href="index.html" rel="home">Ezu<span>ca</span></a></h1>
-                            </div><!-- .site-branding -->
-                        </div><!-- .col -->
+		<div class="col-3 col-lg-9 flex justify-content-end align-content-center">
+			<nav class="site-navigation flex justify-content-end align-items-center">
+				<ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+				<li class="current-menu-item"><a href="index.html">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Courses</a></li>
+				<li><a href="#">blog</a></li>
+				<li><a href="#">Contact</a></li>
+				</ul>
 
-                        <div class="col-3 col-lg-9 flex justify-content-end align-content-center">
-                            <nav class="site-navigation flex justify-content-end align-items-center">
-                                <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                    <li class="current-menu-item"><a href="index.html">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">blog</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                </ul>
+				<div class="hamburger-menu d-lg-none">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div><!-- .hamburger-menu -->
 
-                                <div class="hamburger-menu d-lg-none">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div><!-- .hamburger-menu -->
-
-                                <div class="header-bar-cart">
-                                    <a href="#" class="flex justify-content-center align-items-center">
-									<span aria-hidden="true" class="icon_bag_alt"></span>
-									</a>
-                                </div><!-- .header-bar-search -->
-                            </nav><!-- .site-navigation -->
-                        </div><!-- .col -->
-                    </div><!-- .row -->
-                </div><!-- .container -->
-            </div><!-- .nav-bar -->
-        </header><!-- .site-header -->
-
-        <div class="hero-content-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
-                            <header class="entry-header">
-                                <h4>Get started with online courses</h4>
-                                <h1>best online<br/>Learning system</h1>
-                            </header><!-- .entry-header -->
-
-                            <div class="entry-content">
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
-                            </div><!-- .entry-content -->
-
-                            <footer class="entry-footer read-more">
-                                <a href="#">read more</a>
-                            </footer><!-- .entry-footer -->
-                        </div><!-- .hero-content-wrap -->
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .container -->
-        </div><!-- .hero-content-hero-content-overlay -->
-    </div><!-- .hero-content -->
+				<div class="header-bar-cart">
+					<a href="#" class="flex justify-content-center align-items-center">
+						<span aria-hidden="true" class="icon_bag_alt"></span>
+					</a>
+				</div><!-- .header-bar-search -->
+			</nav><!-- .site-navigation -->
+		</div><!-- .col -->
+	</div><!-- .row -->
+	</div><!-- .container -->
+	</div><!-- .nav-bar -->
+	<!-- ########################################################################################## -->
+</header><!-- .site-header -->
 <!-- ########################################################################################## -->
+<?php include 'section-hero-content.php'; ?>
+<!-- ########################################################################################## -->
+</div><!-- .hero-content -->
+
+<br><br><br><br><br>
+<div class="container">
     <footer class="site-footer">
-<?php include 't-footer-widgets.php'; ?>
+<?php //include 't-footer-widgets.php'; ?>
         <div class="footer-bar">
             <div class="container">
                 <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
@@ -166,6 +149,8 @@ echo $link3[2] . "\r";
             </div><!-- .container -->
         </div><!-- .footer-bar -->
     </footer><!-- .site-footer -->
+
+</div><!-- .container -->
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<?php echo URL ?>/sumber/js/swiper.min.js"></script>
