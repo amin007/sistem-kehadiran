@@ -19,7 +19,7 @@ class HomeController extends Controller
 			$this->_setView('index-template');
 			# Used to define the page title
 			$this->_view->set('title', 'Selamat Datang');
-			$this->_view->set('email', 'maizatussolehah@gmail.com');
+			$this->_view->set('email', 'admin@duduk.mana');
 			//$this->_view->set('email', 'tuanna.design@gmail.com');
 			$this->_view->set('telefon', '06-762 8046');
 			//$this->_view->set('telefon', '001-1234-88888');
