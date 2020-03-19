@@ -32,7 +32,7 @@ class LoginModel extends Model
 		if($totalRow > 0)
 		{
 			list($error,$errorPassword) =
-				$this->semakPassword($result,$userPassword);
+				$this->semakPassword($error,$result,$userPassword);
 		}
 		else
 		{
@@ -43,7 +43,7 @@ class LoginModel extends Model
 		return array($error,$errorEmailid,$errorPassword);
 	}
 #--------------------------------------------------------------------------------------------------
-	function semakPassword($result,$userPassword)
+	function semakPassword($error,$result,$userPassword)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		foreach($result as $row)
