@@ -107,15 +107,15 @@ class LoginController extends Controller
 		return array($error,$errorEmailid,$errorPassword,$userEmailid,$userPassword);
 	}
 #--------------------------------------------------------------------------------------------------
-	function semakError($error,$error_teacher_emailid,$error_teacher_password)
+	function semakError($error,$errorEmailid,$errorPassword)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		if($error > 0)
 		{
 			$output = array(
 				'error'	=> true,
-				'error_teacher_emailid'	=> $error_teacher_emailid,
-				'error_teacher_password' => $error_teacher_password
+				'error_teacher_emailid'	=> $errorEmailid,
+				'error_teacher_password' => $errorPassword
 			);
 		}
 		else
