@@ -65,8 +65,7 @@ class LoginController extends Controller
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		#------------------------------------------------------------------------------------------
-		$errorEmailid = '';
-		$errorPassword = '';
+		$errorEmailid = $errorPassword = '';
 		$error = 0;
 
 		#------------------------------------------------------------------------------------------
