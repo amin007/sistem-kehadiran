@@ -24,7 +24,7 @@ class LoginModel extends Model
 		return $dataTeacher;
 	}
 #--------------------------------------------------------------------------------------------------
-	public function semakDatabase($error,$userEmailid,$userPassword)
+	public function semakDatabase($error,$userEmailid,$userPassword,$errorEmailid,$errorPassword)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$result = $this->dataSqlTeacher($userEmailid);
