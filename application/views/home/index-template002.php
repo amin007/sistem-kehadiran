@@ -123,46 +123,43 @@ echo $link3[2] . "\r";
 	<!-- ########################################################################################## -->
 </header><!-- .site-header -->
 <!-- ########################################################################################## -->
-<?php include 'section-hero-content.php'; ?>
+<?php include 'template002/section-hero-content.php'; ?>
 <!-- ########################################################################################## -->
 </div><!-- .hero-content -->
 
 <br><br><br><br><br>
-<div class="container">
-    <footer class="site-footer">
-<?php //include 't-footer-widgets.php'; ?>
-        <div class="footer-bar">
-            <div class="container">
-                <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="download-apps flex flex-wrap justify-content-center justify-content-lg-start align-items-center">
-                            <a href="#"><img src="<?php echo URL ?>/sumber/images/app-store.png" alt=""></a>
-                            <a href="#"><img src="<?php echo URL ?>/sumber/images/play-store.png" alt=""></a>
-                        </div><!-- .download-apps -->
+<footer class="site-footer">
+<?php //include 'template002/t-footer-widgets.php'; ?>
+	<div class="footer-bar">
+	<div class="container">
+	<div class="row flex-wrap justify-content-center justify-content-lg-between align-items-center">
+		<div class="col-12 col-lg-6">
+			<div class="download-apps flex flex-wrap justify-content-center
+			justify-content-lg-start align-items-center">
+				<a href="#"><img src="<?php echo URL ?>/sumber/images/app-store.png" alt=""></a>
+				<a href="#"><img src="<?php echo URL ?>/sumber/images/play-store.png" alt=""></a>
+			</div><!-- .download-apps -->
+		</div><!-- .col-12 -->
 
-                    </div>
-
-                    <div class="col-12 col-lg-6 mt-4 mt-lg-0">
-                        <div class="footer-bar-nav">
-                            <ul class="flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
-                                <li><a href="#">DPA</a></li>
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div><!-- .footer-bar-nav -->
-                    </div><!-- .col-12 -->
-                </div><!-- .row -->
-            </div><!-- .container -->
-        </div><!-- .footer-bar -->
-    </footer><!-- .site-footer -->
-
-</div><!-- .container -->
-
+		<div class="col-12 col-lg-6 mt-4 mt-lg-0">
+			<div class="footer-bar-nav">
+				<ul class="flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+				<li><a href="#">DPA</a></li>
+				<li><a href="#">Terms of Use</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+				</ul>
+			</div><!-- .footer-bar-nav -->
+		</div><!-- .col-12 -->
+	</div><!-- .row -->
+	</div><!-- .container -->
+	</div><!-- .footer-bar -->
+</footer><!-- .site-footer -->
+<!-- ########################################################################################## -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="<?php echo URL ?>/sumber/js/swiper.min.js"></script>
 <script type="text/javascript" src="<?php echo URL ?>/sumber/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="<?php echo URL ?>/sumber/js/jquery.collapsible.min.js"></script>
 <script type="text/javascript" src="<?php echo URL ?>/sumber/js/custom.js"></script>
-
+<!-- ########################################################################################## -->
 </body>
 </html>
