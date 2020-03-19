@@ -35,8 +35,6 @@ class LoginModel extends Model
 		$this->_setSql($sql);
 		$dataTeacher = $this->getAll();
 
-		if (empty($dataTeacher)){ return false; }
-
 		return $dataTeacher;		
 	}
 #--------------------------------------------------------------------------------------------------
