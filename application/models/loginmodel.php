@@ -13,7 +13,7 @@ class LoginModel extends Model
 		return $sql;
 	}
 #--------------------------------------------------------------------------------------------------
-	function dataSqlTeacher($sql)
+	function dataSqlTeacher($userEmailid)
 	{
 		$sql = $this->bentukSqlTeacher($userEmailid);
 		$this->_setSql($sql);
@@ -24,7 +24,7 @@ class LoginModel extends Model
 #--------------------------------------------------------------------------------------------------
 	public function semakDatabase($userEmailid,$userPassword)
 	{
-		$dataTeacher = $this->dataSqlTeacher($sql);
+		$dataTeacher = $this->dataSqlTeacher($userEmailid);
 		$totalRow = count($dataTeacher);debugValue($totalRow,'totalRow');
 		if($total_row > 0)
 		{
