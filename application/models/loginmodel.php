@@ -31,7 +31,8 @@ class LoginModel extends Model
 		$totalRow = count($dataTeacher);debugValue($totalRow,'totalRow');
 		if($total_row > 0)
 		{
-			$this->semakPassword($dataTeacher,$userPassword);
+			list($error,$errorPassword) =
+				$this->semakPassword($dataTeacher,$userPassword);
 		}
 		else
 		{
