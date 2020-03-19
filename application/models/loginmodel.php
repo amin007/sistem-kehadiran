@@ -28,7 +28,7 @@ class LoginModel extends Model
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$result = $this->dataSqlTeacher($userEmailid);
-		$totalRow = count($dataTeacher);debugValue($totalRow,'totalRow');
+		$totalRow = count($result);debugValue($totalRow,'totalRow');
 		if($totalRow > 0)
 		{
 			list($error,$errorPassword) =
