@@ -71,6 +71,8 @@ class LoginController extends Controller
 		#------------------------------------------------------------------------------------------
 		list($error,$errorEmailid,$errorPassword,$userEmailid,$userPassword)
 			= $this->semakPost($error,$errorEmailid,$errorPassword);
+		if($error == 0)
+			$this->semakDatabase($userEmailid,$userPassword);
 		$this->semakError($error,$errorEmailid,$errorPassword);
 		#------------------------------------------------------------------------------------------
 	}
