@@ -1,6 +1,6 @@
 <?php
 $action = 'id="teacher_login_form"';
-//$action = URL . '/login/checkteacher';
+//$action = 'action="' . URL . '/login/checkteacher"';
 ?>
 <!DOCTYPE html>
 <html lang="en">
