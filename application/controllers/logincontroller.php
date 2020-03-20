@@ -145,6 +145,7 @@ class LoginController extends Controller
 		#------------------------------------------------------------------------------------------
 		list($error,$errorUsername,$errorPassword,$adminUsername,$adminPassword)
 			= $this->semakPostAdmin($error,$errorUsername,$errorPassword);
+		$this->semakErrorAdmin($error,$errorUsername,$errorPassword);
 		#------------------------------------------------------------------------------------------
 	}
 #--------------------------------------------------------------------------------------------------
@@ -170,6 +171,26 @@ class LoginController extends Controller
 			$adminPassword = $_POST["admin_password"];
 		#
 		return array($error,$errorUsername,$errorPassword,$adminUsername,$adminPassword);
+	}
+#--------------------------------------------------------------------------------------------------
+	function semakErrorAdmin($error,$errorUsername,$errorPassword)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		if($error > 0)
+		{
+			$output = array(
+				'error'	=> true,
+				'error_admin_user_name'	=> $errorUsername,
+				'error_admin_password' => $errorPassword
+			);
+		}
+		else
+		{
+			$output = array('success' => true);
+		}
+
+		echo json_encode($output);
+		#
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
