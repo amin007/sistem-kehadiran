@@ -143,7 +143,7 @@ class LoginController extends Controller
 		$errorUsername = ''; $errorPassword = '';
 		$error = 0;
 		#------------------------------------------------------------------------------------------
-		list($error,$errorEmailid,$errorPassword,$userName,$userPassword)
+		list($error,$errorUsername,$errorPassword,$adminUsername,$adminPassword)
 			= $this->semakPostAdmin($error,$errorUsername,$errorPassword);
 		#------------------------------------------------------------------------------------------
 	}
@@ -169,7 +169,7 @@ class LoginController extends Controller
 		else
 			$adminPassword = $_POST["admin_password"];
 		#
-		return array($error,$errorEmailid,$errorPassword,$adminUsername,$adminPassword);
+		return array($error,$errorUsername,$errorPassword,$adminUsername,$adminPassword);
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
