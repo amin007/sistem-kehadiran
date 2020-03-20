@@ -25,12 +25,12 @@ $action = 'action="' . URL . '/login/checkadmin"';
 		<div class="card-header">Admin Login</div>
 		<div class="card-body">
 			<div class="form-group">
-				<label>Email</label>
+				<label>Enter Username</label>
 				<input type="text" name="admin_user_name" id="admin_user_name" class="form-control" />
 				<span id="error_admin_user_name" class="text-danger"></span>
 			</div><!-- / class="form-group" -->
             <div class="form-group">
-				<label>Password</label>
+				<label>Enter Password</label>
 				<input type="password" name="admin_password" id="admin_password" class="form-control" />
 				<span id="error_admin_password" class="text-danger"></span>
 			</div><!-- / class="form-group" -->
