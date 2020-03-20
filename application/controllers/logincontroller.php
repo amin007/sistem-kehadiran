@@ -148,5 +148,29 @@ class LoginController extends Controller
 		#------------------------------------------------------------------------------------------
 	}
 #--------------------------------------------------------------------------------------------------
+	function semakPostAdmin($error,$errorUsername,$errorPassword)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$adminUsername = $adminPassword = '';
+
+		if(empty($_POST["admin_user_name"]))
+		{
+			$errorUsername = 'Username is required';
+			$error++;
+		}
+		else
+			$adminUsername = $_POST["admin_user_name"];
+
+		if(empty($_POST["admin_password"]))
+		{
+			$errorPassword = 'Password is required';
+			$error++;
+		}
+		else
+			$adminPassword = $_POST["admin_password"];
+		#
+		return array($error,$errorEmailid,$errorPassword,$adminUsername,$adminPassword);
+	}
+#--------------------------------------------------------------------------------------------------
 #==================================================================================================
 }
