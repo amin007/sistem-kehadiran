@@ -13,7 +13,7 @@ $action = 'action="' . URL . '/login/checkadmin"';
 <body>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-	<h1>Student Attendance System</h1>
+	<h1>Sistem Kedatangan Murid</h1>
 </div>
 
 <form method="POST" <?php echo $action ?>>
