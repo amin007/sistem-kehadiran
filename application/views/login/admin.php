@@ -1,6 +1,6 @@
 <?php
-//$action = 'id="admin_login_form"';
-$action = 'action="' . URL . '/login/checkadmin"';
+$action = 'id="admin_login_form"';
+//$action = 'action="' . URL . '/login/checkadmin"';
 ?>
 <!DOCTYPE html>
 <html lang="en">
