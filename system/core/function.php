@@ -3,6 +3,7 @@
 #--------------------------------------------------------------------------------------------------
 	function debugValue($senarai,$jadual,$p='0')
 	{
+		//$senarai =  htmlentities();
 		echo '<pre>$' . $jadual . '=><br>';
 		if($p == '0') print_r($senarai);
 		if($p == '1') var_export($senarai);
