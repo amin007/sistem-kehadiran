@@ -137,7 +137,7 @@ class LoginController extends Controller
 #--------------------------------------------------------------------------------------------------
 	public function checkadmin()
 	{
-		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		//debugValue($_POST,'_POST');
 		#------------------------------------------------------------------------------------------
 		$errorUsername = ''; $errorPassword = '';
