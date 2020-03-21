@@ -39,15 +39,19 @@ class AdminController extends Controller
 	public function grade()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		# mula baca database
+		# guna try catch jika ada masalah
 		try {
-			$this->_setView('index-admin');# nama fail di View
+			$this->_setView('1grade');# nama fail di View
+			# mula baca database
+			$senarai['grade'] = $this->_model->dataSqlGrade();
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
-			$this->_view->set('tajukModul', 'Ini Dashboard Kelas');
-			$this->_view->set('action', '&nbsp;...&nbsp;');
+			$this->_view->set('tajukModul', 'Location & Grade List');
+			$this->_view->set('action', '<button type="button" id="add_button"'
+			$this->_view->set('senarai', $senarai);
+			//$this->debugValueGrade($senarai);
 
-			return $this->_view->output();
+			//return $this->_view->output();
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
 			$_SESSION['message'] = $errors;
@@ -58,6 +62,12 @@ class AdminController extends Controller
 			//exit;
 		}
 		//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	function debugValueGrade($senarai)
+	{
+		debugValue($this->_view,'this->_view');
+		debugValue($senarai,'senarai');
 	}
 #--------------------------------------------------------------------------------------------------
 	public function teacher()
