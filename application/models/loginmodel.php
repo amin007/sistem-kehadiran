@@ -65,23 +65,33 @@ class LoginModel extends Model
 #==================================================================================================
 # semak login untuk admin
 #--------------------------------------------------------------------------------------------------
+	function dataSqlAdmin($adminUsername)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = "SELECT * FROM tbl_admin "
+		. "\r WHERE admin_user_name = '" . $adminUsername . "' "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
 	public function semakAdmin($error,$adminUsername,$adminPassword,$errorUsername,$errorPassword)
 	{
 		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$result = $this->dataSqlAdmin($userEmailid);
+		$result = $this->dataSqlAdmin($adminUsername);
 		$totalRow = count($result);debugValue($totalRow,'totalRow');
-		/*if($totalRow > 0)
+		if($totalRow > 0)
 		{
 			list($error,$errorPassword) =
-				$this->semakPassword($error,$result,$userPassword,$errorPassword);
+				$this->semakPasswordAdmin($error,$result,$adminPassword,$errorPassword);
 		}
 		else
 		{
-			$errorEmailid = "Wrong Email Address";
+			$errorUsername = "Wrong Email Address";
 			$error++;
 		}
 		#
-		return array($error,$errorEmailid,$errorPassword);//*/
+		return array($error,$errorUsername,$errorPassword);//*/
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
