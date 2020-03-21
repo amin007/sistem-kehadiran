@@ -145,10 +145,10 @@ class LoginController extends Controller
 		#------------------------------------------------------------------------------------------
 		list($error,$errorUsername,$errorPassword,$adminUsername,$adminPassword)
 			= $this->semakPostAdmin($error,$errorUsername,$errorPassword);
-		if($error == 0) echo 'tak ada error<br>';
-			/*list($error,$errorEmailid,$errorPassword) =
-				$this->_model->semakDatabase($error,$userEmailid,$userPassword,
-				$errorEmailid,$errorPassword);//*/
+		if($error == 0) //echo 'tak ada error<br>';
+			list($error,$errorUsername,$errorPassword) =
+				$this->_model->semakAdmin($error,$adminUsername,$adminPassword,
+				$errorUsername,$errorPassword);//*/
 		$this->semakErrorAdmin($error,$errorUsername,$errorPassword);
 		#------------------------------------------------------------------------------------------
 	}
