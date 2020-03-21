@@ -137,18 +137,17 @@ class LoginController extends Controller
 #--------------------------------------------------------------------------------------------------
 	public function checkadmin()
 	{
-		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		//debugValue($_POST,'_POST');
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';//debugValue($_POST,'_POST');
 		#------------------------------------------------------------------------------------------
 		$errorUsername = ''; $errorPassword = '';
 		$error = 0;
 		#------------------------------------------------------------------------------------------
 		list($error,$errorUsername,$errorPassword,$adminUsername,$adminPassword)
 			= $this->semakPostAdmin($error,$errorUsername,$errorPassword);
-		if($error == 0) //echo 'tak ada error<br>';
+		if($error == 0)
 			list($error,$errorUsername,$errorPassword) =
 				$this->_model->semakAdmin($error,$adminUsername,$adminPassword,
-				$errorUsername,$errorPassword);//*/
+				$errorUsername,$errorPassword);
 		$this->semakErrorAdmin($error,$errorUsername,$errorPassword);
 		#------------------------------------------------------------------------------------------
 	}
