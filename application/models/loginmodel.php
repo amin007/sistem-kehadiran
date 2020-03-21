@@ -80,14 +80,14 @@ class LoginModel extends Model
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$sql = $this->bentukSqlAdmin($adminUsername);
 		$this->_setSql($sql);
-		$dataTeacher = $this->getAll();
+		$dataAdmin = $this->getAll();
 
-		return $dataTeacher;
+		return $dataAdmin;
 	}
 #--------------------------------------------------------------------------------------------------
 	public function semakAdmin($error,$adminUsername,$adminPassword,$errorUsername,$errorPassword)
 	{
-		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$result = $this->dataSqlAdmin($adminUsername);
 		$totalRow = count($result);debugValue($totalRow,'totalRow');
 		if($totalRow > 0)
@@ -97,11 +97,30 @@ class LoginModel extends Model
 		}
 		else
 		{
-			$errorUsername = "Wrong Email Address";
+			$errorUsername = "Wrong Password";
 			$error++;
 		}
 		#
 		return array($error,$errorUsername,$errorPassword);//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	function semakPasswordAdmin($error,$result,$adminPassword,$errorPassword)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		foreach($result as $row)
+		{
+			if(password_verify($adminPassword, $row["admin_password"]))
+			{
+				$_SESSION["admin_id"] = $row["admin_id"];
+			}
+			else
+			{
+				$errorPassword = "Wrong Password";
+				$error++;
+			}
+		}
+		#
+		return array($error,$errorPassword);
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
