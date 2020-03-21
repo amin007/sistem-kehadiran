@@ -89,7 +89,7 @@ class LoginModel extends Model
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$result = $this->dataSqlAdmin($adminUsername);
-		$totalRow = count($result);debugValue($totalRow,'totalRow');
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		if($totalRow > 0)
 		{
 			list($error,$errorPassword) =
