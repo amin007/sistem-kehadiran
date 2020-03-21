@@ -48,10 +48,11 @@ class AdminController extends Controller
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Location & Grade List');
 			$this->_view->set('action', '<button type="button" id="add_button"'
+			. ' class="btn btn-info btn-sm">Add</button>');
 			$this->_view->set('senarai', $senarai);
 			//$this->debugValueGrade($senarai);
 
-			//return $this->_view->output();
+			return $this->_view->output();
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
 			$_SESSION['message'] = $errors;
