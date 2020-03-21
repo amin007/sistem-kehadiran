@@ -59,7 +59,7 @@ END;
 	</button>
 	<div class="collapse navbar-collapse" id="collapsibleNavbar">
 	<ul class="navbar-nav">
-	<li class="nav-item"><a class="nav-link" href="$url/admin/grade">Grade</a></li>
+	<li class="nav-item"><a class="nav-link" href="$url/admin/grade">Location & Grade</a></li>
 	<li class="nav-item"><a class="nav-link" href="$url/admin/teacher">Teacher</a></li>
 	<li class="nav-item"><a class="nav-link" href="$url/admin/student">Student</a></li>
 	<li class="nav-item"><a class="nav-link" href="$url/admin/attendance">Attendance</a></li>
