@@ -65,7 +65,7 @@ class LoginModel extends Model
 #==================================================================================================
 # semak login untuk admin
 #--------------------------------------------------------------------------------------------------
-	function dataSqlAdmin($adminUsername)
+	function bentukSqlAdmin($adminUsername)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$sql = "SELECT * FROM tbl_admin "
@@ -73,6 +73,16 @@ class LoginModel extends Model
 		. "";
 
 		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataSqlAdmin($adminUsername)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = $this->bentukSqlAdmin($adminUsername);
+		$this->_setSql($sql);
+		$dataTeacher = $this->getAll();
+
+		return $dataTeacher;
 	}
 #--------------------------------------------------------------------------------------------------
 	public function semakAdmin($error,$adminUsername,$adminPassword,$errorUsername,$errorPassword)
