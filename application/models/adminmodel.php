@@ -7,7 +7,9 @@ class AdminModel extends Model
 	function bentukSqlGrade()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$sql = "SELECT * FROM tbl_grade "
+		$sql = " SELECT grade_name '&nbsp;Location & Grade Name',"
+		. "grade_id '&nbsp;Edit', grade_id '&nbsp;Delete' "
+		. " FROM tbl_grade "
 		. "";
 
 		return $sql;
