@@ -24,6 +24,49 @@ class AdminModel extends Model
 
 		return $data;
 	}
+#--------------------------------------------------------------------------------------------------
+	function bentukSql2Grade()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = " SELECT grade_name, grade_id "
+		. " FROM tbl_grade "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function data2SqlGrade()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = $this->bentukSql2Grade();
+		$this->_setSql($sql);
+		$data = $this->getAll();
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	function bentukDataGrade()
+	{
+		$result = $this->data2SqlGrade();
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
+		$data = array();
+		#------------------------------------------------------------------------------------------
+		foreach($result as $row)
+		{
+			$sub_array = array();
+			$sub_array[] = $row['grade_name'];
+			$sub_array[] = '<button type="button" name="edit_grade"'
+			. ' class="btn btn-primary btn-sm edit_grade" id="' . $row['grade_id']
+			. '">Edit</button>';
+			$sub_array[] = '<button type="button" name="delete_grade"'
+			. ' class="btn btn-danger btn-sm delete_grade" id="' . $row['grade_id']
+			. '">Delete</button>';
+			$data[] = $sub_array;
+		}
+		#------------------------------------------------------------------------------------------
+		return array($totalRow,$data);
+	}
+#--------------------------------------------------------------------------------------------------
 #==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
