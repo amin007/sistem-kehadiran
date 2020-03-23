@@ -108,6 +108,41 @@ $(document).ready(function(){
 	});
 
 	/* ***************************************************************************************** */
+	$('#add_button').click(function(){
+		$('#modal_title').text('Add Grade');
+		$('#button_action').val('Add');
+		$('#action').val('Add');
+		$('#formModal').modal('show');
+		clear_field();
+	});
+
+	function clear_field()
+	{
+		$('#grade_form')[0].reset();
+		$('#error_grade_name').text('');
+	}
+	/* ***************************************************************************************** */
+	var grade_id = '';
+
+	$(document).on('click', '.edit_grade', function(){
+		grade_id = $(this).attr('id');
+		clear_field();
+		$.ajax({
+			url:"<?php echo URL ?>/admin/gradeEdit",
+			method:"POST",
+			data:{action:'edit_fetch', grade_id:grade_id},
+			dataType:"json",
+			success:function(data)
+			{
+				$('#grade_name').val(data.grade_name);
+				$('#grade_id').val(data.grade_id);
+				$('#modal_title').text('Edit Grade');
+				$('#button_action').val('Edit');
+				$('#action').val('Edit');
+				$('#formModal').modal('show');
+			}
+		})
+	});
 	/* ***************************************************************************************** */
 	/* ***************************************************************************************** */
 	/* ***************************************************************************************** */
