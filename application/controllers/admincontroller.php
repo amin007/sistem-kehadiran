@@ -102,8 +102,8 @@ class AdminController extends Controller
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# guna try catch jika ada masalah
-		$_POST['action'] = 'edit_fetch';
-		$_POST['grade_id'] = '1';
+		//$_POST['action'] = 'edit_fetch';
+		//$_POST['grade_id'] = '1';
 		try {
 			if(isset($_POST['action'])):
 			if($_POST['action'] == 'edit_fetch'):
@@ -174,9 +174,9 @@ class AdminController extends Controller
 		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
 		//$_POST['action'] = 'delete';
 		//$_POST['grade_id'] = '1';
-		$gradeID = trim($_POST['grade_id']);
+		$gradeID = trim($_POST['grade_id']) . '&nbsp;&nbsp;';
 		if($_POST['action'] == 'delete'):
-			$dataDaa = '<strong>' . $gradeID . '&nbsp;</strong>';
+			$dataDaa = '<strong>' . $gradeID . '</strong>';
 			$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
 		endif;// endif($_POST['action'] == 'delete')
 
