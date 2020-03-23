@@ -82,6 +82,7 @@ function confirmdelete(id)
 </div><!-- /class="modal-dialog" -->
 </div><!-- /class="modal" -->
 <!-- =========================================================================================== -->
+<?php deleteModal(); ?>
 <!-- =========================================================================================== -->
 <?php
 //diJquery();
@@ -133,6 +134,19 @@ $(document).ready(function(){
 		$('#deleteModal').modal('show');
 	});
 	/* ***************************************************************************************** */
+	$('#ok_button').click(function(){
+		$.ajax({
+			url:"<?php echo URL ?>/admin/gradeDelete",
+			method:"POST",
+			data:{grade_id:grade_id, action:'delete'},
+			success:function(data)
+			{
+				$('#message_operation').html('<div class="alert alert-success">'+data+'</div>');
+				$('#deleteModal').modal('hide');
+				dataTable.ajax.reload();
+			}
+		})
+	});
 	/* ***************************************************************************************** */
 });
 </script>
@@ -284,6 +298,7 @@ dibawah();
 	function deleteModal()
 	{
 		print <<<END
+
 <div class="modal" id="deleteModal">
 <div class="modal-dialog">
 <div class="modal-content">
@@ -308,6 +323,7 @@ dibawah();
 </div><!-- /class="modal-content" -->
 </div><!-- /class="modal-dialog" -->
 </div><!-- /class="modal" -->
+
 END;
 		#
 	}
