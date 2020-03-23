@@ -177,10 +177,12 @@ class AdminController extends Controller
 		$gradeID = trim($_POST['grade_id']) . '&nbsp;&nbsp;';
 		if($_POST['action'] == 'delete'):
 			$dataDaa = '<strong>' . $gradeID . '</strong>';
-			$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
+			//$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
+			$output = 'Data ' . $dataDaa . ' Deleted Successfully';
 		endif;// endif($_POST['action'] == 'delete')
 
-		echo json_encode($output);
+		echo $output;
+		//echo json_encode($output);
 		#
 	}
 #--------------------------------------------------------------------------------------------------
