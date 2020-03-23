@@ -82,6 +82,31 @@ function confirmdelete(id)
 </div><!-- /class="modal-dialog" -->
 </div><!-- /class="modal" -->
 <!-- =========================================================================================== -->
+<div class="modal" id="deleteModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+	<!-- Modal Header -->
+	<div class="modal-header">
+		<h4 class="modal-title">Delete Confirmation</h4>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	</div><!-- /class="modal-header" -->
+
+	<!-- Modal body -->
+	<div class="modal-body">
+		<h3 align="center">Are you sure you want to remove this?</h3>
+	</div><!-- /class="modal-body" -->
+
+	<!-- Modal footer -->
+	<div class="modal-footer">
+		<button type="button" name="ok_button" id="ok_button" class="btn btn-primary btn-sm">OK</button>
+		<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+	</div><!-- /class="modal-footer" -->
+
+</div><!-- /class="modal-content" -->
+</div><!-- /class="modal-dialog" -->
+</div><!-- /class="modal" -->
+<!-- =========================================================================================== -->
 <?php
 //diJquery();
 diJqueryAdmin();
@@ -121,6 +146,47 @@ $(document).ready(function(){
 		$('#grade_form')[0].reset();
 		$('#error_grade_name').text('');
 	}
+	/* ***************************************************************************************** */
+	$('#grade_form').on('submit', function(event){
+		event.preventDefault();
+		$.ajax({
+			url:"grade_action.php",
+			method:"POST",
+			data:$(this).serialize(),
+			dataType:"json",
+			beforeSend:function()
+			{
+				$('#button_action').attr('disabled', 'disabled');
+				$('#button_action').val('Validate...');
+			},
+			success:function(data)
+			{
+	//-------------------------------------------------------------------------------------------------
+				$('#button_action').attr('disabled', false);
+				$('#button_action').val($('#action').val());
+				if(data.success)
+				{
+					$('#message_operation').html('<div class="alert alert-success">'
+					+data.success+'</div>');
+					clear_field();
+					dataTable.ajax.reload();
+					$('#formModal').modal('hide');
+				}
+				if(data.error)
+				{
+					if(data.error_grade_name != '')
+					{
+						$('#error_grade_name').text(data.error_grade_name);
+					}
+					else
+					{
+						$('#error_grade_name').text('');
+					}
+				}
+	//-------------------------------------------------------------------------------------------------
+			}
+		})
+	});
 	/* ***************************************************************************************** */
 	var grade_id = '';
 
