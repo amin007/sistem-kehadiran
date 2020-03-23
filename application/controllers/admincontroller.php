@@ -127,6 +127,35 @@ class AdminController extends Controller
 		//*/
 	}
 #--------------------------------------------------------------------------------------------------
+	public function gradeSubmit()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$grade_name = '';
+		$error_grade_name = '';
+		$error = 0;
+		if(empty($_POST["grade_name"]))
+		{
+			$error_grade_name = 'Grade Name is required';
+			$error++;
+		}
+		else
+		{
+			$grade_name = $_POST["grade_name"];
+		}
+		if($error > 0)
+		{
+			$output = array(
+				'error'	=> true,
+				'error_grade_name' => $error_grade_name
+			);
+		}
+		else
+			$output = array('success' => 'Data Added Successfully');
+		#
+		echo json_encode($output);
+		#
+	}
+#--------------------------------------------------------------------------------------------------
 	function debugValueGrade($senarai)
 	{
 		debugValue($this->_view,'this->_view');
