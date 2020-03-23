@@ -107,6 +107,29 @@ if (!function_exists('atasbawah'))
 	}
 }
 #--------------------------------------------------------------------------------------------------
+// contoh javasript untuk delete
+if (!function_exists('confirmdelete'))
+{
+	function confirmdelete()
+	{
+		print <<<END
+<script type="text/javascript">
+function confirmdelete(id)
+{
+	var messege="Are you sure to DELETE the record(id:"+id+")?";
+	var r=confirm(message);
+	if(r==true)
+	{
+		//redirect if user press yes
+		window.location.href = "delete.php?x="+id;
+	}
+}
+</script>
+END;
+		#
+	}
+}
+
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
