@@ -130,7 +130,7 @@ class AdminController extends Controller
 	public function gradeSubmit()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$output = array('success' => '<hr>Nama class ini :' . __METHOD__ . '()<hr>');
+		$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
 		$grade_name = '';
 		$error_grade_name = '';
 		$error = 0;
