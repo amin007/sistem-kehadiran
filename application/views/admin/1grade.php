@@ -16,8 +16,12 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 	<!-- ====================================================================================== -->
 		<div class="row">
 			<div class="col-md-9"><?php echo $tajukModul ?></div>
-			<div class="col-md-3" align="right"><?php echo $action ?></div>
-		</div>
+			<div class="col-md-3" align="right">
+			<?php echo $action . "\r" ?>
+			<button type="button" class="btn btn-danger btn-sm"
+			onclick="confirmdelete(007)">Delete</button>
+			</div><!-- / class="col-md-3" -->
+		</div><!-- / class="row" -->
 	<!-- ====================================================================================== -->
 	</div><!-- / class="card-header" -->
 	<div class="card-body">
@@ -26,6 +30,18 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 </div><!-- / class="card" -->
 </div><!-- / class="container" -->
 
+<script type="text/javascript">
+function confirmdelete(id)
+{
+	var messege="Are you sure to DELETE the record(id:"+id+")?";
+	var r=confirm(message);
+	if(r==true)
+	{
+		//redirect if user press yes
+		window.location.href = "delete.php?x="+id;
+	}
+}
+</script>
 
 <?php
 diJquery();
