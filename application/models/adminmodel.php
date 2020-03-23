@@ -79,15 +79,14 @@ class AdminModel extends Model
 	function sqlCariGrade($id)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$sql = " SELECT grade_name, grade_id "
-		. " FROM tbl_grade "
+		$sql = " SELECT * FROM tbl_grade "
 		. " WHERE grade_id = '$id' "
 		. "";
 
 		return $sql;
 	}
 #--------------------------------------------------------------------------------------------------
-	function dataCariGrade()
+	function dataCariGrade($id)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$sql = $this->sqlCariGrade($id);
@@ -100,7 +99,7 @@ class AdminModel extends Model
 	public function cariGradeById($id)
 	{
 		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$result = $this->dataCariGrade();
+		$result = $this->dataCariGrade($id);
 		$totalRow = count($result);debugValue($totalRow,'totalRow');
 		$output = array();
 		#------------------------------------------------------------------------------------------
