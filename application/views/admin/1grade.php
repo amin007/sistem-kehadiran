@@ -46,6 +46,42 @@ function confirmdelete(id)
 }
 </script>
 
+<!-- =========================================================================================== -->
+<div class="modal" id="formModal">
+<div class="modal-dialog">
+<form method="post" id="grade_form">
+<div class="modal-content">
+
+	<!-- Modal Header -->
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal_title"></h4>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	</div><!-- /class="modal-header" -->
+
+	<!-- Modal body -->
+	<div class="modal-body">
+		<div class="form-group row">
+			<label class="col-md-4 text-right">Location & Grade Name
+			<span class="text-danger">*</span></label>
+			<div class="col-md-8">
+				<input type="text" name="grade_name" id="grade_name" class="form-control" />
+				<span id="error_grade_name" class="text-danger"></span>
+			</div><!-- /class="col" -->
+		</div><!-- /class="form-group row" -->
+	</div><!-- /class="modal-body" -->
+
+	<!-- Modal footer -->
+	<div class="modal-footer">
+		<input type="hidden" name="grade_id" id="grade_id" />
+		<input type="hidden" name="action" id="action" value="Add" />
+		<input type="submit" name="button_action" id="button_action" class="btn btn-success btn-sm" value="Add" />
+		<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+	</div><!-- /class="modal-footer" -->
+</div><!-- /class="modal-content" -->
+</form>
+</div><!-- /class="modal-dialog" -->
+</div><!-- /class="modal" -->
+<!-- =========================================================================================== -->
 <?php
 //diJquery();
 diJqueryAdmin();
