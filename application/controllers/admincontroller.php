@@ -130,10 +130,11 @@ class AdminController extends Controller
 	public function gradeSubmit()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$output = array('success' => '<hr>Nama class ini :' . __METHOD__ . '()<hr>');
 		$grade_name = '';
 		$error_grade_name = '';
 		$error = 0;
-		if(empty($_POST["grade_name"]))
+		/*if(empty($_POST["grade_name"]))
 		{
 			$error_grade_name = 'Grade Name is required';
 			$error++;
@@ -151,7 +152,7 @@ class AdminController extends Controller
 		}
 		else
 			$output = array('success' => 'Data Added Successfully');
-		#
+		#//*/
 		echo json_encode($output);
 		#
 	}
