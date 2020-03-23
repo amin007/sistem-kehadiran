@@ -18,8 +18,8 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 			<div class="col-md-9"><?php echo $tajukModul ?></div>
 			<div class="col-md-3" align="right">
 				<button type="button" id="add_button" class="btn btn-info btn-sm">Add</button>
-				<button type="button" class="btn btn-danger btn-sm"
-				onclick="confirmdelete(007)">Delete</button>
+				<!-- button type="button" class="btn btn-danger btn-sm"
+				onclick="confirmdelete(007)">Delete</button -->
 			</div><!-- / class="col-md-3" -->
 		</div><!-- / class="row" -->
 	<!-- ====================================================================================== -->
