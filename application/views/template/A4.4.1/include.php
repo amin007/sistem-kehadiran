@@ -131,6 +131,22 @@ END;
 		#
 	}
 #--------------------------------------------------------------------------------------------------
+	function diJqueryAdmin()
+	{
+		$url = URL . '/sumber/js/admin';
+		print <<<END
+<!-- khas untuk jquery dan js2 lain
+=============================================================================================== -->
+<script type="text/javascript" src="$url/jquery.min.js"></script>
+<script type="text/javascript" src="$url/popper.min.js"></script>
+<script src="$url/bootstrap.min.js"></script>
+<script src="$url/jquery.dataTables.min.js"></script>
+<script src="$url/dataTables.bootstrap4.min.js"></script>
+
+END;
+		#
+	}
+#--------------------------------------------------------------------------------------------------
 	function dibawah()
 	{
 		print <<<END
