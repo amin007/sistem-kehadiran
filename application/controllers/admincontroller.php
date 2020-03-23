@@ -131,7 +131,7 @@ class AdminController extends Controller
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
-		$grade_name = '';
+		$gradeName = '';
 		$error_grade_name = '';
 		$error = 0;
 		if(empty($_POST["grade_name"]))
@@ -142,7 +142,7 @@ class AdminController extends Controller
 		}
 		else
 		{
-			$grade_name = $_POST["grade_name"];
+			$gradeName = $_POST["grade_name"];
 		}
 		if($error > 0)
 		{
@@ -153,13 +153,14 @@ class AdminController extends Controller
 		}
 		else
 		{
+			$dataDaa = '<strong>' . $gradeName . '</strong>';
 			if($_POST["action"] == "Add")
 			{
-				$output = array('success' => 'Data Added Successfully');
+				$output = array('success' => 'Data ' . $dataDaa . ' Added Successfully');
 			}
 			if($_POST["action"] == "Edit")
 			{
-				$output = array('success' => 'Data Updated Successfully');
+				$output = array('success' => 'Data ' . $dataDaa . ' Updated Successfully');
 			}
 		}// end if($error > 0)
 		#//*/
