@@ -47,7 +47,8 @@ function confirmdelete(id)
 </script>
 
 <?php
-diJquery();
+//diJquery();
+diJqueryAdmin();
 #--------------------------------------------------------------------------------------------------
 ?>
 <script>
