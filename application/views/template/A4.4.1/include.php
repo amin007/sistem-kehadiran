@@ -2,6 +2,8 @@
 #--------------------------------------------------------------------------------------------------
 	function diatas($title = 'List Folder')
 	{
+		//$css = cssCdn();
+		$css = cssLocal();
 		print <<<END
 <!doctype html>
 <html lang="en">
@@ -11,10 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>$title</title>
-<link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" type="text/css">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
-
+$css
 <style type="text/css">
 table.excel {
 	border-style:ridge;
@@ -44,6 +43,28 @@ table.excel tbody td
 END;
 		#
 	}
+#--------------------------------------------------------------------------------------------------
+	function cssCdn()
+	{
+		print <<<END
+<link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" type="text/css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+END;
+		#
+	}
+#--------------------------------------------------------------------------------------------------
+	function cssLocal()
+	{
+		$url = URL . '/sumber/css/admin';
+		print <<<END
+<link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="$url/bootstrap.min.css">
+<link rel="stylesheet" href="$url/dataTables.bootstrap4.min.css"> 
+
+END;
+		#
+	}	
 #--------------------------------------------------------------------------------------------------
 	function menuAdmin()
 	{
