@@ -108,11 +108,14 @@ if (!function_exists('atasbawah'))
 }
 #--------------------------------------------------------------------------------------------------
 // contoh javasript untuk delete
-if (!function_exists('confirmdelete'))
+if (!function_exists('buangDaa'))
 {
-	function confirmdelete()
+	function buangDaa()
 	{
 		print <<<END
+<button type="button" class="btn btn-danger btn-sm"
+onclick="confirmdelete(007)">Delete</button>
+
 <script type="text/javascript">
 function confirmdelete(id)
 {
