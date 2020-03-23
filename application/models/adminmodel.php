@@ -98,9 +98,9 @@ class AdminModel extends Model
 #--------------------------------------------------------------------------------------------------
 	public function cariGradeById($id)
 	{
-		echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$result = $this->dataCariGrade($id);
-		$totalRow = count($result);debugValue($totalRow,'totalRow');
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		$output = array();
 		#------------------------------------------------------------------------------------------
 		foreach($result as $row):
