@@ -96,6 +96,39 @@ class AdminController extends Controller
 			//exit;
 		}
 		//*/
+	}#--------------------------------------------------------------------------------------------------
+	public function gradeEdit()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# guna try catch jika ada masalah
+		$_POST['action'] = 'edit_fetch';
+		try {
+			if(isset($_POST['action'])):
+			if($_POST['action'] == 'edit_fetch'):
+				# mula baca database
+				list($kira,$senarai) = $this->_model->bentukDataGrade();
+
+				$output = array(
+				"draw"	=>	intval(1),
+				"recordsTotal"	=> 	$kira,//$filtered_rows,
+				"recordsFiltered" => $kira,//get_total_records($connect, 'tbl_grade'),
+				"data" => $senarai
+				);
+
+				echo json_encode($output);
+			endif;//if($_POST["action"] == "fetch")
+			endif;//if(isset($_POST["action"]))
+			#
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');
+			//exit;
+		}
+		//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	function debugValueGrade($senarai)
