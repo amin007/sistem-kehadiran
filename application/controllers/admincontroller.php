@@ -47,8 +47,7 @@ class AdminController extends Controller
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Location & Grade List');
-			$this->_view->set('action', '<button type="button" id="add_button"'
-			. ' class="btn btn-info btn-sm">Add</button>');
+			//$this->_view->set('action', '');
 			$this->_view->set('senarai', $senarai);
 			//$this->debugValueGrade($senarai);
 
