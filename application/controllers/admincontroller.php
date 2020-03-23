@@ -102,12 +102,13 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# guna try catch jika ada masalah
 		$_POST['action'] = 'edit_fetch';
-		$id = trim($_POST["grade_id"]);
+		$_POST['grade_id'] = '1';
 		try {
 			if(isset($_POST['action'])):
 			if($_POST['action'] == 'edit_fetch'):
 				# mula baca database
-				list($output) = $this->_model->cariGradeById(id);
+				$id = trim($_POST['grade_id']);
+				list($output) = $this->_model->cariGradeById($id);
 
 				echo json_encode($output);
 			endif;//if($_POST["action"] == "fetch")
