@@ -82,30 +82,6 @@ function confirmdelete(id)
 </div><!-- /class="modal-dialog" -->
 </div><!-- /class="modal" -->
 <!-- =========================================================================================== -->
-<div class="modal" id="deleteModal">
-<div class="modal-dialog">
-<div class="modal-content">
-
-	<!-- Modal Header -->
-	<div class="modal-header">
-		<h4 class="modal-title">Delete Confirmation</h4>
-		<button type="button" class="close" data-dismiss="modal">&times;</button>
-	</div><!-- /class="modal-header" -->
-
-	<!-- Modal body -->
-	<div class="modal-body">
-		<h3 align="center">Are you sure you want to remove this?</h3>
-	</div><!-- /class="modal-body" -->
-
-	<!-- Modal footer -->
-	<div class="modal-footer">
-		<button type="button" name="ok_button" id="ok_button" class="btn btn-primary btn-sm">OK</button>
-		<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
-	</div><!-- /class="modal-footer" -->
-
-</div><!-- /class="modal-content" -->
-</div><!-- /class="modal-dialog" -->
-</div><!-- /class="modal" -->
 <!-- =========================================================================================== -->
 <?php
 //diJquery();
@@ -290,4 +266,34 @@ dibawah();
 		return $output;
 	}
 #--------------------------------------------------------------------------------------------------
+	function deleteModal()
+	{
+		print <<<END
+<div class="modal" id="deleteModal">
+<div class="modal-dialog">
+<div class="modal-content">
+
+	<!-- Modal Header -->
+	<div class="modal-header">
+		<h4 class="modal-title">Delete Confirmation</h4>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	</div><!-- /class="modal-header" -->
+
+	<!-- Modal body -->
+	<div class="modal-body">
+		<h3 align="center">Are you sure you want to remove this?</h3>
+	</div><!-- /class="modal-body" -->
+
+	<!-- Modal footer -->
+	<div class="modal-footer">
+		<button type="button" name="ok_button" id="ok_button" class="btn btn-primary btn-sm">OK</button>
+		<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+	</div><!-- /class="modal-footer" -->
+
+</div><!-- /class="modal-content" -->
+</div><!-- /class="modal-dialog" -->
+</div><!-- /class="modal" -->
+END;
+		#
+	}
 #--------------------------------------------------------------------------------------------------
