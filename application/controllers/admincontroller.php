@@ -168,6 +168,22 @@ class AdminController extends Controller
 		#
 	}
 #--------------------------------------------------------------------------------------------------
+	public function gradeDelete()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
+		//$_POST['action'] = 'delete';
+		//$_POST['grade_id'] = '1';
+		$gradeID = trim($_POST['grade_id']);
+		if($_POST['action'] == 'delete'):
+			$dataDaa = '<strong>' . $gradeID . '&nbsp;</strong>';
+			$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
+		endif;// endif($_POST['action'] == 'delete')
+
+		echo json_encode($output);
+		#
+	}
+#--------------------------------------------------------------------------------------------------
 	function debugValueGrade($senarai)
 	{
 		debugValue($this->_view,'this->_view');
