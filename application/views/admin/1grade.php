@@ -124,13 +124,7 @@ $(document).ready(function(){
 	}
 	/* ***************************************************************************************** */
 	var grade_id = '';
-	$('#edit_grade').click(function(){
-		$('#modal_title').text('Ubah Grade');
-		$('#button_action').val('Ubah');
-		$('#action').val('Ubah');
-		$('#formModal').modal('show');
-		clear_field();
-	});
+<?php EditForm(); ?>
 	/* ***************************************************************************************** */
 	/* ***************************************************************************************** */
 	/* ***************************************************************************************** */
@@ -144,7 +138,7 @@ $(document).ready(function(){
 	$('#grade_form').on('submit', function(event){
 		event.preventDefault();
 		$.ajax({
-			url:"grade_action.php",
+			url:"$url/admin/gradeSubmit",
 			method:"POST",
 			data:$(this).serialize(),
 			dataType:"json",
@@ -187,12 +181,13 @@ END;
 #--------------------------------------------------------------------------------------------------
 	function EditForm()
 	{
+		$url = URL;
 		print <<<END
 	$(document).on('click', '.edit_grade', function(){
 		grade_id = $(this).attr('id');
 		clear_field();
 		$.ajax({
-			url:"<?php echo URL ?>/admin/gradeEdit",
+			url:"$url/admin/gradeEdit",
 			method:"POST",
 			data:{action:'edit_fetch', grade_id:grade_id},
 			dataType:"json",
@@ -207,6 +202,7 @@ END;
 			}
 		})
 	});
+
 END;
 		#
 	}
