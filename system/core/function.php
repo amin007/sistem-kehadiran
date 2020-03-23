@@ -119,7 +119,7 @@ onclick="confirmdelete(007)">Delete</button>
 <script type="text/javascript">
 function confirmdelete(id)
 {
-	var messege="Are you sure to DELETE the record(id:"+id+")?";
+	var message="Are you sure to DELETE the record(id:"+id+")?";
 	var r=confirm(message);
 	if(r==true)
 	{
