@@ -29,8 +29,15 @@ class AdminModel extends Model
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$sql = " SELECT grade_name, grade_id "
-		. " FROM tbl_grade "
-		. "";
+		. " FROM tbl_grade ";
+		/*if(isset($_POST["search"]["value"]))
+			$sql .= 'WHERE grade_name LIKE "%'.$_POST["search"]["value"].'%" ';
+		if(isset($_POST["order"]))
+			$sql .= (isset($_POST["order"])) ?
+				'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' '
+				: 'ORDER BY grade_id DESC ';
+		if($_POST["length"] != -1)
+			$sql .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];//*/
 
 		return $sql;
 	}
