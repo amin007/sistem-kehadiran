@@ -114,7 +114,7 @@ $(document).ready(function(){
 		$('#button_action').val('Add');
 		$('#action').val('Add');
 		$('#formModal').modal('show');
-		//clear_field();
+		clear_field();
 	});
 
 	function clear_field()
@@ -124,6 +124,13 @@ $(document).ready(function(){
 	}
 	/* ***************************************************************************************** */
 	var grade_id = '';
+	$('#edit_grade').click(function(){
+		$('#modal_title').text('Ubah Grade');
+		$('#button_action').val('Ubah');
+		$('#action').val('Ubah');
+		$('#formModal').modal('show');
+		clear_field();
+	});
 	/* ***************************************************************************************** */
 	/* ***************************************************************************************** */
 	/* ***************************************************************************************** */
