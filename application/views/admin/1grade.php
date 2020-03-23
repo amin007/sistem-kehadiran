@@ -2,7 +2,7 @@
 # masukkan fail header dalam view/template/A4.4.1
 //atasbawah($type = 'template', $folder = null, $name = '' );
 atasbawah('template','A4.4.1','include');
-diatas();
+diatas($title);
 menuAdmin();
 #--------------------------------------------------------------------------------------------------
 if(!isset($tajukModul)) $tajukModul = 'Ini Deskboard Admin';
@@ -25,7 +25,10 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 	<!-- ====================================================================================== -->
 	</div><!-- / class="card-header" -->
 	<div class="card-body">
+		<div class="table-responsive">
+		<span id="message_operation"></span>
 		<?php binaJadual($senarai) ?>
+		</div><!-- / class="table-responsive" -->
 	</div><!-- / class="card-body" -->
 </div><!-- / class="card" -->
 </div><!-- / class="container" -->
