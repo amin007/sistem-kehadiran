@@ -141,9 +141,10 @@ $(document).ready(function(){
 			data:{grade_id:grade_id, action:'delete'},
 			success:function(data)
 			{
-				$('#message_operation').html('<div class="alert alert-danger">'+data+'</div>');
+				$('#message_operation').html('<div class="alert alert-warning">'+data+'</div>');
 				$('#deleteModal').modal('hide');
 				dataTable.ajax.reload();
+				$('#formModal').modal('hide');
 			}
 		})
 	});
