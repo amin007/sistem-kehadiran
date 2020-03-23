@@ -172,17 +172,19 @@ class AdminController extends Controller
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
-		$_POST['action'] = 'delete';
-		$_POST['grade_id'] = '1';
+		//$_POST['action'] = 'delete';
+		//$_POST['grade_id'] = '1';
 		$gradeID = trim($_POST['grade_id']) . '';
-		$dataDaa = htmlentities('<strong>' . $gradeID . '</strong>');
+		//$dataDaa = htmlentities('<strong>' . $gradeID . '</strong>');
+		$dataDaa = ('<strong>' . $gradeID . '</strong>');
 		$output = 'Data ' . $dataDaa . ' Deleted Successfully';
 		if($_POST['action'] == 'delete'):
-			$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
+			//$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
 			//$output = 'Data ' . $dataDaa . ' Deleted Successfully';
 		endif;// endif($_POST['action'] == 'delete')
 
-		echo json_encode($output);
+		echo $output;
+		//echo json_encode($output);
 		#
 	}
 #--------------------------------------------------------------------------------------------------
