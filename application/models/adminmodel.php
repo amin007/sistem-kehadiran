@@ -331,7 +331,7 @@ class AdminModel extends Model
 			$sub_array = array();
 			$sub_array[] = null;
 			$sub_array[] = '<img src="' . URL . '/sumber/teacher_image/' . $row["teacher_image"]
-			.'" class="img-thumbnail" width="75" />';
+			. '" class="img-thumbnail" width="75" />';
 			$sub_array[] = $row["teacher_name"];
 			$sub_array[] = $row["teacher_emailid"];
 			$sub_array[] = $row["grade_name"];
@@ -386,7 +386,7 @@ class AdminModel extends Model
 		{
 			$data = '
 				<div class="col-md-3">
-					<img src="' . URL . '/public/teacher_image/' . $row["teacher_image"] . '" class="img-thumbnail" />
+					<img src="' . URL . '/sumber/teacher_image/' . $row["teacher_image"] . '" class="img-thumbnail" />
 				</div>
 				<div class="col-md-9">
 					<table class="table">
