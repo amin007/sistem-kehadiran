@@ -9,8 +9,11 @@ if(!isset($tajukModul)) $tajukModul = 'Ini Deskboard Admin';
 if(!isset($action)) $action = '&nbsp;...&nbsp;';
 #--------------------------------------------------------------------------------------------------
 /*
-				<!-- button type="button" name="delete_grade"
-				class="btn btn-danger btn-sm delete_grade" id="-100">Delete 100</button -->
+				<!-- button type="button" name="delete_teacher"
+				class="btn btn-danger btn-sm delete_teacher" id="-100">Delete 100</button -->
+				<button type="button" name="view_teacher"
+				class="btn btn-info btn-sm view_teacher" id="-100">View
+				<strong>-100</strong></button>
 */
 ?>
 2teacher
@@ -22,6 +25,9 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 			<div class="col-md-9"><?php echo $tajukModul ?></div>
 			<div class="col-md-3" align="right">
 				<button type="button" id="add_button" class="btn btn-info btn-sm">Add</button>
+				<button type="button" name="view_teacher"
+				class="btn btn-info btn-sm view_teacher" id="-100">View
+				<strong>-100</strong></button>
 			</div><!-- / class="col-md-3" -->
 		</div><!-- / class="row" -->
 	<!-- ====================================================================================== -->
