@@ -7,7 +7,7 @@ class AdminModel extends Model
 	function bentukSqlGrade()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$sql = " SELECT grade_name '&nbsp;Location & Grade Name',"
+		$sql = " SELECT \"\" as Bil, grade_name '&nbsp;Location & Grade Name',"
 		. "grade_id '&nbsp;Edit', grade_id '&nbsp;Delete' "
 		. " FROM tbl_grade "
 		. "";
@@ -61,6 +61,7 @@ class AdminModel extends Model
 		foreach($result as $row)
 		{
 			$sub_array = array();
+			$sub_array[] = null;
 			$sub_array[] = $row['grade_name'];
 			$sub_array[] = '<button type="button" name="edit_grade"'
 			. ' class="btn btn-primary btn-sm edit_grade" id="' . $row['grade_id']
