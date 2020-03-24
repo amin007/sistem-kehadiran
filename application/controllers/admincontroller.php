@@ -209,7 +209,9 @@ class AdminController extends Controller
 		try {
 			$this->_setView('2teacher');# nama fail di View
 			# mula baca database
-			$senarai['teacher'] = $this->_model->dataTeacher();
+			list($kira,$senarai['teacher']) = $this->_model->dataTeacherTajuk();
+			$this->_view->set('senarai', $senarai);
+			//debugValue($senarai,'senarai');
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Guru');
