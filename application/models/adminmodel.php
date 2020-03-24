@@ -197,7 +197,7 @@ class AdminModel extends Model
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$totalRow = $this->dataUpdateGrade($id,$gradeName);
 		//debugValue($totalRow,'totalRow');
-		$output = array(); $dataDaa = '<strong>' . $id . '</strong>';
+		$output = array(); $dataDaa = '<strong>' . $gradeName . '</strong>';
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0)
 			$output = array('success' => 'Data ' . $dataDaa . ' Updated Successfully');
