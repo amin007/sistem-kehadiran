@@ -265,8 +265,10 @@ class AdminModel extends Model
 		INNER JOIN tbl_grade 
 		ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id 
 		';
-		$sql = " SELECT \"\" as Bil,"
-		. " teacher_image,teacher_name,teacher_emailid,grade_name,teacher_acc,"
+		$sql = " SELECT \"\" as Bil,teacher_image '&nbsp;Image',"
+		. " teacher_name '&nbsp;Teacher Name',"
+		. " teacher_emailid '&nbsp;Email Address',grade_name '&nbsp;Location & Grade',"
+		. " teacher_acc '&nbsp;Account',"
 		. " teacher_id '&nbsp;View', teacher_id '&nbsp;Edit', teacher_id '&nbsp;Delete' "
 		. " FROM tbl_teacher INNER JOIN tbl_grade "
 		. "	ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id  "
