@@ -261,9 +261,14 @@ class AdminModel extends Model
 	function sqlTeacher()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$sql = " SELECT \"\" as Bil, grade_name '&nbsp;Location & Grade Name',"
-		. "grade_id '&nbsp;Edit', grade_id '&nbsp;Delete' "
-		. " FROM tbl_grade "
+		$sql0 = 'SELECT * FROM tbl_teacher 
+		INNER JOIN tbl_grade 
+		ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id 
+		';
+		$sql = " SELECT \"\" as Bil, * "
+		//. "grade_id '&nbsp;Edit', grade_id '&nbsp;Delete' "
+		. " FROM tbl_teacher INNER JOIN tbl_grade 
+		ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id  "
 		. "";
 
 		return $sql;
@@ -289,13 +294,15 @@ class AdminModel extends Model
 		{
 			$sub_array = array();
 			$sub_array[] = null;
-			$sub_array[] = $row['grade_name'];
-			$sub_array[] = '<button type="button" name="edit_grade"'
-			. ' class="btn btn-primary btn-sm edit_grade" id="' . $row['grade_id']
-			. '">Edit</button>';
-			$sub_array[] = '<button type="button" name="delete_grade"'
-			. ' class="btn btn-danger btn-sm delete_grade" id="' . $row['grade_id']
-			. '">Delete <strong>' . $row['grade_id'] . '</strong></button>';
+			$sub_array = array();
+			$sub_array[] = '<img src="teacher_image/'.$row["teacher_image"].'" class="img-thumbnail" width="75" />';
+			$sub_array[] = $row["teacher_name"];
+			$sub_array[] = $row["teacher_emailid"];
+			$sub_array[] = $row["grade_name"];
+			$sub_array[] = $row["teacher_acc"];
+			$sub_array[] = '<button type="button" name="view_teacher" class="btn btn-info btn-sm view_teacher" id="'.$row["teacher_id"].'">View</button>';
+			$sub_array[] = '<button type="button" name="edit_teacher" class="btn btn-primary btn-sm edit_teacher" id="'.$row["teacher_id"].'">Edit</button>';
+			$sub_array[] = '<button type="button" name="delete_teacher" class="btn btn-danger btn-sm delete_teacher" id="'.$row["teacher_id"].'">Delete</button>';
 			$data[] = $sub_array;
 		}
 		#------------------------------------------------------------------------------------------
