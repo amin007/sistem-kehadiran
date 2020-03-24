@@ -251,6 +251,29 @@ class AdminController extends Controller
 		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
+	public function teacherID()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# guna try catch jika ada masalah
+		try {
+			# mula baca database
+			$id = $_POST['teacher_id'];
+			list($kira,$output) = $this->_model->bentukTeacherID($id);
+
+			//debugValue($output,'output');
+			echo $output;
+			//echo json_encode($output);
+			#
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');//exit;
+		}//*/
+	}
+#--------------------------------------------------------------------------------------------------
 #==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function student()
