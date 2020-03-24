@@ -382,9 +382,9 @@ class AdminModel extends Model
 		$result = $this->dataTeacherID($id);//debugValue($result,'result');
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		#------------------------------------------------------------------------------------------
-		foreach($result as $row)
-		{
-			$data = '
+		if($totalRow > 0):
+			foreach($result as $row):
+				$data = '
 				<div class="col-md-3">
 					<img src="' . URL . '/sumber/teacher_image/' . $row["teacher_image"] . '" class="img-thumbnail" />
 				</div>
@@ -401,7 +401,9 @@ class AdminModel extends Model
 					<tr><th>Acconut No</th><td>' . $row["teacher_acc"] . '</td></tr>
 					</table>
 				</div>';
-		}
+			endforeach;
+		else: $data = '<div class="col-md"> Data Tidak Wujud</div>';
+		endif;
 		#------------------------------------------------------------------------------------------
 		return array($totalRow,$data);
 	}
