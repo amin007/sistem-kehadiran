@@ -116,14 +116,22 @@ gradeTable002($url);
 ?>
 $(document).ready(function(){
 	/* ***************************************************************************************** */
-	$(document).on('click', '.teacher_grade_id', function(){
+	$('#teacher_grade_id').change(function(){
+		var city = $(this).val();
+		// AJAX request
 		$.ajax({
-			url:"<?php echo URL ?>/admin/gradeList",
-			method:"POST",
-			success:function(data)
+			url:'<?php echo URL ?>/admin/gradeList',
+			method: 'post',
+			data: {city: city},
+			dataType: 'json',
+			success: function(response)
 			{
-				$('#teacher_grade_id').html(data);
-			}
+				// Add options
+				$.each(response,function(index,data){
+				$('#teacher_grade_id').append('<option value="'+data['id']
+				+'">'+data['name']+'</option>');
+				});
+		  }
 		});
 	});
 	/* ***************************************************************************************** */
