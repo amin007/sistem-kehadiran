@@ -326,8 +326,7 @@ class AdminModel extends Model
 		$result = $this->dataTeacherAll();//debugValue($result,'result');
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		#------------------------------------------------------------------------------------------
-		foreach($result as $row)
-		{
+		if($totalRow > 0):foreach($result as $row):
 			$sub_array = array();
 			$sub_array[] = null;
 			$sub_array[] = '<img src="' . URL . '/sumber/teacher_image/' . $row["teacher_image"]
@@ -346,7 +345,9 @@ class AdminModel extends Model
 			. ' class="btn btn-danger btn-sm delete_teacher" id="' . $row["teacher_id"]
 			. '">Delete</button>';
 			$data[] = $sub_array;
-		}
+		endforeach;
+		else: $data[] = '<div class="col-md"> Data Tidak Wujud</div>';
+		endif;
 		#------------------------------------------------------------------------------------------
 		return array($totalRow,$data);
 	}
@@ -382,8 +383,7 @@ class AdminModel extends Model
 		$result = $this->dataTeacherID($id);//debugValue($result,'result');
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		#------------------------------------------------------------------------------------------
-		if($totalRow > 0):
-			foreach($result as $row):
+		if($totalRow > 0):foreach($result as $row):
 				$data = '
 				<div class="col-md-3">
 					<img src="' . URL . '/sumber/teacher_image/' . $row["teacher_image"] . '" class="img-thumbnail" />
@@ -401,7 +401,7 @@ class AdminModel extends Model
 					<tr><th>Acconut No</th><td>' . $row["teacher_acc"] . '</td></tr>
 					</table>
 				</div>';
-			endforeach;
+		endforeach;
 		else: $data = '<div class="col-md"> Data Tidak Wujud</div>';
 		endif;
 		#------------------------------------------------------------------------------------------
