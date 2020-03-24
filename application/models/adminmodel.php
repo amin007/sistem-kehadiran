@@ -247,9 +247,9 @@ class AdminModel extends Model
 		$output = array(); $dataDaa = '<strong>' . $id . '</strong>';
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0)
-			$output = 'Data ' . $dataDaa . ' Deleted Successfully.';
+			$output = 'Id ' . $dataDaa . ' Deleted Successfully.';
 		else
-			$output = 'Data ' . $dataDaa . ' error delete.';
+			$output = 'Id ' . $dataDaa . ' Does Not Exist.';
 		#------------------------------------------------------------------------------------------
 		return $output;//*/
 	}
