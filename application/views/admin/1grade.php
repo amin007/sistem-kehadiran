@@ -87,14 +87,15 @@ function confirmdelete(id)
 <?php
 //diJquery();
 diJqueryAdmin();
+$url = URL;
 #--------------------------------------------------------------------------------------------------
 ?>
 <script>
 $(document).ready(function(){
 	/* ***************************************************************************************** */
 <?php
-	gradeTable001();
-	//gradeTable002();
+	gradeTable001($url);
+	//gradeTable002($url);
 ?>
 	/* ***************************************************************************************** */
 	$('#add_button').click(function(){
@@ -111,10 +112,10 @@ $(document).ready(function(){
 		$('#error_grade_name').text('');
 	}
 	/* ***************************************************************************************** */
-<?php gradeFormSubmit(); ?>
+<?php gradeFormSubmit($url); ?>
 	/* ***************************************************************************************** */
 	var grade_id = '';
-<?php EditForm(); ?>
+<?php EditForm($url); ?>
 	/* ***************************************************************************************** */
 	$(document).on('click', '.delete_grade', function(){
 		grade_id = $(this).attr('id');
@@ -141,9 +142,8 @@ $(document).ready(function(){
 <?php
 dibawah();// letak di bawah script
 #--------------------------------------------------------------------------------------------------
-	function gradeTable001()
+	function gradeTable001($url)
 	{
-		$url = URL;
 		print <<<END
 	var dataTable = $('#grade_table').DataTable({
 		"processing":true,
@@ -166,17 +166,15 @@ END;
 		#
 	}
 #--------------------------------------------------------------------------------------------------
-	function gradeTable002()
+	function gradeTable002($url)
 	{
-		$url = URL;
 		print <<<END
 END;
 		#
 	}
 #--------------------------------------------------------------------------------------------------
-	function gradeFormSubmit()
+	function gradeFormSubmit($url)
 	{
-		$url = URL;
 		print <<<END
 	$('#grade_form').on('submit', function(event){
 		event.preventDefault();
@@ -221,9 +219,8 @@ END;
 		#
 	}
 #--------------------------------------------------------------------------------------------------
-	function EditForm()
+	function EditForm($url)
 	{
-		$url = URL;
 		print <<<END
 	$(document).on('click', '.edit_grade', function(){
 		grade_id = $(this).attr('id');
