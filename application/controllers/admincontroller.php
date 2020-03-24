@@ -156,7 +156,7 @@ class AdminController extends Controller
 				if($_POST["action"] == "Edit")
 				{
 					$id = trim($_POST['grade_id']);
-					$output = $this->_model->UpdateGrade($id,$gradeName);
+					$output = $this->_model->updateGrade($id,$gradeName);
 				}
 			}// end if($error > 0)
 			#--------------------------------------------------------------------------------------

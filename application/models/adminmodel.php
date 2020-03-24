@@ -192,7 +192,7 @@ class AdminModel extends Model
 		return $data;
 	}
 #--------------------------------------------------------------------------------------------------
-	public function UpdateGrade($id,$gradeName)
+	public function updateGrade($id,$gradeName)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$totalRow = $this->dataUpdateGrade($id,$gradeName);
