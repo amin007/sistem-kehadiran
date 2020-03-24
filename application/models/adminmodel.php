@@ -141,10 +141,10 @@ class AdminModel extends Model
 		return $data;
 	}
 #--------------------------------------------------------------------------------------------------
-	public function insertGrade($id,$gradeName)
+	public function insertGrade($gradeName)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$totalRow = $this->dataInsertGrade($id,$gradeName);
+		$totalRow = $this->dataInsertGrade($gradeName);
 		//debugValue($totalRow,'totalRow');
 		$output = array(); $dataDaa = '<strong>' . $gradeName . '</strong>';
 		#------------------------------------------------------------------------------------------
