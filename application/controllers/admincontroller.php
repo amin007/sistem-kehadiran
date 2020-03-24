@@ -32,8 +32,7 @@ class AdminController extends Controller
 			debugValue($_SESSION, '_SESSION');
 			//header('Location: ');
 			//exit;
-		}
-		//*/
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	public function grade()
@@ -58,10 +57,8 @@ class AdminController extends Controller
 			$_SESSION['type'] = 'error';
 
 			debugValue($_SESSION, '_SESSION');
-			//header('Location: ');
-			//exit;
-		}
-		//*/
+			//header('Location: ');//exit;
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	public function gradeAction()
@@ -92,10 +89,8 @@ class AdminController extends Controller
 			$_SESSION['type'] = 'error';
 
 			debugValue($_SESSION, '_SESSION');
-			//header('Location: ');
-			//exit;
-		}
-		//*/
+			//header('Location: ');//exit;
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	public function gradeEdit()
@@ -121,71 +116,84 @@ class AdminController extends Controller
 			$_SESSION['type'] = 'error';
 
 			debugValue($_SESSION, '_SESSION');
-			//header('Location: ');
-			//exit;
-		}
-		//*/
+			//header('Location: ');//exit;
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	public function gradeSubmit()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
-		$gradeName = '';
-		$error_grade_name = '';
-		$error = 0;
-		if(empty($_POST["grade_name"]))
-		{
-			//$error_grade_name = 'Grade Name is required';
-			$error_grade_name = 'Sila Isi Ya???';
-			$error++;
-		}
-		else
-		{
-			$gradeName = $_POST["grade_name"];
-		}
-		if($error > 0)
-		{
-			$output = array(
-				'error'	=> true,
-				'error_grade_name' => $error_grade_name
-			);
-		}
-		else
-		{
-			$dataDaa = '<strong>' . $gradeName . '</strong>';
-			if($_POST["action"] == "Add")
+		try {
+			$gradeName = '';
+			$error_grade_name = '';
+			$error = 0;
+			if(empty($_POST["grade_name"]))
 			{
-				$output = array('success' => 'Data ' . $dataDaa . ' Added Successfully');
+				//$error_grade_name = 'Grade Name is required';
+				$error_grade_name = 'Sila Isi Ya???';
+				$error++;
 			}
-			if($_POST["action"] == "Edit")
+			else
 			{
-				$output = array('success' => 'Data ' . $dataDaa . ' Updated Successfully');
+				$gradeName = $_POST["grade_name"];
 			}
-		}// end if($error > 0)
-		#//*/
-		echo json_encode($output);
-		#
+			if($error > 0)
+			{
+				$output = array(
+					'error'	=> true,
+					'error_grade_name' => $error_grade_name
+				);
+			}
+			else
+			{
+				$dataDaa = '<strong>' . $gradeName . '</strong>';
+				if($_POST["action"] == "Add")
+				{
+					$output = array('success' => 'Data ' . $dataDaa . ' Added Successfully');
+				}
+				if($_POST["action"] == "Edit")
+				{
+					$output = array('success' => 'Data ' . $dataDaa . ' Updated Successfully');
+				}
+			}// end if($error > 0)
+			#//*/
+			echo json_encode($output);
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');//exit;
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	public function gradeDelete()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
-		//$_POST['action'] = 'delete';
-		//$_POST['grade_id'] = '1';
-		$gradeID = trim($_POST['grade_id']) . '';
-		//$dataDaa = htmlentities('<strong>' . $gradeID . '</strong>');
-		$dataDaa = ('<strong>' . $gradeID . '</strong>');
-		$output = 'Data ' . $dataDaa . ' Deleted Successfully';
-		if($_POST['action'] == 'delete'):
-			//$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
-			//$output = 'Data ' . $dataDaa . ' Deleted Successfully';
-		endif;// endif($_POST['action'] == 'delete')
+		try {
+			//$_POST['action'] = 'delete'; $_POST['grade_id'] = '1';
+			$gradeID = trim($_POST['grade_id']) . '';
+			//$dataDaa = htmlentities('<strong>' . $gradeID . '</strong>');
+			$dataDaa = ('<strong>' . $gradeID . '</strong>');
+			$output = 'Data ' . $dataDaa . ' Deleted Successfully';
+			if($_POST['action'] == 'delete'):
+				//$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
+				//$output = 'Data ' . $dataDaa . ' Deleted Successfully';
+			endif;// endif($_POST['action'] == 'delete')
 
-		echo $output;
-		//echo json_encode($output);
-		#
+			echo $output;
+			//echo json_encode($output);
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');//exit;
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	function debugValueGrade($senarai)
