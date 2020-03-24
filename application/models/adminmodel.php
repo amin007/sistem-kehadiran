@@ -338,7 +338,7 @@ class AdminModel extends Model
 			$sub_array[] = $row["teacher_acc"];
 			$sub_array[] = '<button type="button" name="view_teacher" '
 			. ' class="btn btn-info btn-sm view_teacher" id="' . $row["teacher_id"]
-			. '">View</button>';
+			. '">View <strong>' . $row["teacher_id"] . '</strong></button>';
 			$sub_array[] = '<button type="button" name="edit_teacher"'
 			. ' class="btn btn-primary btn-sm edit_teacher" id="' . $row["teacher_id"]
 			. '">Edit</button>';
