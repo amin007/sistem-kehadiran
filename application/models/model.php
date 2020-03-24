@@ -20,7 +20,7 @@ class Model
 	{
 		if (!$this->_sql)
 		{
-		throw new Exception("No SQL query!");
+			throw new Exception("No SQL query!");
 		}
 
 		$sth = $this->_db->prepare($this->_sql);
@@ -32,7 +32,7 @@ class Model
 	{
 		if (!$this->_sql)
 		{
-		throw new Exception("No SQL query!");
+			throw new Exception("No SQL query!");
 		}
 
 		$sth = $this->_db->prepare($this->_sql);
