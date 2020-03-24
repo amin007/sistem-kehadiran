@@ -297,6 +297,39 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# untuk teacher - data bawah
+#--------------------------------------------------------------------------------------------------
+	public function bentukDataTeacher()
+	{
+		$result = $this->dataSqlTeacherTajuk();
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
+		#------------------------------------------------------------------------------------------
+		foreach($result as $row)
+		{
+			$sub_array = array();
+			$sub_array[] = null;
+			$sub_array[] = '<img src="' . URL . '/sumber/teacher_image/' . $row["teacher_image"]
+			.'" class="img-thumbnail" width="75" />';
+			$sub_array[] = $row["teacher_name"];
+			$sub_array[] = $row["teacher_emailid"];
+			$sub_array[] = $row["grade_name"];
+			$sub_array[] = $row["teacher_acc"];
+			$sub_array[] = '<button type="button" name="view_teacher" '
+			. ' class="btn btn-info btn-sm view_teacher" id="' . $row["teacher_id"]
+			. '">View</button>';
+			$sub_array[] = '<button type="button" name="edit_teacher"'
+			. ' class="btn btn-primary btn-sm edit_teacher" id="' . $row["teacher_id"]
+			. '">Edit</button>';
+			$sub_array[] = '<button type="button" name="delete_teacher"'
+			. ' class="btn btn-danger btn-sm delete_teacher" id="' . $row["teacher_id"]
+			. '">Delete</button>';
+			$data[] = $sub_array;
+		}
+		#------------------------------------------------------------------------------------------
+		return array($totalRow,$result);
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
