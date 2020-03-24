@@ -55,9 +55,7 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 
 	<!-- Modal body -->
 	<div class="modal-body">
-<?php
-$gradeList = URL . '/admin/gradeList';
-formAdd($gradeList); ?>
+<?php formAdd($gradeList); ?>
 	</div><!-- /class="modal-body" -->
 
 	<!-- Modal footer -->
@@ -426,7 +424,7 @@ END;
 		foreach($senarai as $jadual => $row):
 			$output = paparJadual2($row,$jadual);
 			echo "\r\t" . '<table class="'.$class.'" id="grade_table">'
-			. $output . "\r\t" . '</table>';
+			. $output . "\r\t" . '</table>' . "\r\r";
 		endforeach;
 		#
 	}
@@ -522,7 +520,7 @@ END;
 				<label class="col-md-4 text-right">Password
 				<span class="text-danger">*</span></label>
 				<div class="col-md-8">
-					<input type="password"class="form-control"
+					<input type="password" class="form-control"
 					name="teacher_password" id="teacher_password">
 					<span id="error_teacher_password" class="text-danger"></span>
 				</div><!-- / class="col" -->
@@ -543,8 +541,7 @@ END;
 				<span class="text-danger">*</span></label>
 				<div class="col-md-8">
 					<select class="form-control" name="teacher_grade_id" id="teacher_grade_id">
-					<option value="">Select Grade</option>
-					$loadGradeList
+					<option value="">Select Grade</option>$loadGradeList
 					</select>
 					<span id="error_teacher_grade_id" class="text-danger"></span>
 				</div><!-- / class="col" -->
