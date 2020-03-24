@@ -320,13 +320,9 @@ END;
 				if(data.error)
 				{
 					if(data.error_grade_name != '')
-					{
 						$('#error_grade_name').html(data.error_grade_name);
-					}
 					else
-					{
 						$('#error_grade_name').text('');
-					}
 				}
 	// -------------------------------------------------------------------------------------------------
 			}
