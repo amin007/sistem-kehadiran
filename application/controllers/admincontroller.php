@@ -150,6 +150,7 @@ class AdminController extends Controller
 				$dataDaa = '<strong>' . $gradeName . '</strong>';
 				if($_POST["action"] == "Add")
 				{
+					$output = $this->_model->insertGrade($gradeName);
 					//$output = array('success' => 'Data ' . $dataDaa . ' Added Successfully');
 				}
 				if($_POST["action"] == "Edit")
