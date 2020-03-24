@@ -40,4 +40,17 @@ class Model
 		return $sth->fetch();
 	}
 #--------------------------------------------------------------------------------------------------
+	public function getInUpDel($data = null)
+	{
+		# untul insert/update/delete
+		if (!$this->_sql)
+		{
+			throw new Exception("No SQL query!");
+		}
+
+		$sth = $this->_db->prepare($this->_sql);
+		$sth->execute($data);
+		return $sth->rowCount();
+	}
+#--------------------------------------------------------------------------------------------------
 }
