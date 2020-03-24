@@ -66,6 +66,29 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 </div><!-- /class="modal-dialog" -->
 </div><!-- /class="modal" -->
 <!-- =========================================================================================== -->
+<div class="modal" id="viewModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+
+	<!-- Modal Header -->
+	<div class="modal-header">
+		<h4 class="modal-title">Teacher Details</h4>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	</div><!-- /class="modal-header" -->
+
+	<!-- Modal body -->
+	<div class="modal-body" id="teacher_details">
+	</div><!-- /class="modal-body" -->
+
+	<!-- Modal footer -->
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+	</div><!-- /class="modal-footer" -->
+
+</div><!-- /class="modal-content" -->
+</div><!-- /class="modal-dialog" -->
+</div><!-- /class="modal" -->
+<!-- =========================================================================================== -->
 <?php deleteModal(); ?>
 <!-- =========================================================================================== -->
 <?php
@@ -116,7 +139,7 @@ $(document).ready(function(){
 	$(document).on('click', '.view_teacher', function(){
 		teacher_id = $(this).attr('id');
 		$.ajax({
-			url:"<?php echo URL ?>/teacherID",
+			url:"<?php echo URL ?>/admin/teacherID",
 			method:"POST",
 			data:{action:'single_fetch', teacher_id:teacher_id},
 			success:function(data)
