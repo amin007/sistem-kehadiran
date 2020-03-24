@@ -230,7 +230,7 @@ END;
 	function gradeTable002($url)
 	{
 		print <<<END
-	var t = $('#grade_table').DataTable({
+	var t = $('#allTable').DataTable({
 	"ajax": "$url/admin/teacherData",
 	searchHighlight: true,
 	"columnDefs": [{
@@ -423,7 +423,7 @@ END;
 		$class = 'table table-striped table-bordered';
 		foreach($senarai as $jadual => $row):
 			$output = paparJadual2($row,$jadual);
-			echo "\r\t" . '<table class="'.$class.'" id="grade_table">'
+			echo "\r\t" . '<table class="'.$class.'" id="allTable">'
 			. $output . "\r\t" . '</table>' . "\r\r";
 		endforeach;
 		#
