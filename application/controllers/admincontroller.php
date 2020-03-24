@@ -222,7 +222,9 @@ class AdminController extends Controller
 			$this->_setView('2teacher');# nama fail di View
 			# mula baca database
 			list($kira,$senarai['teacher']) = $this->_model->dataTeacherTajuk();
+			$gradeList = $this->_model->getGradeList();
 			$this->_view->set('senarai', $senarai);
+			$this->_view->set('gradeList', $gradeList);
 			//debugValue($senarai,'senarai');
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
