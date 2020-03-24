@@ -255,6 +255,7 @@ class AdminController extends Controller
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# guna try catch jika ada masalah
+		$output = null;
 		try {
 			# mula baca database
 			$id = $_POST['teacher_id'];
