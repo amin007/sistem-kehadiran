@@ -164,7 +164,7 @@ END;
 	{
 		print <<<END
 	var t = $('#grade_table').DataTable({
-	"ajax": "$url/admin/gradeAction",
+	"ajax": "$url/admin/teacherData",
 	searchHighlight: true,
 	"columnDefs": [{
 		"searchable": false,
