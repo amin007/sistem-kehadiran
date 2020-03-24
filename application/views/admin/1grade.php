@@ -175,7 +175,7 @@ END;
 	function gradeTable002($url)
 	{
 		print <<<END
-	var t = $('#myTable').DataTable({
+	var t = $('#grade_table').DataTable({
 	"ajax": "$url/admin/gradeAction",
 	searchHighlight: true,
 	"columnDefs": [{
@@ -183,7 +183,7 @@ END;
 		"orderable": false,
 		"targets": 0
 	}],
-	"order": [[ 1, 'asc' ]]
+	"order": []
     });
 
 	t.on( 'order.dt search.dt', function (){
@@ -310,10 +310,10 @@ END;
 				$('#button_action').val($('#action').val());
 				if(data.success)
 				{
+					$('#formModal').modal('hide');
+					dataTable.ajax.reload();
 					$('#message_operation').html('<div class="alert alert-success">'+data.success+'</div>');
 					clear_field();
-					dataTable.ajax.reload();
-					$('#formModal').modal('hide');
 				}
 				if(data.error)
 				{
