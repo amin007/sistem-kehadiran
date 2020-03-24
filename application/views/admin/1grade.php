@@ -92,23 +92,10 @@ diJqueryAdmin();
 <script>
 $(document).ready(function(){
 	/* ***************************************************************************************** */
-	var dataTable = $('#grade_table').DataTable({
-	"processing":true,
-	"serverSide":true,
-	"order":[],
-	"ajax":{
-		url:"<?php echo URL ?>/admin/gradeAction",
-		type:"POST",
-		data:{action:'fetch'}
-	},
-	"columnDefs":[
-		{
-			"targets":[0, 1, 2],
-			"orderable":false,
-		},
-		],
-	});
-
+<?php
+	gradeTable001();
+	//gradeTable002();
+?>
 	/* ***************************************************************************************** */
 	$('#add_button').click(function(){
 		$('#modal_title').text('Add Grade');
@@ -158,6 +145,23 @@ dibawah();// letak di bawah script
 	{
 		$url = URL;
 		print <<<END
+	var dataTable = $('#grade_table').DataTable({
+		"processing":true,
+		"serverSide":true,
+		"order":[],
+		"ajax":{
+			url:"$url/admin/gradeAction",
+			type:"POST",
+			data:{action:'fetch'}
+		},
+		"columnDefs":[
+			{
+				"targets":[0, 1, 2],
+				"orderable":false,
+			},
+			],
+	});
+
 END;
 		#
 	}
@@ -174,7 +178,7 @@ END;
 	{
 		$url = URL;
 		print <<<END
-		$('#grade_form').on('submit', function(event){
+	$('#grade_form').on('submit', function(event){
 		event.preventDefault();
 		$.ajax({
 			url:"$url/admin/gradeSubmit",
