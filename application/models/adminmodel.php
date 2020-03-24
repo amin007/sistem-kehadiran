@@ -279,15 +279,13 @@ class AdminModel extends Model
 	public function getGradeList()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$result = $this->dataGradeList();
+		$result = $this->dataGradeList();//debugValue($result,'result');
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		$data = array();
 		#------------------------------------------------------------------------------------------
-		if($totalRow > 0):foreach($result as $row):
-			$data[] = '<option value="'
-			. $row['grade_id'] . '">' . $row['grade_name']
-			. '</option>';
-			//$output["grade_id"] = $row["grade_id"];
+		if($totalRow > 0):foreach($result as $key => $row):
+			$data[$key]['id'] = $row["grade_id"];
+			$data[$key]['name'] = $row["grade_name"];
 		endforeach;
 		else: $data = '';
 		endif;
