@@ -281,11 +281,13 @@ class AdminModel extends Model
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$result = $this->dataGradeList();//debugValue($result,'result');
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
-		$data = array();
+		$data = '';
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0):foreach($result as $key => $row):
-			$data[$key]['id'] = $row["grade_id"];
-			$data[$key]['name'] = $row["grade_name"];
+			$data .= "\n\t\t\t\t\t" . '<option value="' . $row['grade_id'] . '">'
+			. $row['grade_name'] . '</option>';
+			//$data[$key]['id'] = $row['grade_id'];
+			//$data[$key]['name'] = $row['grade_name'];
 		endforeach;
 		else: $data = '';
 		endif;
