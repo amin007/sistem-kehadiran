@@ -55,7 +55,9 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 
 	<!-- Modal body -->
 	<div class="modal-body">
-<?php formAdd(); ?>
+<?php
+$gradeList = URL . '/admin/gradeList';
+formAdd($gradeList); ?>
 	</div><!-- /class="modal-body" -->
 
 	<!-- Modal footer -->
@@ -114,9 +116,16 @@ gradeTable002($url);
 ?>
 $(document).ready(function(){
 	/* ***************************************************************************************** */
-<?php
-	//gradeTable001($url);
-?>
+	$(document).on('click', '.teacher_grade_id', function(){
+		$.ajax({
+			url:"<?php echo URL ?>/admin/gradeList",
+			method:"POST",
+			success:function(data)
+			{
+				$('#teacher_grade_id').html(data);
+			}
+		});
+	});
 	/* ***************************************************************************************** */
 	$('#add_button').click(function(){
 		$('#modal_title').text('Add Teacher');
@@ -163,14 +172,14 @@ $(document).ready(function(){
 	var grade_id = '';
 <?php editForm($url); ?>
 	/* ***************************************************************************************** */
-	$(document).on('click', '.delete_grade', function(){
+	$(document).on('click', '.delete_teacher', function(){
 		grade_id = $(this).attr('id');
 		$('#deleteModal').modal('show');
 	});
 	/* ***************************************************************************************** */
 	$('#ok_button').click(function(){
 		$.ajax({
-			url:"<?php echo URL ?>/admin/gradeDelete",
+			url:"<?php echo URL ?>/admin/teacherDelete",
 			method:"POST",
 			data:{grade_id:grade_id, action:'delete'},
 			success:function(data)
