@@ -258,55 +258,40 @@ class AdminModel extends Model
 #==================================================================================================
 # data tentang teacher
 #--------------------------------------------------------------------------------------------------
-	function sqlTeacher()
+	function sqlTeacherTajuk()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$sql0 = 'SELECT * FROM tbl_teacher 
 		INNER JOIN tbl_grade 
 		ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id 
 		';
-		$sql = " SELECT \"\" as Bil, * "
-		//. "grade_id '&nbsp;Edit', grade_id '&nbsp;Delete' "
-		. " FROM tbl_teacher INNER JOIN tbl_grade 
-		ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id  "
+		$sql = " SELECT \"\" as Bil,"
+		. " teacher_image,teacher_name,teacher_emailid,grade_name,teacher_acc,"
+		. " teacher_id '&nbsp;View', teacher_id '&nbsp;Edit', teacher_id '&nbsp;Delete' "
+		. " FROM tbl_teacher INNER JOIN tbl_grade "
+		. "	ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id  "
 		. "";
 
 		return $sql;
 	}
 #--------------------------------------------------------------------------------------------------
-	function dataSqlTeacher()
+	function dataSqlTeacherTajuk()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$sql = $this->sqlTeacher();
+		$sql = $this->sqlTeacherTajuk();
 		$this->_setSql($sql);
 		$data = $this->getAll();
 
 		return $data;
 	}
 #--------------------------------------------------------------------------------------------------
-	function dataTeacher()
+	function dataTeacherTajuk()
 	{
-		$result = $this->sqlTeacher();
+		$result = $this->dataSqlTeacherTajuk();
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
-		$data = array();
 		#------------------------------------------------------------------------------------------
-		foreach($result as $row)
-		{
-			$sub_array = array();
-			$sub_array[] = null;
-			$sub_array = array();
-			$sub_array[] = '<img src="teacher_image/'.$row["teacher_image"].'" class="img-thumbnail" width="75" />';
-			$sub_array[] = $row["teacher_name"];
-			$sub_array[] = $row["teacher_emailid"];
-			$sub_array[] = $row["grade_name"];
-			$sub_array[] = $row["teacher_acc"];
-			$sub_array[] = '<button type="button" name="view_teacher" class="btn btn-info btn-sm view_teacher" id="'.$row["teacher_id"].'">View</button>';
-			$sub_array[] = '<button type="button" name="edit_teacher" class="btn btn-primary btn-sm edit_teacher" id="'.$row["teacher_id"].'">Edit</button>';
-			$sub_array[] = '<button type="button" name="delete_teacher" class="btn btn-danger btn-sm delete_teacher" id="'.$row["teacher_id"].'">Delete</button>';
-			$data[] = $sub_array;
-		}
 		#------------------------------------------------------------------------------------------
-		return array($totalRow,$data);
+		return array($totalRow,$result);
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
