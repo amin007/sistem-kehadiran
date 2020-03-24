@@ -125,13 +125,14 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
 		# untuk debug sahaja
-		$_POST['action'] = 'Add';
+		/*$_POST['action'] = 'Add';
 		//$_POST['grade_id'] = '1';
 		$_POST['grade_name'] = '11 - B';//*/
 		# try catch try {
 			$gradeName = '';
 			$error_grade_name = '';
 			$error = 0;
+			#--------------------------------------------------------------------------------------
 			if(empty($_POST["grade_name"]))
 			{
 				//$error_grade_name = 'Grade Name is required';
@@ -140,6 +141,7 @@ class AdminController extends Controller
 			}
 			else
 				$gradeName = TRIM($_POST["grade_name"]);
+			#--------------------------------------------------------------------------------------
 			if($error > 0)
 				$output = array(
 					'error'	=> true,
@@ -149,18 +151,14 @@ class AdminController extends Controller
 			{
 				$dataDaa = '<strong>' . $gradeName . '</strong>';
 				if($_POST["action"] == "Add")
-				{
 					$output = $this->_model->insertGrade($gradeName);
-					//$output = array('success' => 'Data ' . $dataDaa . ' Added Successfully');
-				}
 				if($_POST["action"] == "Edit")
 				{
 					$id = trim($_POST['grade_id']);
 					$output = $this->_model->UpdateGrade($id,$gradeName);
-					//$output = array('success' => 'Data ' . $dataDaa . ' Updated Successfully');
 				}
 			}// end if($error > 0)
-			#//*/
+			#--------------------------------------------------------------------------------------
 			echo json_encode($output);
 		/*} catch (Exception $e) {
 			$errors[] = $e->getMessage();
