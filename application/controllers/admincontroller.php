@@ -94,7 +94,7 @@ class AdminController extends Controller
 		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
-	public function gradeEdit()
+	public function gradeEditForm()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# guna try catch jika ada masalah
@@ -175,12 +175,13 @@ class AdminController extends Controller
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		debugValue($_POST,'_POST');
+		//$_POST['action'] = 'delete'; $_POST['grade_id'] = '1';
 		try {
-			//$_POST['action'] = 'delete'; $_POST['grade_id'] = '1';
-			$gradeID = trim($_POST['grade_id']);
+			$id = trim($_POST['grade_id']);
+			$dataDaa = '<strong>' . $id . '</strong>';
 			$output = 'Data ' . $dataDaa . ' Deleted Successfully';
 			/*if($_POST['action'] == 'delete'):
-				$output = $this->_model->deleteGrade($gradeID);
+				$output = $this->_model->deleteGrade($id);
 				//$output = 'Data ' . $dataDaa . ' Deleted Successfully';
 			endif;// endif($_POST['action'] == 'delete') //*/
 
