@@ -79,6 +79,7 @@ class AdminController extends Controller
 				"data" => $senarai
 				);
 
+				//debugValue($output,'output');
 				echo json_encode($output);
 			endif;//if($_POST["action"] == "fetch")
 			endif;//if(isset($_POST["action"]))
