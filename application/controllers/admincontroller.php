@@ -201,12 +201,15 @@ class AdminController extends Controller
 		debugValue($senarai,'senarai');
 	}
 #--------------------------------------------------------------------------------------------------
+#==================================================================================================
+#--------------------------------------------------------------------------------------------------
 	public function teacher()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		# mula baca database
 		try {
-			$this->_setView('index-admin');# nama fail di View
+			$this->_setView('2teacher');# nama fail di View
+			# mula baca database
+			$senarai['teacher'] = $this->_model->dataTeacher();
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Guru');
@@ -219,11 +222,11 @@ class AdminController extends Controller
 			$_SESSION['type'] = 'error';
 
 			debugValue($_SESSION, '_SESSION');
-			//header('Location: ');
-			//exit;
-		}
-		//*/
+			//header('Location: ');//exit;
+		}//*/
 	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function student()
 	{
