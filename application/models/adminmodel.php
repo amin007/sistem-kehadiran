@@ -352,6 +352,61 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# cari seorang teacher sahaja
+#--------------------------------------------------------------------------------------------------
+	function sqlTeacherID()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = "SELECT * "
+		. " FROM tbl_teacher INNER JOIN tbl_grade "
+		. "	ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id "
+		. " WHERE tbl_teacher.teacher_id = :id "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataTeacherID($id)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$dataAll = array(':id' => $id);
+		$sql = $this->sqlTeacherID();
+		$this->_setSql($sql);
+		$data = $this->getAll($dataAll);
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function bentukTeacherID($id)
+	{
+		$result = $this->dataTeacherID($id);//debugValue($result,'result');
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
+		#------------------------------------------------------------------------------------------
+		foreach($result as $row)
+		{
+			$data = '
+				<div class="col-md-3">
+					<img src="' . URL . '/public/teacher_image/' . $row["teacher_image"] . '" class="img-thumbnail" />
+				</div>
+				<div class="col-md-9">
+					<table class="table">
+					<tr><th>Name</th><td>' . $row["teacher_name"] . '</td></tr>
+					<tr><th>Address</th><td>' . $row["teacher_address"] . '</td></tr>
+					<tr><th>Email Address</th><td>' . $row["teacher_emailid"] . '</td></tr>
+					<tr><th>Qualification</th><td>' . $row["teacher_qualification"] . '</td></tr>
+					<tr><th>Date of Joining</th><td>' . $row["teacher_doj"] . '</td></tr>
+					<tr><th>Location & Grade</th><td>' . $row["grade_name"] . '</td></tr>
+					<tr><th>IC No</th><td>' . $row["teacher_ic"] . '</td></tr>
+					<tr><th>Phone No</th><td>' . $row["teacher_phone"] . '</td></tr>
+					<tr><th>Acconut No</th><td>' . $row["teacher_acc"] . '</td></tr>
+					</table>
+				</div>';
+		}
+		#------------------------------------------------------------------------------------------
+		return array($totalRow,$data);
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
