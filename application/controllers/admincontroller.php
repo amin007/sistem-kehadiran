@@ -174,17 +174,15 @@ class AdminController extends Controller
 	public function gradeDelete()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
+		debugValue($_POST,'_POST');
 		try {
 			//$_POST['action'] = 'delete'; $_POST['grade_id'] = '1';
-			$gradeID = trim($_POST['grade_id']) . '';
-			//$dataDaa = htmlentities('<strong>' . $gradeID . '</strong>');
-			$dataDaa = ('<strong>' . $gradeID . '</strong>');
+			$gradeID = trim($_POST['grade_id']);
 			$output = 'Data ' . $dataDaa . ' Deleted Successfully';
-			if($_POST['action'] == 'delete'):
-				//$output = array('success' => 'Data ' . $dataDaa . ' Deleted Successfully');
+			/*if($_POST['action'] == 'delete'):
+				$output = $this->_model->deleteGrade($gradeID);
 				//$output = 'Data ' . $dataDaa . ' Deleted Successfully';
-			endif;// endif($_POST['action'] == 'delete')
+			endif;// endif($_POST['action'] == 'delete') //*/
 
 			echo $output;
 			//echo json_encode($output);
