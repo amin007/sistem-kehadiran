@@ -112,6 +112,55 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# untuk update
+#--------------------------------------------------------------------------------------------------
+	function sqlUpdateGrade($gradeName)
+	{
+		$sql = "
+		UPDATE tbl_grade
+		SET grade_name = :grade_name
+		WHERE grade_id = :grade_id
+		";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataUpdateGrade($id,$gradeName)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$dataAll = array(
+			':grade_name' => $gradeName,
+			':grade_id' => $id
+		);
+		$sql = $this->sqlUpdateGrade($gradeName);
+		$this->_setSql($sql);
+		//$data = $this->getAll($dataAll);
+		$data = $this->getRow($dataAll);
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function UpdateGrade($id,$gradeName)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$result = $this->dataUpdateGrade($id,$gradeName);
+		$totalRow = count($result); debugValue($totalRow,'totalRow');
+		$output = array(); $dataDaa = '<strong>' . $gradeName . '</strong>';
+		#------------------------------------------------------------------------------------------
+		if($totalRow > 0)
+			$output = array('success' => 'Data ' . $dataDaa . ' Updated Successfully');
+		else
+		{
+			$output = array(
+				'error'	=> true,
+				'error_grade_name' => 'Data ' . $dataDaa . ' error update'
+			);
+		}
+		#------------------------------------------------------------------------------------------
+		return $output;//*/
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
