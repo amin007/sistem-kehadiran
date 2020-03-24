@@ -68,7 +68,7 @@ class AdminModel extends Model
 			. '">Edit</button>';
 			$sub_array[] = '<button type="button" name="delete_grade"'
 			. ' class="btn btn-danger btn-sm delete_grade" id="' . $row['grade_id']
-			. '">Delete</button>';
+			. '">Delete <strong>' . $row['grade_id'] . '</strong></button>';
 			$data[] = $sub_array;
 		}
 		#------------------------------------------------------------------------------------------
@@ -155,7 +155,7 @@ class AdminModel extends Model
 		{
 			$output = array(
 				'error'	=> true,
-				'error_grade_name' => 'Data ' . $dataDaa . ' error insert. '
+				'error_grade_name' => 'Data ' . $dataDaa . ' Error Insert. '
 				. 'Grade Name Already Exists'
 			);
 		}
@@ -205,7 +205,7 @@ class AdminModel extends Model
 		{
 			$output = array(
 				'error'	=> true,
-				'error_grade_name' => 'Data ' . $dataDaa . ' error update'
+				'error_grade_name' => 'Data ' . $dataDaa . ' Error Update'
 			);
 		}
 		#------------------------------------------------------------------------------------------
