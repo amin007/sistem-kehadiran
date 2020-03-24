@@ -299,9 +299,31 @@ class AdminModel extends Model
 #==================================================================================================
 # untuk teacher - data bawah
 #--------------------------------------------------------------------------------------------------
+	function sqlTeacherAll()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = "SELECT teacher_image,teacher_name,teacher_emailid,"
+		. " grade_name,teacher_acc,teacher_id"
+		. " FROM tbl_teacher INNER JOIN tbl_grade "
+		. "	ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataTeacherAll()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = $this->sqlTeacherAll();
+		$this->_setSql($sql);
+		$data = $this->getAll();
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
 	public function bentukDataTeacher()
 	{
-		$result = $this->dataSqlTeacherTajuk();
+		$result = $this->dataTeacherAll();//debugValue($result,'result');
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		#------------------------------------------------------------------------------------------
 		foreach($result as $row)
@@ -326,7 +348,7 @@ class AdminModel extends Model
 			$data[] = $sub_array;
 		}
 		#------------------------------------------------------------------------------------------
-		return array($totalRow,$result);
+		return array($totalRow,$data);
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
