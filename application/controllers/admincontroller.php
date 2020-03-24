@@ -190,6 +190,23 @@ class AdminController extends Controller
 		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
+	public function gradeList()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		try {
+			$output = $this->_model->getGradeList();
+			echo json_encode($output);
+			#
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');//exit;
+		}//*/
+	}
+#--------------------------------------------------------------------------------------------------
 	function debugValueGrade($senarai)
 	{
 		debugValue($this->_view,'this->_view');
