@@ -77,7 +77,9 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 	</div><!-- /class="modal-header" -->
 
 	<!-- Modal body -->
-	<div class="modal-body" id="teacher_details">
+	<div class="modal-body">
+		<div class="row" id="teacher_details">
+		</div><!-- /class="row" -->
 	</div><!-- /class="modal-body" -->
 
 	<!-- Modal footer -->
