@@ -115,7 +115,7 @@ $(document).ready(function(){
 <?php gradeFormSubmit($url); ?>
 	/* ***************************************************************************************** */
 	var grade_id = '';
-<?php EditForm($url); ?>
+<?php editForm($url); ?>
 	/* ***************************************************************************************** */
 	$(document).on('click', '.delete_grade', function(){
 		grade_id = $(this).attr('id');
@@ -219,7 +219,7 @@ END;
 		#
 	}
 #--------------------------------------------------------------------------------------------------
-	function EditForm($url)
+	function editForm($url)
 	{
 		print <<<END
 	$(document).on('click', '.edit_grade', function(){
