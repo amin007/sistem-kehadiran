@@ -38,7 +38,7 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 <!-- =========================================================================================== -->
 <div class="modal" id="formModal">
 <div class="modal-dialog">
-<form method="post" id="grade_form">
+<form method="post" id="teacher_form" enctype="multipart/form-data">
 <div class="modal-content">
 
 	<!-- Modal Header -->
@@ -49,21 +49,16 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 
 	<!-- Modal body -->
 	<div class="modal-body">
-		<div class="form-group row">
-			<label class="col-md-4 text-right">Location & Grade Name
-			<span class="text-danger">*</span></label>
-			<div class="col-md-8">
-				<input type="text" name="grade_name" id="grade_name" class="form-control" />
-				<span id="error_grade_name" class="text-danger"></span>
-			</div><!-- /class="col" -->
-		</div><!-- /class="form-group row" -->
+<?php formAdd(); ?>
 	</div><!-- /class="modal-body" -->
 
 	<!-- Modal footer -->
 	<div class="modal-footer">
-		<input type="hidden" name="grade_id" id="grade_id" />
-		<input type="hidden" name="action" id="action" value="Add" />
-		<input type="submit" name="button_action" id="button_action" class="btn btn-success btn-sm" value="Add" />
+		<input type="hidden" name="hidden_teacher_image" id="hidden_teacher_image" value="">
+		<input type="hidden" name="teacher_id" id="teacher_id">
+		<input type="hidden" name="action" id="action" value="Add">
+		<input type="submit" name="button_action" id="button_action"
+		class="btn btn-success btn-sm" value="Add">
 		<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
 	</div><!-- /class="modal-footer" -->
 </div><!-- /class="modal-content" -->
@@ -93,18 +88,44 @@ $(document).ready(function(){
 ?>
 	/* ***************************************************************************************** */
 	$('#add_button').click(function(){
-		$('#modal_title').text('Add Grade');
+		$('#modal_title').text('Add Teacher');
 		$('#button_action').val('Add');
 		$('#action').val('Add');
 		$('#formModal').modal('show');
 		clear_field();
 	});
-
+	/* ***************************************************************************************** */
 	function clear_field()
 	{
-		$('#grade_form')[0].reset();
-		$('#error_grade_name').text('');
+		$('#teacher_form')[0].reset();
+		$('#error_teacher_name').text('');
+		$('#error_teacher_address').text('');
+		$('#error_teacher_emailid').text('');
+		$('#error_teacher_password').text('');
+		$('#error_teacher_qualification').text('');
+		$('#error_teacher_doj').text('');
+		$('#error_teacher_ic').text('');
+		$('#error_teacher_phone').text('');
+		$('#error_teacher_acc').text('');
+		$('#error_teacher_image').text('');
+		$('#error_teacher_grade_id').text('');
 	}
+	/* ***************************************************************************************** */
+	var teacher_id = '';
+
+	$(document).on('click', '.view_teacher', function(){
+		teacher_id = $(this).attr('id');
+		$.ajax({
+			url:"<?php echo URL ?>/teacherID",
+			method:"POST",
+			data:{action:'single_fetch', teacher_id:teacher_id},
+			success:function(data)
+			{
+				$('#viewModal').modal('show');
+				$('#teacher_details').html(data);
+			}
+		});
+	});
 	/* ***************************************************************************************** */
 <?php gradeFormSubmit($url); ?>
 	/* ***************************************************************************************** */
@@ -415,6 +436,123 @@ END;
 		}#----------------------------------------------------------------
 
 		return $output;
+	}
+#--------------------------------------------------------------------------------------------------
+	function formAdd($loadGradeList = null)
+	{
+		print <<<END
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Teacher Name
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+					name="teacher_name" id="teacher_name">
+					<span id="error_teacher_name" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Address
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<textarea class="form-control" name="teacher_address" id="teacher_address"></textarea>
+					<span id="error_teacher_address" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Email Address 
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+					name="teacher_emailid" id="teacher_emailid">
+					<span id="error_teacher_emailid" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Password
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="password"class="form-control"
+					name="teacher_password" id="teacher_password">
+					<span id="error_teacher_password" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Qualification
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+					name="teacher_qualification" id="teacher_qualification">
+					<span id="error_teacher_qualification" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Grade
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<select class="form-control" name="teacher_grade_id" id="teacher_grade_id">
+					<option value="">Select Grade</option>
+					$loadGradeList
+					</select>
+					<span id="error_teacher_grade_id" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Date of Joining
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+					name="teacher_doj" id="teacher_doj">
+					<span id="error_teacher_doj" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">IC No
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+					name="teacher_ic" id="teacher_ic">
+					<span id="error_teacher_ic" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Phone No<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+					name="teacher_phone" id="teacher_phone">
+					<span id="error_teacher_phone" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Account No (BIMB)<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="text" class="form-control"
+					name="teacher_acc" id="teacher_acc">
+					<span id="error_teacher_acc" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+			<div class="form-group row">
+				<label class="col-md-4 text-right">Image
+				<span class="text-danger">*</span></label>
+				<div class="col-md-8">
+					<input type="file" name="teacher_image" id="teacher_image" />
+					<span class="text-muted">Only .jpg and .png allowed</span><br />
+					<span id="error_teacher_image" class="text-danger"></span>
+				</div><!-- / class="col" -->
+			</div><!-- / class="form-group row" -->
+			<!-- =============================================================================== -->
+
+END;
+		#
 	}
 #--------------------------------------------------------------------------------------------------
 	function deleteModal()
