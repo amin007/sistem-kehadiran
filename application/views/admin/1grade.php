@@ -8,6 +8,10 @@ menuAdmin();
 if(!isset($tajukModul)) $tajukModul = 'Ini Deskboard Admin';
 if(!isset($action)) $action = '&nbsp;...&nbsp;';
 #--------------------------------------------------------------------------------------------------
+/*
+				<!-- button type="button" name="delete_grade"
+				class="btn btn-danger btn-sm delete_grade" id="-100">Delete 100</button -->
+*/
 ?>
 1grade
 <div class="container" style="margin-top:20px">
@@ -18,8 +22,6 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 			<div class="col-md-9"><?php echo $tajukModul ?></div>
 			<div class="col-md-3" align="right">
 				<button type="button" id="add_button" class="btn btn-info btn-sm">Add</button>
-				<!-- button type="button" class="btn btn-danger btn-sm"
-				onclick="confirmdelete(007)">Delete</button -->
 			</div><!-- / class="col-md-3" -->
 		</div><!-- / class="row" -->
 	<!-- ====================================================================================== -->
@@ -32,19 +34,6 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 	</div><!-- / class="card-body" -->
 </div><!-- / class="card" -->
 </div><!-- / class="container" -->
-
-<script type="text/javascript">
-function confirmdelete(id)
-{
-	var message="Are you sure to DELETE the record(id:"+id+")?";
-	var r=confirm(message);
-	if(r==true)
-	{
-		//redirect if user press yes
-		window.location.href = "delete.php?x="+id;
-	}
-}
-</script>
 
 <!-- =========================================================================================== -->
 <div class="modal" id="formModal">
