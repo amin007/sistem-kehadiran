@@ -125,9 +125,9 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		//$output = array('success' => 'Nama class ini :' . __METHOD__ . '()');
 		# untuk debug sahaja
-		$_POST['action'] = 'Edit';
+		/*$_POST['action'] = 'Edit';
 		$_POST['grade_id'] = '1';
-		$_POST['grade_name'] = 'KFC';//*/
+		$_POST['grade_name'] = '11 - A';//*/
 		# try catch try {
 			$gradeName = '';
 			$error_grade_name = '';
