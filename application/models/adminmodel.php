@@ -255,6 +255,54 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+#==================================================================================================
+# data tentang teacher
+#--------------------------------------------------------------------------------------------------
+	function sqlTeacher()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = " SELECT \"\" as Bil, grade_name '&nbsp;Location & Grade Name',"
+		. "grade_id '&nbsp;Edit', grade_id '&nbsp;Delete' "
+		. " FROM tbl_grade "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataSqlTeacher()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = $this->sqlTeacher();
+		$this->_setSql($sql);
+		$data = $this->getAll();
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataTeacher()
+	{
+		$result = $this->sqlTeacher();
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
+		$data = array();
+		#------------------------------------------------------------------------------------------
+		foreach($result as $row)
+		{
+			$sub_array = array();
+			$sub_array[] = null;
+			$sub_array[] = $row['grade_name'];
+			$sub_array[] = '<button type="button" name="edit_grade"'
+			. ' class="btn btn-primary btn-sm edit_grade" id="' . $row['grade_id']
+			. '">Edit</button>';
+			$sub_array[] = '<button type="button" name="delete_grade"'
+			. ' class="btn btn-danger btn-sm delete_grade" id="' . $row['grade_id']
+			. '">Delete <strong>' . $row['grade_id'] . '</strong></button>';
+			$data[] = $sub_array;
+		}
+		#------------------------------------------------------------------------------------------
+		return array($totalRow,$data);
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
