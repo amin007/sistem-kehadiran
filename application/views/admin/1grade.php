@@ -136,8 +136,7 @@ $(document).ready(function(){
 			{
 				$('#message_operation').html('<div class="alert alert-warning">'+data+'</div>');
 				$('#deleteModal').modal('hide');
-				dataTable.ajax.reload();
-				$('#formModal').modal('hide');
+				$('#grade_table').DataTable().ajax.reload();
 			}
 		})
 	});
@@ -320,9 +319,13 @@ END;
 				if(data.error)
 				{
 					if(data.error_grade_name != '')
+					{
 						$('#error_grade_name').html(data.error_grade_name);
+					}
 					else
+					{
 						$('#error_grade_name').text('');
+					}
 				}
 	// -------------------------------------------------------------------------------------------------
 			}
