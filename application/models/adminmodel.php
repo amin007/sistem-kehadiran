@@ -135,7 +135,7 @@ class AdminModel extends Model
 		$sql = $this->sqlUpdateGrade($gradeName);
 		$this->_setSql($sql);
 		//$data = $this->getAll($dataAll);
-		$data = $this->getRow($dataAll);
+		$data = $this->getInUpDel($dataAll);
 
 		return $data;
 	}
@@ -143,8 +143,8 @@ class AdminModel extends Model
 	public function UpdateGrade($id,$gradeName)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$result = $this->dataUpdateGrade($id,$gradeName);
-		$totalRow = count($result); debugValue($totalRow,'totalRow');
+		$totalRow = $this->dataUpdateGrade($id,$gradeName);
+		//debugValue($totalRow,'totalRow');
 		$output = array(); $dataDaa = '<strong>' . $gradeName . '</strong>';
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0)
