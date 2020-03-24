@@ -290,6 +290,8 @@ END;
 #--------------------------------------------------------------------------------------------------
 	function gradeFormSubmit($url)
 	{
+		//$('#example').DataTable().ajax.reload();
+		//$('#grade_table').DataTable().ajax.reload();
 		print <<<END
 	$('#grade_form').on('submit', function(event){
 		event.preventDefault();
@@ -311,9 +313,9 @@ END;
 				if(data.success)
 				{
 					$('#formModal').modal('hide');
-					dataTable.ajax.reload();
 					$('#message_operation').html('<div class="alert alert-success">'+data.success+'</div>');
 					clear_field();
+					$('#grade_table').DataTable().ajax.reload();
 				}
 				if(data.error)
 				{
