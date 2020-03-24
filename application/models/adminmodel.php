@@ -112,6 +112,57 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# untuk insert
+#--------------------------------------------------------------------------------------------------
+	function sqlInsertGrade($gradeName)
+	{
+		$sql = "
+		INSERT INTO tbl_grade(grade_name)
+		SELECT * FROM (SELECT :grade_name) as temp
+		WHERE NOT EXISTS (
+			SELECT grade_name FROM tbl_grade
+			WHERE grade_name = :grade_name
+		) LIMIT 1 ";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataInsertGrade($gradeName)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$dataAll = array(
+			':grade_name' => $gradeName,
+		);
+		$sql = $this->sqlInsertGrade($gradeName);
+		$this->_setSql($sql);
+		//$data = $this->getAll($dataAll);
+		$data = $this->getInUpDel($dataAll);
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function insertGrade($id,$gradeName)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$totalRow = $this->dataInsertGrade($id,$gradeName);
+		//debugValue($totalRow,'totalRow');
+		$output = array(); $dataDaa = '<strong>' . $gradeName . '</strong>';
+		#------------------------------------------------------------------------------------------
+		if($totalRow > 0)
+			$output = array('success' => 'Data ' . $dataDaa . ' Added Successfully');
+		else
+		{
+			$output = array(
+				'error'	=> true,
+				'error_grade_name' => 'Data ' . $dataDaa . ' error insert. '
+				. 'Grade Name Already Exists'
+			);
+		}
+		#------------------------------------------------------------------------------------------
+		return $output;//*/
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 # untuk update
 #--------------------------------------------------------------------------------------------------
 	function sqlUpdateGrade($gradeName)
