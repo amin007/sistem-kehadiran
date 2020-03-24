@@ -154,11 +154,27 @@ $(document).ready(function(){
 <?php
 dibawah();// letak di bawah script
 #--------------------------------------------------------------------------------------------------
+	function gradeTable001()
+	{
+		$url = URL;
+		print <<<END
+END;
+		#
+	}
+#--------------------------------------------------------------------------------------------------
+	function gradeTable002()
+	{
+		$url = URL;
+		print <<<END
+END;
+		#
+	}
+#--------------------------------------------------------------------------------------------------
 	function gradeFormSubmit()
 	{
 		$url = URL;
 		print <<<END
-	$('#grade_form').on('submit', function(event){
+		$('#grade_form').on('submit', function(event){
 		event.preventDefault();
 		$.ajax({
 			url:"$url/admin/gradeSubmit",
