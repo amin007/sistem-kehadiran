@@ -339,7 +339,7 @@ END;
 		grade_id = $(this).attr('id');
 		clear_field();
 		$.ajax({
-			url:"$url/admin/gradeEdit",
+			url:"$url/admin/gradeEditForm",
 			method:"POST",
 			data:{action:'edit_fetch', grade_id:grade_id},
 			dataType:"json",
