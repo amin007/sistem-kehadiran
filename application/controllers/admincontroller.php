@@ -299,16 +299,14 @@ class AdminController extends Controller
 	public function teacherIDForm()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		# guna try catch jika ada masalah
-		$output = null;
+		# guna try catch jika ada masalah //$output = null;
 		try {
 			# mula baca database
 			$id = $_POST['teacher_id'];
 			list($kira,$output) = $this->_model->bentukTeacherIDForm($id);
 
 			//debugValue($output,'output');
-			echo $output;
-			//echo json_encode($output);
+			echo json_encode($output);
 			#
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
