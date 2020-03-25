@@ -429,22 +429,18 @@ class AdminModel extends Model
 		$dataAll = null;
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0):foreach($result as $key => $val):
-			//echo "<br>$key = $val";
-			#--------------------------------------------------------------------------------------
-			$dataAtas = "\t\t\t" . '<div class="col-md-3">'
-			. "\n\t\t\t" . '<img src="' . URL . '/sumber/teacher_image/'
-			. $result['Image'] . '" class="img-thumbnail" />'
-			. "\n\t\t\t" . '</div>';
+			$dataAtas = '<img src="' . URL . '/sumber/teacher_image/'
+			. $result['Image'] . '" class="img-thumbnail" />';
 			#--------------------------------------------------------------------------------------
 			if(!in_array($key,array('Image')))
 			$dataAll .= "\n\t\t\t" . '<tr><th>' . ucfirst($key) . '</th><td>'
 			. $val . '</td></tr>';
-			//<tr><th>Address</th><td>' . $row["teacher_address"] . '</td></tr>
 		endforeach;
 		else: $data = '<div class="col-md"> Data Tidak Wujud</div>';
 		endif;
 		#------------------------------------------------------------------------------------------
-		$data = $dataAtas . "\n\t\t\t" . '<div class="col-md-9"><table class="table">'
+		$data = "\t\t\t" . '<div class="col-md-3">' . "\n\t\t\t$dataAtas\n\t\t\t</div>\n\t\t\t"
+		. '<div class="col-md-9"><table class="table">'
 		. $dataAll . "\n\t\t\t" . '</table></div>';
 		#------------------------------------------------------------------------------------------
 		return array($totalRow,$data);
