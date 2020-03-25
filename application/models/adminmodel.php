@@ -523,7 +523,7 @@ class AdminModel extends Model
 		# untuk image sahaja
 		$ext = 'png';
 		$teacher_image = uniqid() . '.' . $ext;
-		$data['::teacher_image'] = null;
+		$data[':teacher_image'] = null;
 
 		return $data;
 	}
