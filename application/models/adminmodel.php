@@ -468,7 +468,8 @@ class AdminModel extends Model
 		$dataAll = array(':id' => $id);
 		$sql = $this->sqlTeacherIDForm();
 		$this->_setSql($sql);
-		$data = $this->getAll($dataAll);
+		//$data = $this->getAll($dataAll);// dapatkan semua data
+		$data = $this->getRow($dataAll);// dapatkan satu data sahaja
 
 		return $data;
 	}
@@ -479,9 +480,9 @@ class AdminModel extends Model
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
 		$data = null;
 		#------------------------------------------------------------------------------------------
-		if($totalRow > 0):foreach($result as $row):foreach($row as $key => $val):
+		if($totalRow > 0):foreach($result as $key => $val):
 			$data[$key] = $val;
-		endforeach;endforeach;
+		endforeach;
 		//else: $data = '<div class="col-md"> Data Tidak Wujud</div>';
 		endif;
 		#------------------------------------------------------------------------------------------
