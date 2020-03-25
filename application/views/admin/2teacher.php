@@ -28,8 +28,8 @@ $action = 'action="' . URL . '/admin/teacherFormSubmit"';
 			<div class="col-md-9"><?php echo $tajukModul ?></div>
 			<div class="col-md-3" align="right">
 				<button type="button" id="add_button" class="btn btn-info btn-sm">Add</button>
-				<button type="button" name="view_teacher"
-				class="btn btn-info btn-sm view_teacher" id="-100">View
+				<button type="button" name="edit_teacher"
+				class="btn btn-primary btn-sm edit_teacher" id="2">Edit
 				<strong>-100</strong></button>
 			</div><!-- / class="col-md-3" -->
 		</div><!-- / class="row" -->
@@ -445,8 +445,7 @@ END;
 				$('#teacher_ic').val(data.teacher_ic);
 				$('#teacher_phone').val(data.teacher_phone);
 				$('#teacher_acc').val(data.teacher_acc);
-				$('#error_teacher_image').html('<img src="$url/sumber/teacher_image/'
-				+data.teacher_image+'" class="img-thumbnail" width="70" />');
+				$('#error_teacher_image').html('<img src="$url/sumber/teacher_image/'+data.teacher_image+'" class="img-thumbnail" width="70" />');
 				$('#hidden_teacher_image').val(data.teacher_image);
 				$('#teacher_id').val(data.teacher_id);
 				$('#modal_title').text('Edit Teacher');
