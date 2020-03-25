@@ -594,7 +594,7 @@ END;
 				<label class="col-md-4 text-right">Date of Joining
 				<span class="text-danger">*</span></label>
 				<div class="col-md-8">
-					<input type="text" class="form-control"
+					<input type="date" class="form-control"
 					name="teacher_doj" id="teacher_doj">
 					<span id="error_teacher_doj" class="text-danger"></span>
 				</div><!-- / class="col" -->
