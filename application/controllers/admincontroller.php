@@ -307,8 +307,8 @@ class AdminController extends Controller
 			list($kira,$output) = $this->_model->bentukTeacherIDForm($id);
 
 			//debugValue($output,'output');
-			//echo $output;
-			echo json_encode($output);
+			echo $output;
+			//echo json_encode($output);
 			#
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
