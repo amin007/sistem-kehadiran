@@ -615,6 +615,96 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# untuk Teacher - update
+#--------------------------------------------------------------------------------------------------
+	function sqlUpdateTeacher($gradeName)
+	{
+		echo $sql = "
+		UPDATE tbl_teacher
+		SET teacher_name = :teacher_name,
+		teacher_address = :teacher_address,
+		teacher_grade_id = :teacher_grade_id,
+		teacher_qualification = :teacher_qualification,
+		teacher_doj = :teacher_doj,
+		teacher_ic = :teacher_ic,
+		teacher_phone = :teacher_phone,
+		teacher_acc = :teacher_acc,
+		teacher_image = :teacher_image
+		WHERE teacher_id = :teacher_id
+		";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataUpdateTeacher($id,$posmen)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = $this->sqlUpdateTeacher($posmen);
+		$this->_setSql($sql);
+		//$data = $this->getAll($posmen);
+		//$data = $this->getInUpDel($posmen);
+
+		//return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function bentukUpdateTeacher($id,$gradeName)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$totalRow = $this->dataUpdateTeacher($id,$gradeName);
+		//debugValue($totalRow,'totalRow');
+		$output = array();
+		#------------------------------------------------------------------------------------------
+		if($totalRow > 0)
+			$output = array('success' => 'Data Updated Successfully');
+		else
+		{
+			$output = array('error'	=> 'Data Error Update');
+		}
+		#------------------------------------------------------------------------------------------
+		return $output;//*/
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
+# untuk Teacher - delete
+#--------------------------------------------------------------------------------------------------
+	function sqlDeleteTeacher()
+	{
+		$sql = "
+		DELETE FROM tbl_teacher
+		WHERE teacher_id = :teacher_id
+		";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataDeleteTeacher($id)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$dataAll = array(':teacher_id' => $id);
+		$sql = $this->sqlDeleteGrade();
+		$this->_setSql($sql);
+		//$data = $this->getAll($dataAll);
+		$data = $this->getInUpDel($dataAll);
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function deleteTeacher($id)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$totalRow = $this->dataDeleteTeacher($id);
+		//debugValue($totalRow,'totalRow');
+		$output = array(); $dataDaa = '<strong>' . $id . '</strong>';
+		#------------------------------------------------------------------------------------------
+		if($totalRow > 0)
+			$output = 'Id ' . $dataDaa . ' Deleted Successfully.';
+		else
+			$output = 'Id ' . $dataDaa . ' Does Not Exist.';
+		#------------------------------------------------------------------------------------------
+		return $output;//*/
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
