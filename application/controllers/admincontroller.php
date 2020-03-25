@@ -326,14 +326,16 @@ class AdminController extends Controller
 		//debugValue($_FILES,'_FILES');
 		try {
 			# mula baca database
-			$posmen = $this->_model->semakPOST();debugValue($posmen,'posmen');
+			$posmen = $this->_model->semakPOST();//debugValue($posmen,'posmen');
 			if($_POST['action'] == 'Add'):
 				$error = $this->_model->bentukInsertTeacher($posmen);
+				//echo json_encode($error);
 				header('Location: ' . URL . '/admin/teacher/' . $error);
 			elseif($_POST['action'] == 'Edit'):
-				$error = $this->_model->bentukUpdateTeacher($posmen);
-				debugValue($error,'error');
-				//header('Location: ' . URL . '/admin/teacher/' . $error);
+				$id = trim($_POST['teacher_id']);
+				$error = $this->_model->bentukUpdateTeacher($id,$posmen);
+				//echo json_encode($error);//debugValue($error,'error');
+				header('Location: ' . URL . '/admin/teacher/' . $error);
 			else:
 			endif;//*/
 		} catch (Exception $e) {
@@ -345,6 +347,28 @@ class AdminController extends Controller
 			debugValue($_SESSION, '_SESSION');
 			//header('Location: ');//exit;
 		}//*/		
+	}
+#--------------------------------------------------------------------------------------------------
+	public function teacherDelete()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//debugValue($_POST,'_POST');
+		//$_POST['action'] = 'delete'; $_POST['teacher_id'] = '1';
+		try {
+			$id = trim($_POST['teacher_id']);
+			if($_POST['action'] == 'delete'):
+				$output = $this->_model->deleteTeacher($id);
+			endif;
+
+			echo $output;
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');//exit;
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
