@@ -277,7 +277,7 @@ class AdminController extends Controller
 		$output = null;
 		try {
 			# mula baca database
-			$id = $_POST['teacher_id'];
+			$id = (isset($_POST['teacher_id']))? $_POST['teacher_id'] : null;
 			list($kira,$output) = $this->_model->bentukTeacherID($id);
 
 			//debugValue($output,'output');
