@@ -486,6 +486,42 @@ class AdminModel extends Model
 #==================================================================================================
 # semak post
 #--------------------------------------------------------------------------------------------------
+	function pilihGambar($errorKira = 0)
+	{
+		$teacher_image = $_POST["hidden_teacher_image"];
+		if($_FILES["teacher_image"]["name"] != '')
+		{
+			$file_name = $_FILES["teacher_image"]["name"];
+			$tmp_name = $_FILES["teacher_image"]["tmp_name"];
+			$extension_array = explode(".", $file_name);
+			$extension = strtolower($extension_array[1]);
+			$allowed_extension = array('jpg','png');
+			if(!in_array($extension, $allowed_extension))
+			{
+				$error['teacher_image'] = 'Invalid Image Format';
+				$error['kira'] = $errorKira++;
+			}
+			else
+			{
+				$data = uniqid() . '.' . $extension;
+				$upload_path = ROOT . DS . 'public' . DS . 'sumber' . DS
+				. 'teacher_image/' . $data;
+				move_uploaded_file($tmp_name, $upload_path);
+			}
+		}
+		else
+		{
+			if($data == '')
+			{
+				$error['teacher_image'] = 'Image is required';
+				$error['kira'] = $errorKira++;
+			}
+		}
+		#------------------------------------------------------------------------------------------
+		return array($error,$data);
+		#------------------------------------------------------------------------------------------
+	}
+#--------------------------------------------------------------------------------------------------
 	public function cincang($data)
 	{
 		#https://www.php.net/manual/en/function.password-hash.php
@@ -511,19 +547,19 @@ class AdminModel extends Model
 #--------------------------------------------------------------------------------------------------
 	public function semakPOST()
 	{
+		# untuk image sahaja
+		list($error,$teacher_image) = $this->pilihGambar();
+		$data[':teacher_image'] = $teacher_image;
+		# proses data lain
 		$abaikan = array('hidden_teacher_image','teacher_id','button_action','action');
 		foreach($_POST as $key => $val):
 			if(!in_array($key,$abaikan)):
 				if($key == 'teacher_password')
-					$data[":$key"] = $this->cincang($val);
+					$data[":$key"] = $this->cincang(trim($val));
 				else
 					$data[":$key"] = trim($val);
 			endif;
 		endforeach;
-		# untuk image sahaja
-		$ext = 'png';
-		$teacher_image = uniqid() . '.' . $ext;
-		$data[':teacher_image'] = null;
 
 		return $data;
 	}
