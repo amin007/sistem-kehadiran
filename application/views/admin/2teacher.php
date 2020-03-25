@@ -28,9 +28,6 @@ $action = 'action="' . URL . '/admin/teacherFormSubmit"';
 			<div class="col-md-9"><?php echo $tajukModul ?></div>
 			<div class="col-md-3" align="right">
 				<button type="button" id="add_button" class="btn btn-info btn-sm">Add</button>
-				<button type="button" name="edit_teacher"
-				class="btn btn-primary btn-sm edit_teacher" id="2">Edit
-				<strong>-100</strong></button>
 			</div><!-- / class="col-md-3" -->
 		</div><!-- / class="row" -->
 	<!-- ====================================================================================== -->
