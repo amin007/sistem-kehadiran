@@ -278,12 +278,14 @@ class AdminController extends Controller
 		try {
 			# mula baca database
 			$id = (isset($_POST['teacher_id']))? $_POST['teacher_id'] : null;
-			list($kira,$output) = $this->_model->bentukTeacherID($id);
+			list($kira,$dataAtas,$dataAll) = $this->_model->bentukTeacherID($id);
+			$output = "\t\t\t" . '<div class="col-md-3">'
+			. "\n\t\t\t$dataAtas\n\t\t\t</div>\n\t\t\t"
+			. '<div class="col-md-9"><table class="table">'
+			. $dataAll . "\n\t\t\t" . '</table></div>';
 
 			//debugValue($output,'output');
-			echo $output;
-			//echo json_encode($output);
-			#
+			echo $output;//echo json_encode($output);
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
 			$_SESSION['message'] = $errors;
