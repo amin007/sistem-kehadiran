@@ -443,7 +443,7 @@ END;
 		print <<<END
 	$(document).on('click', '.edit_teacher', function(){
 		teacher_id = $(this).attr('id');
-		//clear_field();//$('#editModal').modal('show');
+		//clear_field(); ada masalah teknikal, terpaksa komen dulu
 		$.ajax({
 			url:"$url/admin/teacherIDForm",
 			method:"POST",
@@ -451,10 +451,21 @@ END;
 			dataType:"json",
 			success:function(data)
 			{
-				alert(data.teacher_emailid);
+				//alert(data.teacher_id); untuk debug data wujud atau tidak
 				$('#teacher_name').val(data.teacher_name);
 				$('#teacher_address').val(data.teacher_address);
 				$('#teacher_emailid').val(data.teacher_emailid);
+				$('#teacher_grade_id').val(data.teacher_grade_id);
+				$('#teacher_qualification').val(data.teacher_qualification);
+				$('#teacher_doj').val(data.teacher_doj);
+				$('#teacher_ic').val(data.teacher_ic);
+				$('#teacher_phone').val(data.teacher_phone);
+				$('#teacher_acc').val(data.teacher_acc);
+				$('#error_teacher_image').html('<img src="$url/sumber/teacher_image/'
+				+data.teacher_image+'" class="img-thumbnail" width="70" />');
+				$('#hidden_teacher_image').val(data.teacher_image);
+				$('#teacher_id').val(data.teacher_id);
+				// --------------------------------------------------------------------------------
 				$('#modal_title').text('Edit Teacher');
 				$('#button_action').val('Edit');
 				$('#action').val('Edit');
