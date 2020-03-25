@@ -7,6 +7,9 @@ menuAdmin();
 #--------------------------------------------------------------------------------------------------
 if(!isset($tajukModul)) $tajukModul = 'Ini Deskboard Admin';
 if(!isset($action)) $action = '&nbsp;...&nbsp;';
+# untuk form yang kompleks guna ajax, untuk senang debug
+//$action = 'id="teacher_form"';
+$action = 'action="' . URL . '/admin/teacherFormSubmit"';
 #--------------------------------------------------------------------------------------------------
 /*
 				<!-- button type="button" name="delete_teacher"
@@ -44,7 +47,7 @@ if(!isset($action)) $action = '&nbsp;...&nbsp;';
 <!-- =========================================================================================== -->
 <div class="modal" id="formModal">
 <div class="modal-dialog">
-<form method="post" id="teacher_form" enctype="multipart/form-data">
+<form method="post" <?php echo $action ?> enctype="multipart/form-data">
 <div class="modal-content">
 
 	<!-- Modal Header -->
@@ -114,25 +117,6 @@ gradeTable002($url);
 ?>
 $(document).ready(function(){
 	/* ***************************************************************************************** */
-	$('#teacher_grade_id').change(function(){
-		var city = $(this).val();
-		// AJAX request
-		$.ajax({
-			url:'<?php echo URL ?>/admin/gradeList',
-			method: 'post',
-			data: {city: city},
-			dataType: 'json',
-			success: function(response)
-			{
-				// Add options
-				$.each(response,function(index,data){
-				$('#teacher_grade_id').append('<option value="'+data['id']
-				+'">'+data['name']+'</option>');
-				});
-		  }
-		});
-	});
-	/* ***************************************************************************************** */
 	$('#add_button').click(function(){
 		$('#modal_title').text('Add Teacher');
 		$('#button_action').val('Add');
@@ -173,7 +157,7 @@ $(document).ready(function(){
 		});
 	});
 	/* ***************************************************************************************** */
-<?php gradeFormSubmit($url); ?>
+<?php formSubmit($url); ?>
 	/* ***************************************************************************************** */
 <?php editForm($url); ?>
 	/* ***************************************************************************************** */
@@ -191,7 +175,7 @@ $(document).ready(function(){
 			{
 				$('#message_operation').html('<div class="alert alert-warning">'+data+'</div>');
 				$('#deleteModal').modal('hide');
-				$('#grade_table').DataTable().ajax.reload();
+				$('#allTable').DataTable().ajax.reload();
 			}
 		})
 	});
@@ -204,7 +188,7 @@ dibawah();// letak di bawah script
 	function gradeTable001($url)
 	{
 		print <<<END
-	var dataTable = $('#grade_table').DataTable({
+	var dataTable = $('#allTable').DataTable({
 		"processing":true,
 		"serverSide":true,
 		"order":[],
@@ -342,50 +326,99 @@ END;
 		#
 	}
 #--------------------------------------------------------------------------------------------------
-	function gradeFormSubmit($url)
+	function formSubmit($url)
 	{
 		//$('#example').DataTable().ajax.reload();
-		//$('#grade_table').DataTable().ajax.reload();
+		//$('#allTable').DataTable().ajax.reload();
 		print <<<END
-	$('#grade_form').on('submit', function(event){
+	$('#teacher_form').on('submit', function(event){
 		event.preventDefault();
 		$.ajax({
-			url:"$url/admin/gradeSubmit",
+			url:"$url/admin/teacherFormSubmit",
 			method:"POST",
-			data:$(this).serialize(),
+			data:new FormData(this),
 			dataType:"json",
+			contentType:false, processData:false,
 			beforeSend:function()
 			{
-				$('#button_action').attr('disabled', 'disabled');
 				$('#button_action').val('Validate...');
+				$('#button_action').attr('disabled', 'disabled');
 			},
 			success:function(data)
 			{
-	// -------------------------------------------------------------------------------------------------
+			// ------------------------------------------------------------------------------------
 				$('#button_action').attr('disabled', false);
 				$('#button_action').val($('#action').val());
 				if(data.success)
 				{
-					$('#formModal').modal('hide');
 					$('#message_operation').html('<div class="alert alert-success">'+data.success+'</div>');
 					clear_field();
-					$('#grade_table').DataTable().ajax.reload();
+					$('#formModal').modal('hide');
+					$('#allTable').DataTable().ajax.reload();
 				}
 				if(data.error)
-				{
-					if(data.error_grade_name != '')
+				{// ============================================================================
+					if(data.error_teacher_name != '')
 					{
-						$('#error_grade_name').html(data.error_grade_name);
+						$('#error_teacher_name').text(data.error_teacher_name);
 					}
-					else
+					else { $('#error_teacher_name').text(''); }
+					if(data.error_teacher_address != '')
 					{
-						$('#error_grade_name').text('');
+						$('#error_teacher_address').text(data.error_teacher_address);
 					}
-				}
-	// -------------------------------------------------------------------------------------------------
-			}
-		})
+					else { $('#error_teacher_address').text(''); }
+					if(data.error_teacher_emailid != '')
+					{
+						$('#error_teacher_emailid').text(data.error_teacher_emailid);
+					}
+					else { $('#error_teacher_emailid').text(''); }
+					if(data.error_teacher_password != '')
+					{
+						$('#error_teacher_password').text(data.error_teacher_password);
+					}
+					else { $('#error_teacher_password').text(''); }
+					if(data.error_teacher_grade_id != '')
+					{
+						$('#error_teacher_grade_id').text(data.error_teacher_grade_id);
+					}
+					else { $('#error_teacher_grade_id').text(''); }
+					if(data.error_teacher_qualification != '')
+					{
+						$('#error_teacher_qualification').text(data.error_teacher_qualification);
+					}
+					else { $('#error_teacher_qualification').text(''); }
+					if(data.error_teacher_doj != '')
+					{
+						$('#error_teacher_doj').text(data.error_teacher_doj);
+					}
+					else { $('#error_teacher_doj').text(''); }
+					if(data.error_teacher_ic != '')
+					{
+						$('#error_teacher_ic').text(data.error_teacher_ic);
+					}
+					else { $('#error_teacher_ic').text(''); }
+					if(data.error_teacher_phone != '')
+					{
+						$('#error_teacher_phone').text(data.error_teacher_phone);
+					}
+					else { $('#error_teacher_phone').text(''); }
+					if(data.error_teacher_acc != '')
+					{
+						$('#error_teacher_acc').text(data.error_teacher_acc);
+					}
+					else { $('#error_teacher_acc').text(''); }
+					if(data.error_teacher_image != '')
+					{
+						$('#error_teacher_image').text(data.error_teacher_image);
+					}
+					else { $('#error_teacher_image').text(''); }
+				}//if(data.error)
+			// ------------------------------------------------------------------------------------
+			}//success:function(data)
+		});
 	});
+
 END;
 		#
 	}
