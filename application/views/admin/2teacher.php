@@ -175,7 +175,6 @@ $(document).ready(function(){
 	/* ***************************************************************************************** */
 <?php gradeFormSubmit($url); ?>
 	/* ***************************************************************************************** */
-	var grade_id = '';
 <?php editForm($url); ?>
 	/* ***************************************************************************************** */
 	$(document).on('click', '.delete_teacher', function(){
@@ -394,24 +393,35 @@ END;
 	function editForm($url)
 	{
 		print <<<END
-	$(document).on('click', '.edit_grade', function(){
-		grade_id = $(this).attr('id');
+	$(document).on('click', '.edit_teacher', function(){
+		teacher_id = $(this).attr('id');
 		clear_field();
 		$.ajax({
-			url:"$url/admin/gradeEditForm",
+			url:"$url/admin/teacherIDForm",
 			method:"POST",
-			data:{action:'edit_fetch', grade_id:grade_id},
+			data:{action:'edit_fetch', teacher_id:teacher_id},
 			dataType:"json",
 			success:function(data)
 			{
-				$('#grade_name').val(data.grade_name);
-				$('#grade_id').val(data.grade_id);
-				$('#modal_title').text('Edit Grade');
+				$('#teacher_name').val(data.teacher_name);
+				$('#teacher_address').val(data.teacher_address);
+				$('#teacher_emailid').val(data.teacher_emailid);
+				$('#teacher_grade_id').val(data.teacher_grade_id);
+				$('#teacher_qualification').val(data.teacher_qualification);
+				$('#teacher_doj').val(data.teacher_doj);
+				$('#teacher_ic').val(data.teacher_ic);
+				$('#teacher_phone').val(data.teacher_phone);
+				$('#teacher_acc').val(data.teacher_acc);
+				$('#error_teacher_image').html('<img src="$url/sumber/teacher_image/'
+				+data.teacher_image+'" class="img-thumbnail" width="70" />');
+				$('#hidden_teacher_image').val(data.teacher_image);
+				$('#teacher_id').val(data.teacher_id);
+				$('#modal_title').text('Edit Teacher');
 				$('#button_action').val('Edit');
 				$('#action').val('Edit');
 				$('#formModal').modal('show');
 			}
-		})
+		});
 	});
 
 END;
