@@ -490,7 +490,7 @@ class AdminModel extends Model
 #--------------------------------------------------------------------------------------------------
 	function pilihGambar($errorKira = 0)
 	{
-		$teacher_image = $_POST["hidden_teacher_image"];
+		$data = $_POST["hidden_teacher_image"];
 		if($_FILES["teacher_image"]["name"] != '')
 		{
 			$file_name = $_FILES["teacher_image"]["name"];
@@ -557,7 +557,10 @@ class AdminModel extends Model
 		foreach($_POST as $key => $val):
 			if(!in_array($key,$abaikan)):
 				if($key == 'teacher_password')
+				{
+					if($val != null)
 					$data[":$key"] = $this->cincang(trim($val));
+				}
 				else
 					$data[":$key"] = trim($val);
 			endif;
@@ -623,6 +626,7 @@ class AdminModel extends Model
 		UPDATE tbl_teacher
 		SET teacher_name = :teacher_name,
 		teacher_address = :teacher_address,
+		teacher_emailid = :teacher_emailid,
 		teacher_grade_id = :teacher_grade_id,
 		teacher_qualification = :teacher_qualification,
 		teacher_doj = :teacher_doj,
@@ -639,12 +643,14 @@ class AdminModel extends Model
 	function dataUpdateTeacher($id,$posmen)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$posmen[':teacher_id'] = $id;
+		//debugValue($posmen,'posmen kedua');
 		$sql = $this->sqlUpdateTeacher($posmen);
 		$this->_setSql($sql);
 		//$data = $this->getAll($posmen);
-		//$data = $this->getInUpDel($posmen);
+		$data = $this->getInUpDel($posmen);
 
-		//return $data;
+		return $data;
 	}
 #--------------------------------------------------------------------------------------------------
 	public function bentukUpdateTeacher($id,$gradeName)
@@ -655,10 +661,12 @@ class AdminModel extends Model
 		$output = array();
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0)
-			$output = array('success' => 'Data Updated Successfully');
+			//$output = array('success' => 'Data Updated Successfully');
+			$output = 'Data Updated Successfully';
 		else
 		{
-			$output = array('error'	=> 'Data Error Update');
+			//$output = array('error'	=> 'Data Error Update');
+			$output = 'Data Error Update';
 		}
 		#------------------------------------------------------------------------------------------
 		return $output;//*/
@@ -681,7 +689,7 @@ class AdminModel extends Model
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		$dataAll = array(':teacher_id' => $id);
-		$sql = $this->sqlDeleteGrade();
+		$sql = $this->sqlDeleteTeacher();
 		$this->_setSql($sql);
 		//$data = $this->getAll($dataAll);
 		$data = $this->getInUpDel($dataAll);
@@ -692,8 +700,7 @@ class AdminModel extends Model
 	public function deleteTeacher($id)
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$totalRow = $this->dataDeleteTeacher($id);
-		//debugValue($totalRow,'totalRow');
+		$totalRow = $this->dataDeleteTeacher($id);//debugValue($totalRow,'totalRow');
 		$output = array(); $dataDaa = '<strong>' . $id . '</strong>';
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0)
