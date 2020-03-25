@@ -449,6 +449,46 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# untuk paparkan dalam bentuk form teacherID
+#--------------------------------------------------------------------------------------------------
+	function sqlTeacherIDForm()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = "SELECT * "
+		. " FROM tbl_teacher "
+		. " WHERE teacher_id = :id "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataTeacherIDForm($id)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$dataAll = array(':id' => $id);
+		$sql = $this->sqlTeacherIDForm();
+		$this->_setSql($sql);
+		$data = $this->getAll($dataAll);
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function bentukTeacherIDForm($id)
+	{
+		$result = $this->dataTeacherIDForm($id);//debugValue($result,'result');
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
+		$data = null;
+		#------------------------------------------------------------------------------------------
+		if($totalRow > 0):foreach($result as $row):foreach($row as $key => $val):
+			$data[$key] = $val;
+		endforeach;endforeach;
+		//else: $data = '<div class="col-md"> Data Tidak Wujud</div>';
+		endif;
+		#------------------------------------------------------------------------------------------
+		return array($totalRow,$data);
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
