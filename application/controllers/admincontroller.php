@@ -326,10 +326,14 @@ class AdminController extends Controller
 		//debugValue($_FILES,'_FILES');
 		try {
 			# mula baca database
-			$posmen = $this->_model->semakPOST();//debugValue($posmen,'posmen');
+			$posmen = $this->_model->semakPOST();debugValue($posmen,'posmen');
 			if($_POST['action'] == 'Add'):
 				$error = $this->_model->bentukInsertTeacher($posmen);
 				header('Location: ' . URL . '/admin/teacher/' . $error);
+			elseif($_POST['action'] == 'Edit'):
+				$error = $this->_model->bentukUpdateTeacher($posmen);
+				debugValue($error,'error');
+				//header('Location: ' . URL . '/admin/teacher/' . $error);
 			else:
 			endif;//*/
 		} catch (Exception $e) {
