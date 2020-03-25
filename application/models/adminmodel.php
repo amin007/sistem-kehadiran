@@ -426,7 +426,7 @@ class AdminModel extends Model
 	{
 		$result = $this->dataTeacherID($id);//debugValue($result,'result');
 		$totalRow = count($result);//debugValue($totalRow,'totalRow');
-		$dataAll = null;
+		$dataAtas = $dataAll = null;
 		#------------------------------------------------------------------------------------------
 		if($totalRow > 0):foreach($result as $key => $val):
 			$dataAtas = '<img src="' . URL . '/sumber/teacher_image/'
@@ -436,7 +436,7 @@ class AdminModel extends Model
 			$dataAll .= "\n\t\t\t" . '<tr><th>' . ucfirst($key) . '</th><td>'
 			. $val . '</td></tr>';
 		endforeach;
-		else: $data = '<div class="col-md"> Data Tidak Wujud</div>';
+		else: $dataAll = '<div class="col-md"> Data Tidak Wujud</div>';
 		endif;
 		#------------------------------------------------------------------------------------------
 		return array($totalRow,$dataAtas,$dataAll);
