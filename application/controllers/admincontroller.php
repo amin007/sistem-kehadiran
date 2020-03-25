@@ -320,6 +320,29 @@ class AdminController extends Controller
 		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
+	public function teacherFormSubmit()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# guna try catch jika ada masalah
+		//debugValue($_POST,'_POST');
+		try {
+			# mula baca database
+			$posmen = $this->_model->semakPOST();//debugValue($posmen,'posmen');
+			if($_POST['action'] == 'Add'):
+				$error = $this->_model->bentukInsertTeacher($posmen);
+				header('Location: ' . URL . '/admin/teacher/' . $error);
+			else:
+			endif;
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
+
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');//exit;
+		}//*/		
+	}
+#--------------------------------------------------------------------------------------------------
 #==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function student()
