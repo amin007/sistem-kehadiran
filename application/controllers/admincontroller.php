@@ -325,6 +325,7 @@ class AdminController extends Controller
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
 		# guna try catch jika ada masalah
 		//debugValue($_POST,'_POST');
+		//debugValue($_FILES,'_FILES');
 		try {
 			# mula baca database
 			$posmen = $this->_model->semakPOST();//debugValue($posmen,'posmen');
@@ -332,7 +333,7 @@ class AdminController extends Controller
 				$error = $this->_model->bentukInsertTeacher($posmen);
 				header('Location: ' . URL . '/admin/teacher/' . $error);
 			else:
-			endif;
+			endif;//*/
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
 			$_SESSION['type'] = 'error';
