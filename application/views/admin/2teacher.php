@@ -443,7 +443,7 @@ END;
 		print <<<END
 	$(document).on('click', '.edit_teacher', function(){
 		teacher_id = $(this).attr('id');
-		//$('#editModal').modal('show');
+		//clear_field();//$('#editModal').modal('show');
 		$.ajax({
 			url:"$url/admin/teacherIDForm",
 			method:"POST",
@@ -451,8 +451,10 @@ END;
 			dataType:"json",
 			success:function(data)
 			{
-				alert(data.teacher_name);
+				alert(data.teacher_emailid);
 				$('#teacher_name').val(data.teacher_name);
+				$('#teacher_address').val(data.teacher_address);
+				$('#teacher_emailid').val(data.teacher_emailid);
 				$('#modal_title').text('Edit Teacher');
 				$('#button_action').val('Edit');
 				$('#action').val('Edit');
