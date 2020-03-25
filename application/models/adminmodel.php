@@ -484,6 +484,99 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# semak post
+#--------------------------------------------------------------------------------------------------
+	public function cincang($data)
+	{
+		#https://www.php.net/manual/en/function.password-hash.php
+		if (function_exists('password_hash'))
+		{# php >= 5.5
+			//$numAlgo = PASSWORD_DEFAULT;
+			//$numAlgo = PASSWORD_ARGON2I; php7.2.0
+			//$numAlgo = PASSWORD_ARGON2ID; php7.3.0
+			$numAlgo = PASSWORD_BCRYPT;
+			$options = array('cost' => 12);
+			$cincang = password_hash($data, $numAlgo, $options);
+		}
+		else
+		{
+			$garam = mcrypt_create_iv(22, MCRYPT_DEV_URANDOM);
+			$garam = base64_encode($garam);
+			$garam = str_replace('+', '.', $garam);
+			$cincang = crypt($data, '$2y$18$' . $garam . '$');
+		}
+
+		return $cincang;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function semakPOST()
+	{
+		$abaikan = array('hidden_teacher_image','teacher_id','button_action','action');
+		foreach($_POST as $key => $val):
+			if(!in_array($key,$abaikan)):
+				if($key == 'teacher_password')
+					$data[":$key"] = $this->cincang($val);
+				else
+					$data[":$key"] = trim($val);
+			endif;
+		endforeach;
+		# untuk image sahaja
+		$ext = 'png';
+		$teacher_image = uniqid() . '.' . $ext;
+		$data['::teacher_image'] = null;
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	function sqlInsertTeacher($posmen)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = "
+		INSERT INTO tbl_teacher
+		(teacher_name, teacher_address, teacher_emailid, teacher_password, teacher_qualification,
+		teacher_grade_id, teacher_doj, teacher_ic, teacher_phone, teacher_acc, teacher_image)
+		SELECT * FROM (SELECT :teacher_name, :teacher_address, :teacher_emailid, :teacher_password,
+		:teacher_qualification, :teacher_grade_id, :teacher_doj, :teacher_ic, :teacher_phone,
+		:teacher_acc, :teacher_image) as temp
+		WHERE NOT EXISTS (
+			SELECT teacher_emailid FROM tbl_teacher
+			WHERE teacher_emailid = :teacher_emailid
+		) LIMIT 1";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataInsertTeacher($posmen)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		//debugValue($posmen,'posmen');
+
+		$sql = $this->sqlInsertTeacher($posmen);
+		$this->_setSql($sql);
+		//$data = $this->getAll($posmen);
+		$data = $this->getInUpDel($posmen);
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function bentukInsertTeacher($posmen)
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$totalRow = $this->dataInsertTeacher($posmen);
+		//debugValue($totalRow,'totalRow');
+		$output = array();
+		#------------------------------------------------------------------------------------------
+		if($totalRow > 0)
+			$output = 'Data Added Successfully';
+		else
+		{
+			$output = 'Data Error Insert. ';
+		}
+		#------------------------------------------------------------------------------------------
+		return $output;//*/
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
