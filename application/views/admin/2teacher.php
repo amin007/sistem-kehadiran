@@ -75,6 +75,20 @@ $action = 'action="' . URL . '/admin/teacherFormSubmit"';
 </div><!-- /class="modal-dialog" -->
 </div><!-- /class="modal" -->
 <!-- =========================================================================================== -->
+<div class="modal" id="editModal">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+
+	<!-- Modal Header -->
+	<div class="modal-header">
+		<h4 class="modal-title">Teacher Edit</h4>
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	</div><!-- /class="modal-header" -->
+
+</div><!-- /class="modal-content" -->
+</div><!-- /class="modal-dialog" -->
+</div><!-- /class="modal" -->
+<!-- =========================================================================================== -->
 <div class="modal" id="viewModal">
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
@@ -141,6 +155,8 @@ $(document).ready(function(){
 		$('#error_teacher_grade_id').text('');
 	}
 	/* ***************************************************************************************** */
+<?php formSubmit($url); ?>
+	/* ***************************************************************************************** */
 	var teacher_id = '';
 
 	$(document).on('click', '.view_teacher', function(){
@@ -157,12 +173,30 @@ $(document).ready(function(){
 		});
 	});
 	/* ***************************************************************************************** */
-<?php formSubmit($url); ?>
+<?php //editForm($url); ?>
 	/* ***************************************************************************************** */
-<?php editForm($url); ?>
+	$(document).on('click', '.edit_teacher', function(){
+		teacher_id = $(this).attr('id');
+		//$('#editModal').modal('show');
+		$.ajax({
+			url:"<?php echo URL ?>/admin/teacherIDForm",
+			method:"POST",
+			data:{action:'edit_fetch', teacher_id:teacher_id},
+			//dataType:"json",
+			success:function(data)
+			{
+				alert(data.teacher_name);
+				$('#teacher_name').val(data.teacher_name);
+				$('#modal_title').text('Edit Teacher');
+				$('#button_action').val('Edit');
+				$('#action').val('Edit');
+				$('#formModal').modal('show');
+			}
+		});
+	});
 	/* ***************************************************************************************** */
 	$(document).on('click', '.delete_teacher', function(){
-		grade_id = $(this).attr('id');
+		teacher_id = $(this).attr('id');
 		$('#deleteModal').modal('show');
 	});
 	/* ***************************************************************************************** */
@@ -170,7 +204,7 @@ $(document).ready(function(){
 		$.ajax({
 			url:"<?php echo URL ?>/admin/teacherDelete",
 			method:"POST",
-			data:{grade_id:grade_id, action:'delete'},
+			data:{teacher_id:teacher_id, action:'delete'},
 			success:function(data)
 			{
 				$('#message_operation').html('<div class="alert alert-warning">'+data+'</div>');
@@ -425,6 +459,7 @@ END;
 #--------------------------------------------------------------------------------------------------
 	function editForm($url)
 	{
+		//dataType:"json",
 		print <<<END
 	$(document).on('click', '.edit_teacher', function(){
 		teacher_id = $(this).attr('id');
@@ -433,25 +468,14 @@ END;
 			url:"$url/admin/teacherIDForm",
 			method:"POST",
 			data:{action:'edit_fetch', teacher_id:teacher_id},
-			dataType:"json",
 			success:function(data)
 			{
+				alert(data.teacher_name);
 				$('#teacher_name').val(data.teacher_name);
-				$('#teacher_address').val(data.teacher_address);
-				$('#teacher_emailid').val(data.teacher_emailid);
-				$('#teacher_grade_id').val(data.teacher_grade_id);
-				$('#teacher_qualification').val(data.teacher_qualification);
-				$('#teacher_doj').val(data.teacher_doj);
-				$('#teacher_ic').val(data.teacher_ic);
-				$('#teacher_phone').val(data.teacher_phone);
-				$('#teacher_acc').val(data.teacher_acc);
-				$('#error_teacher_image').html('<img src="$url/sumber/teacher_image/'+data.teacher_image+'" class="img-thumbnail" width="70" />');
-				$('#hidden_teacher_image').val(data.teacher_image);
-				$('#teacher_id').val(data.teacher_id);
 				$('#modal_title').text('Edit Teacher');
 				$('#button_action').val('Edit');
 				$('#action').val('Edit');
-				$('#formModal').modal('show');
+				$('#editModal').modal('show');
 			}
 		});
 	});
