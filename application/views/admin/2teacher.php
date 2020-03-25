@@ -173,27 +173,7 @@ $(document).ready(function(){
 		});
 	});
 	/* ***************************************************************************************** */
-<?php //editForm($url); ?>
-	/* ***************************************************************************************** */
-	$(document).on('click', '.edit_teacher', function(){
-		teacher_id = $(this).attr('id');
-		//$('#editModal').modal('show');
-		$.ajax({
-			url:"<?php echo URL ?>/admin/teacherIDForm",
-			method:"POST",
-			data:{action:'edit_fetch', teacher_id:teacher_id},
-			//dataType:"json",
-			success:function(data)
-			{
-				alert(data.teacher_name);
-				$('#teacher_name').val(data.teacher_name);
-				$('#modal_title').text('Edit Teacher');
-				$('#button_action').val('Edit');
-				$('#action').val('Edit');
-				$('#formModal').modal('show');
-			}
-		});
-	});
+<?php editForm($url); ?>
 	/* ***************************************************************************************** */
 	$(document).on('click', '.delete_teacher', function(){
 		teacher_id = $(this).attr('id');
@@ -463,11 +443,12 @@ END;
 		print <<<END
 	$(document).on('click', '.edit_teacher', function(){
 		teacher_id = $(this).attr('id');
-		clear_field();
+		//$('#editModal').modal('show');
 		$.ajax({
 			url:"$url/admin/teacherIDForm",
 			method:"POST",
 			data:{action:'edit_fetch', teacher_id:teacher_id},
+			dataType:"json",
 			success:function(data)
 			{
 				alert(data.teacher_name);
@@ -475,7 +456,7 @@ END;
 				$('#modal_title').text('Edit Teacher');
 				$('#button_action').val('Edit');
 				$('#action').val('Edit');
-				$('#editModal').modal('show');
+				$('#formModal').modal('show');
 			}
 		});
 	});
