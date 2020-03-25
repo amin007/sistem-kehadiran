@@ -335,8 +335,9 @@ class AdminController extends Controller
 			endif;
 		} catch (Exception $e) {
 			$errors[] = $e->getMessage();
-			$_SESSION['message'] = $errors;
 			$_SESSION['type'] = 'error';
+			$_SESSION['message'] = $errors;
+			$_SESSION['detail'] = $e;
 
 			debugValue($_SESSION, '_SESSION');
 			//header('Location: ');//exit;
