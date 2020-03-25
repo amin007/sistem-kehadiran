@@ -448,7 +448,9 @@ class AdminModel extends Model
 	function sqlTeacherIDForm()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		$sql = "SELECT * "
+		$sql = "SELECT "
+		. "teacher_name,teacher_address,teacher_qualification,teacher_doj,teacher_ic,"
+		. "teacher_phone,teacher_acc,teacher_image,teacher_grade_id,teacher_id "
 		. " FROM tbl_teacher "
 		. " WHERE teacher_id = :id "
 		. "";
