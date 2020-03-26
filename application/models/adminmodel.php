@@ -712,6 +712,93 @@ class AdminModel extends Model
 	}
 #--------------------------------------------------------------------------------------------------
 #==================================================================================================
+# untuk table student
+#--------------------------------------------------------------------------------------------------
+	function sqlStudentTajuk()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = " SELECT \"\" as Bil,"
+		. " student_name 'Student Name',"
+		. " student_roll_number 'Roll No.',"
+		. " student_dob 'Date of Birth',"
+		. " student_grade_id 'Location & Grade',"
+		. " student_id '&nbsp;Edit', student_id '&nbsp;Delete' "
+		. " FROM tbl_student INNER JOIN tbl_grade "
+		. " ON tbl_grade.grade_id = tbl_student.student_grade_id "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataSqlStudentTajuk()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = $this->sqlStudentTajuk();
+		$this->_setSql($sql);
+		$data = $this->getAll();
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataStudentTajuk()
+	{
+		$result = $this->dataSqlStudentTajuk();
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
+
+		return array($totalRow,$result);
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
+# untuk Student - data bawah
+#--------------------------------------------------------------------------------------------------
+	function sqlStudentAll()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = "SELECT student_name,student_roll_number,student_dob,student_grade_id,student_id"
+		. " FROM tbl_student INNER JOIN tbl_grade "
+		. " ON tbl_grade.grade_id = tbl_student.student_grade_id "
+		. "";
+
+		return $sql;
+	}
+#--------------------------------------------------------------------------------------------------
+	function dataStudentAll()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql = $this->sqlStudentAll();
+		$this->_setSql($sql);
+		$data = $this->getAll();
+
+		return $data;
+	}
+#--------------------------------------------------------------------------------------------------
+	public function bentukDataStudent()
+	{
+		$result = $this->dataStudentAll();//debugValue($result,'result');
+		$totalRow = count($result);//debugValue($totalRow,'totalRow');
+		#------------------------------------------------------------------------------------------
+		if($totalRow > 0):foreach($result as $row):
+			$sub_array = array();
+			$sub_array[] = null;
+			$sub_array[] = $row["student_name"];
+			$sub_array[] = $row["student_roll_number"];
+			$sub_array[] = $row["student_dob"];
+			$sub_array[] = $row["student_grade_id"];
+			$sub_array[] = '<button type="button" name="edit_student"'
+			. ' class="btn btn-primary btn-sm edit_student" id="' . $row["student_id"]
+			. '">Edit</button>';
+			$sub_array[] = '<button type="button" name="delete_student"'
+			. ' class="btn btn-danger btn-sm delete_student" id="' . $row["student_id"]
+			. '">Delete</button>';
+			$data[] = $sub_array;
+		endforeach;
+		else: $data[] = '<div class="col-md"> Data Tidak Wujud</div>';
+		endif;
+		#------------------------------------------------------------------------------------------
+		return array($totalRow,$data);
+	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function getNews()
 	{
