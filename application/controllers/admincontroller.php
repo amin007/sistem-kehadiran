@@ -376,9 +376,15 @@ class AdminController extends Controller
 	public function student()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
-		# mula baca database
 		try {
-			$this->_setView('index-admin');# nama fail di View
+			$this->_setView('3student');# nama fail di View
+
+			# mula baca database
+			list($kira,$senarai['student']) = $this->_model->dataStudentTajuk();
+			$gradeList = $this->_model->getGradeList();
+			$this->_view->set('senarai', $senarai);//debugValue($senarai,'senarai');
+			$this->_view->set('gradeList', $gradeList);
+
 			# Used to define the page title
 			$this->_view->set('title', $this->_tajukModulDaa);
 			$this->_view->set('tajukModul', 'Ini Dashboard Pelajar');
@@ -389,13 +395,40 @@ class AdminController extends Controller
 			$errors[] = $e->getMessage();
 			$_SESSION['message'] = $errors;
 			$_SESSION['type'] = 'error';
+			debugValue($_SESSION, '_SESSION');
+			//header('Location: ');//exit;
+		}//*/
+	}
+#--------------------------------------------------------------------------------------------------
+	public function studentData()
+	{
+		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		# guna try catch jika ada masalah
+		try {
+			# mula baca database
+			list($kira,$senarai) = $this->_model->bentukDataStudent();
+
+			$output = array(
+				"draw" => intval(1),
+				"recordsTotal"	=> $kira,
+				"recordsFiltered" => $kira,
+				"data" => $senarai
+			);
+
+			//debugValue($output,'output');
+			echo json_encode($output);
+			#
+		} catch (Exception $e) {
+			$errors[] = $e->getMessage();
+			$_SESSION['message'] = $errors;
+			$_SESSION['type'] = 'error';
 
 			debugValue($_SESSION, '_SESSION');
-			//header('Location: ');
-			//exit;
-		}
-		//*/
+			//header('Location: ');//exit;
+		}//*/
 	}
+#--------------------------------------------------------------------------------------------------
+#==================================================================================================
 #--------------------------------------------------------------------------------------------------
 	public function attendance()
 	{
@@ -415,10 +448,8 @@ class AdminController extends Controller
 			$_SESSION['type'] = 'error';
 
 			debugValue($_SESSION, '_SESSION');
-			//header('Location: ');
-			//exit;
-		}
-		//*/
+			//header('Location: ');//exit;
+		}//*/
 	}
 #--------------------------------------------------------------------------------------------------
 	public function logout()
