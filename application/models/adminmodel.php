@@ -726,6 +726,13 @@ class AdminModel extends Model
 	function sqlStudentTajuk()
 	{
 		//echo '<hr>Nama class ini :' . __METHOD__ . '()<hr>';
+		$sql0 = "SELECT 'Bil',
+		'Student Name',
+		'Roll No.',
+		'Date of Birth',
+		'Location & Grade',
+		'&nbsp;Edit',
+		'&nbsp;Delete' ";
 		$sql = " SELECT \"\" as Bil,"
 		. " student_name 'Student Name',"
 		. " student_roll_number 'Roll No.',"
@@ -736,7 +743,7 @@ class AdminModel extends Model
 		. " ON tbl_grade.grade_id = tbl_student.student_grade_id "
 		. "";
 
-		return $sql;
+		return $sql0;
 	}
 #--------------------------------------------------------------------------------------------------
 	function dataSqlStudentTajuk()
