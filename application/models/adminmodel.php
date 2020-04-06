@@ -305,6 +305,15 @@ class AdminModel extends Model
 		INNER JOIN tbl_grade 
 		ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id 
 		';
+		$sql1 = "SELECT 'Bil',
+		'&nbsp;Image',
+		'&nbsp;Teacher Name',
+		'&nbsp;Email Address',
+		'&nbsp;Location & Grade',
+		'&nbsp;Account',
+		'&nbsp;View',
+		'&nbsp;Edit',
+		'&nbsp;Delete' ";
 		$sql = " SELECT \"\" as Bil,teacher_image '&nbsp;Image',"
 		. " teacher_name '&nbsp;Teacher Name',"
 		. " teacher_emailid '&nbsp;Email Address',grade_name '&nbsp;Location & Grade',"
@@ -314,7 +323,7 @@ class AdminModel extends Model
 		. "	ON tbl_grade.grade_id = tbl_teacher.teacher_grade_id  "
 		. "";
 
-		return $sql;
+		return $sql1;
 	}
 #--------------------------------------------------------------------------------------------------
 	function dataSqlTeacherTajuk()
